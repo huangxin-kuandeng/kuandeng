@@ -1,0 +1,7 @@
+syntax = "proto2";
+import "common.proto";
+message TRIANGLE_TIP_UP {
+    optional PointFloat top = 1; //
+    optional PointFloat left = 2; //
+    optional PointFloat right = 3; //
+}

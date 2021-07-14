@@ -1,0 +1,24 @@
+syntax = "proto2";
+import "common.proto";
+import "contour_type.proto";
+
+message SegContour{
+    optional int32 frame_id = 1;//帧号，从1开始
+    optional int32 id = 2;//轮廓序号，从0开始
+    optional int32 color_rgb= 3; // RGB,Oxrrggbb  识别颜色对应的分类含义参见ContourType
+    optional int32 seg_type = 4 ;//seg type
+    repeated PointInt contour = 5 ;//轮廓点集
+
+    optional float confidence = 9;//得分
+
+}
+
+//message RetinaMaskContour{
+//    optional int32 frame_id = 1;//帧号，从1开始
+//    optional int32 id = 2;//轮廓序号，从0开始
+//    optional string label = 3;
+//    optional int32 type = 4; //
+//    repeated PointInt contour = 5 ;//轮廓点集
+//
+//    optional float confidence = 9;//得分
+//}

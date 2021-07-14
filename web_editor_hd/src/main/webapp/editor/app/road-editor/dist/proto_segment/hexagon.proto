@@ -1,0 +1,11 @@
+syntax = "proto2";
+import "common.proto";
+message HEXAGON {
+    optional PointFloat left_top = 1; //
+    optional PointFloat right_top = 2; //
+    optional PointFloat left_bot = 3; //
+    optional PointFloat right_bot = 4; //
+
+    optional PointFloat bot_left=6;//
+    optional PointFloat bot_right=7;//
+}

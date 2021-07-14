@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+message PointInt {
+	optional int32 x = 1;
+	optional int32 y = 2;
+}
+message PointFloat {
+	optional float x = 1;
+	optional float y = 2;
+	optional float z = 3;
+}
+message PointDouble {
+	optional double x = 1;
+	optional double y = 2;
+	optional double z = 3;
+}
+message RotatedRect {
+	optional PointFloat p1 = 1;
+	optional PointFloat p2 = 2;
+	optional PointFloat p3 = 3;
+	optional PointFloat p4 = 4;
+}
+message Rect {
+	optional PointInt left_top = 1;
+	optional int32 width = 2;
+	optional int32 height = 3;
+}
+message FitLine {
+	optional float vx = 1;
+    optional float vy = 2;
+    optional float x0 = 3;
+    optional float y0 = 4;
+    optional double u1 = 5;
+    optional double v1 = 6;
+    optional double u2 = 7;
+    optional double v2 = 8;
+}
+message Vector4 {
+	optional double v1 = 1;
+	optional double v2 = 2;
+	optional double v3 = 3;
+	optional double v4 = 4;
+}

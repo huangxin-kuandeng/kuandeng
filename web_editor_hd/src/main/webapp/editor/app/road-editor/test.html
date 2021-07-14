@@ -1,0 +1,77 @@
+﻿ <!DOCTYPE html>
+ <html>
+
+ <head>
+     <title>高精数据编辑</title>
+     <meta charset='utf-8'>
+     <meta name='viewport' content='initial-scale=1.0 maximum-scale=1.0'>
+     <meta name='apple-mobile-web-app-capable' content='yes' />
+     <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+     <meta http-equiv='X-UA-Compatible' content='IE=9; IE=8; IE=7; IE=EDGE' />
+     <script type="text/javascript" src="./boot.js"></script>
+
+     <link rel="shortcut icon" href="favicon.ico" />
+     <script type="text/javascript" src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+ </head>
+
+ <body onload="init()">
+
+     <div id='id-container'></div>
+
+     <script type='text/javascript'>
+         function init() {
+              var url = 'http://10.11.5.40:13920/kds-data/data/task/500066246/fusion/bbox?bbox=116.09252929687501,40.002371935876475,116.10351562500001,40.010787140465524&filter=true&tileId=26951,12404,15&t=1555492809915';
+            //   var a = fetch(url);
+            //   a.then(response => response.json())
+            //       .then(function (d) {
+            //           console.log('end')
+            //       })
+            //       .catch(error => console.log('error is', error));
+            var d3xml = d3.json(url);
+            d3xml.get().on('load', function(d){
+                console.log('d3xml load:',d)
+            }).on('error', function(e){
+                console.log('d3xml error: ',e)
+            });
+
+             d3.json(url,function(err,data){
+                 console.log('d3.json', err,data)
+             })
+
+             d3.jsonp(url + '&callback={callback}',function(err,data){
+                 console.log('d3.jsonp', err,data)
+             })
+
+             $.ajax({
+                 type: "GET", 
+                 dataType: "jsonp",  
+                 url,  
+                 success: function (d1) {  
+                     console.log('jquery: success jsonp ', d1);
+                 },
+                 complete: function (data) {
+                     console.log('jquery: complete callback',data);
+                 },
+             });
+
+              $.ajax({
+                  type: "GET", 
+                  url,
+                  success: function (result) {  
+                      console.log('jquery: success ', result);
+                  },
+                  complete: function (data) {
+                     console.log('jquery: complete2',data);
+                 },
+              });
+              $.getJSON(url, {
+                      id: 1
+                  },
+                  function (data, textStatus, jqXHR) {
+                      console.log(data, textStatus, jqXHR)
+                  });
+         }
+     </script>
+ </body>
+
+ </html>

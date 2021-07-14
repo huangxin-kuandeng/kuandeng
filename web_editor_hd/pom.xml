@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kuandeng</groupId>
+	<artifactId>web_editor</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>kds-roadeditor Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<build>
+		<finalName>web_editor</finalName>
+		
+		<filters>
+      		<filter>src/main/resources/${profiles.active}/config.properties</filter>
+    	</filters>
+    	
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<!-- 资源根目录排除各环境的配置，使用单独的资源目录来指定 -->
+				<excludes>
+					<exclude>test/*</exclude>
+					<exclude>production/*</exclude>
+					<exclude>development/*</exclude>
+					<exclude>kddev_gpu_02/*</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources/${profiles.active}</directory>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<outputDirectory>${project.build.directory}/classes</outputDirectory>
+					<resources>
+						<resource>
+							<directory>src/main/resources</directory>
+							<includes>
+								<include>**/**</include>
+							</includes>
+							<excludes>
+								<exclude>test/**</exclude>
+								<exclude>development/**</exclude>
+								<exclude>production/**</exclude>
+								<exclude>kddev_gpu_02/**</exclude>
+							</excludes>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<warName>web_editor</warName>
+					<filters>
+			      		<filter>${basedir}/src/main/resources/${profiles.active}/config.properties</filter>
+			    	</filters>
+			    	<packagingExcludes>  
+                         WEB-INF/classes/test/**,
+                         WEB-INF/classes/development/**,
+                         WEB-INF/classes/production/**,
+                         WEB-INF/classes/localhost/**,
+                         WEB-INF/classes/kddev_gpu_02/**
+                    </packagingExcludes>  
+					<webResources>
+						<resource>
+							<directory>${basedir}/src/main/webapp/editor/app/road-editor</directory>
+							<filtering>true</filtering>
+							<targetPath>editor/app/road-editor</targetPath>
+							<includes>
+								<include>config.js</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+
+		<profile>
+			<!-- 本地开发环境 -->
+			<id>localhost</id>
+			<properties>
+				<profiles.active>localhost</profiles.active>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<!-- 开发环境 -->
+			<id>development</id>
+			<properties>
+				<profiles.active>development</profiles.active>
+			</properties>
+		</profile>
+
+		<profile>
+			<!-- 测试环境 -->
+			<id>test</id>
+			<properties>
+				<profiles.active>test</profiles.active>
+			</properties>
+		</profile>
+		
+		<profile>
+			<!-- 生产环境 -->
+			<id>production</id>
+			<properties>
+				<profiles.active>production</profiles.active>
+			</properties>
+		</profile>
+		
+		<profile>
+			<!-- kddev_gpu_02环境 -->
+			<id>kddev_gpu_02</id>
+			<properties>
+				<profiles.active>kddev_gpu_02</profiles.active>
+			</properties>
+		</profile>
+
+	</profiles>
+
+	
+</project>

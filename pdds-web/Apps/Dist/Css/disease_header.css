@@ -1,0 +1,321 @@
+
+/*********************header*********************/
+#highway_disease .data_header{
+	width: 100%;
+	/*height: 30px;*/
+	height: 30px;
+	/*padding: 10px 0px;*/
+	padding: 9px 0px;
+	/*border: 1px solid #000000;*/
+	border-bottom: 1px solid #697088;
+	background-image: linear-gradient(-180deg, #171F36 0%, #222B46 100%);
+}
+#highway_disease .data_header a{
+	/*font-size: 12px;
+	height: 14px;
+	line-height: 14px;*/
+	font-size: 15px;
+	height: 15px;
+	/*line-height: 14px;*/
+	
+	color: #555a64;
+    text-decoration: none;
+}
+#highway_disease .data_header a.active{
+    color: #526fd5;
+    font-weight: bold;
+}
+#highway_disease .data_header>div{
+	float: left;
+}
+/*按钮切换栏*/
+#highway_disease .data_header .button_list{
+	margin-left: 16px;
+	position: relative;
+}
+.button_list>h3, .button_list>p, .button_list>div.business_name{
+	float: left;
+	color: #FFFFFF;
+	height: 30px;
+	line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+	font-size: 14px;
+	margin: 0px;
+}
+.button_list h3{
+	/*width: 78px;*/
+	margin-right: 16px;
+	height: 16px;
+	margin-top: 6px;
+	line-height: inherit;
+    letter-spacing: 0;
+    /*background-image: url(../Img/logo.png);*/
+    /*background-size: 100% 100%;*/
+    /*background-position: 0px 0px;*/
+    /*background-repeat: no-repeat;*/
+}
+.button_list h3 img{
+	float: left;
+    margin: 0px;
+    padding: 0px;
+	height: 16px;
+}
+.button_list h3 img.user_logo{
+	margin-right: 4px;
+}
+.button_list p,
+.button_list div.business_name{
+	/*color: #FFFFFF;*/
+	opacity: rgba(255, 255, 255, 0.7);
+}
+#highway_disease .button_list div.business_name a{
+	font-size: 14px;
+	color: #FFFFFF;
+    opacity: 1;
+}
+#highway_disease .button_list div.business_name a span{
+	font-size: 12px;
+}
+#highway_disease .button_list div.business_name a:hover{
+    opacity: 1;
+}
+
+/*头部业务列表样式*/
+#highway_disease ul.business_list{
+	position: absolute;
+	display: none;
+	z-index: 1111;
+	height: auto;
+	width: 184px;
+	background: #262E43;
+	border: 1px solid #697088;
+	box-shadow: 0 0 10px 0 #000920;
+	border-radius: 4px;
+}
+#highway_disease ul.business_list li{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+	float: left;
+	cursor: pointer;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+#highway_disease ul.business_list li:first-child{
+	border-radius: 3px 3px 0 0;
+}
+#highway_disease ul.business_list li:last-child{
+	border-radius: 0 0 3px 3px;
+}
+#highway_disease ul.business_list li:hover{
+	background: rgba(81, 103, 247, 0.2);
+}
+#highway_disease ul.business_list li.active{
+	background: rgba(81, 103, 247, 1);
+	
+}
+
+/*查询搜索栏*/
+#highway_disease .data_header .search_param{
+	position: absolute;
+    margin: 0 auto;
+    left: 0px;
+    right: 0px;
+    /*width: 280px;*/
+	height: 30px;
+    width: 280px;
+}
+#highway_disease .data_header .search_param span.iconfont.iconsousuo{
+    color: #848792;
+    background-color: #32384a;
+    border-radius: 3px 0px 0px 3px;
+    font-size: 18px;
+    float: left;
+    line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+    text-align: center;
+    height: 30px;
+    width: 38px;
+}
+#highway_disease .data_header .search_param input.search_input{
+	/*height: 20px;*/
+	height: 16px;
+    /*padding: 5px;*/
+    padding: 10px 10px 10px 0px;
+    float: left;
+    /*padding-left: 30px;*/
+    /*padding-left: 38px;*/
+    /*width: 200px;*/
+    width: 432px;
+    border-radius: 0px 3px 3px 0px;
+    font-size: 12px;
+    border: none;
+    color: #848792;
+    background-color: #32384a;
+}
+#highway_disease .data_header .search_param a.disease_ruler{
+	display: block;
+    float: left;
+    margin-left: 15px;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    background-color: #32384a;
+    background-image: url(../Img/ruler.png);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 8px 8px;
+}
+/*其他按钮组*/
+#highway_disease .data_header .button_other{
+	float: right;
+    /*margin-right: 5px;*/
+    margin-right: 16px;
+    /*height: 12px;*/
+    height: 20px;
+    /*line-height: 30px;*/
+    padding: 6px 0px;
+	position: relative;
+}
+#highway_disease .data_header .button_other a{
+    float: left;
+    padding: 0px;
+    height: 20px;
+    opacity: 0.7;
+    color: #FFFFFF;
+    /*width: 20px;*/
+    font-size: 20px;
+    /*width: 60px;*/
+    line-height: 20px;
+	/*margin-right: 20px;*/
+    text-align: center;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 20px;		/*火狐*/
+}
+#highway_disease .data_header .button_other a:hover{
+    opacity: 1;
+}
+#highway_disease .data_header .button_other a>span{
+	float: left;
+}
+#highway_disease .data_header .button_other a>span.iconfont{
+	font-size: 20px;
+	margin-right: 8px;
+}
+#highway_disease .data_header .button_other a span.user_name{
+    font-size: 14px;
+    margin-right: 4px;
+}
+#highway_disease .data_header .button_other a span.users_select{
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-top: 5px;
+	font-size: 18px;
+	line-height: 8px;
+	text-align: center;
+}
+#highway_disease .data_header .button_other:hover a span.users_select{
+	transform: rotate(180deg);
+}
+#highway_disease .data_header .button_other ul.user_install{
+	top: 31px;
+	right: 0px;
+	z-index: 300;
+	display: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 6px 0px;
+	text-align: center;
+	position: absolute;
+	border-radius: 4px;
+	background: #262E43;
+	box-shadow: 0 0 10px 0 #000920;
+	
+	line-height: 34px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 34px;		/*火狐*/
+}
+#highway_disease .data_header .button_other ul.user_install li{
+	color: #FFFFFF;
+	height: 14px;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 6px 32px;
+	width: max-content;
+}
+#highway_disease .data_header .button_other ul.user_install li:hover{
+	background: #5167F7;
+	box-shadow: 0 0 10px 0 #000920;
+}
+
+#highway_disease .data_header div.user_citys{
+	float: right;
+	height: 21px;
+	cursor: pointer;
+	font-size: 12px;
+	padding-top: 9px;
+	line-height: 12px;
+	margin-right: 16px;
+	position: relative;
+	color: rgba(255, 255, 255, 0.7);
+}
+#highway_disease .data_header div.user_citys span.citys_name{
+	float: left;
+	margin-right: 4px;
+}
+#highway_disease .data_header div.user_citys span.citys_select{
+	float: left;
+	width: 12px;
+	height: 12px;
+	font-size: 18px;
+	line-height: 8px;
+	text-align: center;
+}
+#highway_disease .data_header div.user_citys span.citys_select.one_city{
+	display: none;
+}
+#highway_disease .data_header div.user_citys:hover span.citys_select{
+	transform: rotate(180deg);
+}
+#highway_disease .data_header div.user_citys ul.citys_list{
+	top: 30px;
+	right: 0px;
+	z-index: 333;
+	display: none;
+	overflow-x: auto;
+	max-height: 300px;
+	position: absolute;
+	border-radius: 4px;
+	background: #262E43;
+	box-shadow: 0 0 10px 0 #000920;
+}
+#highway_disease .data_header div.user_citys ul.citys_list li{
+	width: auto;
+	height: 26px;
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 26px;
+	padding: 0px 32px;
+	text-align: center;
+	min-width: max-content;
+}
+#highway_disease .data_header div.user_citys ul.citys_list li:first-child{
+	border-radius: 4px 4px 0px 0px;
+}
+#highway_disease .data_header div.user_citys ul.citys_list li:last-child{
+	border-radius: 0px 0px 4px 4px;
+}
+#highway_disease .data_header div.user_citys ul.citys_list li:hover{
+	background-color: rgba(81, 103, 247, 0.5);
+}
+#highway_disease .data_header div.user_citys ul.citys_list li.active{
+	background-color: rgba(81, 103, 247, 0.85);
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../config.js"></script>
+		<script src="../KeyWord.js" type="text/javascript" charset="utf-8"></script>
+	  	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	  	<link rel="stylesheet" href="../diagram-viewer/style.css" type="text/css" media="screen" />
+	  	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  	<!-- Font Awesome -->
+	  	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+	  	<!-- Ionicons -->
+	  	<link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+	  	<!-- Theme style -->
+	  	<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+	
+	  	<!-- DataTables -->
+	  	<link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	  	<link rel="stylesheet" href="../bower_components/spop/spop.min.css">
+	
+	  	<link rel="stylesheet" href="../dist/css/dialog.css">
+	  	<link rel="stylesheet" href="../dist/js/citys/jock-citypicker-2.0.css">
+	</head>
+	<style>
+		.rangeTypes{
+			position: absolute;
+			z-index: 2222;
+		    width: 120px;
+		    left: -40px;
+		    top: 70px;
+		}
+	</style>
+	<body>
+  		<span class="upload"></span>
+  		<!-- 等待创建任务相应 -->
+		<div id="loading" onclick="util.errorView('请耐心等待...')">
+			<img src="../dist/img/loading.gif" title="等待中">
+		</div>
+	    <section class="content container-fluid">
+	
+	    </section>
+	</body>
+</html>
+
+<!-- jQuery 3 -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../diagram-viewer/js/jquery/jquery.progressbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="../diagram-viewer/js/jquery/jquery.asyncqueue.js" type="text/javascript" charset="utf-8"></script>
+<!--配置文件-->
+<script src="../dist/js/boot.js"></script>
+<!--功能配置-->
+<script src="../dist/js/switch/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../dist/js/switch/method.js" type="text/javascript" charset="utf-8"></script>
+<!--leaflet框架-->
+<script src="../dist/js/switch/method.js"></script>
+<script src="leafletjs.js" type="text/javascript" charset="utf-8"></script>
+<!--绘制多边形-->
+<script src="morePolygon.js" type="text/javascript" charset="utf-8"></script>
+<!--城市选择-->
+<script src="../dist/js/citys/citypicker-citylist.js"></script>
+<script src="../dist/js/citys/jock-citypicker-2.0.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower_components/spop/spop.min.js"></script>
+<script src="../dist/js/switch/lodash.js"></script>
+<script src="../dist/js/switch/d3.v3.js"></script>

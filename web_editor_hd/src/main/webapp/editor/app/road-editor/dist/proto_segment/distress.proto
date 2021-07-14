@@ -1,0 +1,43 @@
+syntax = "proto2";
+import "common.proto";
+import "distress_type.proto";
+
+
+message PavementBBox {
+    optional PointDouble left_top_xyz = 1;
+    optional PointDouble right_bottom_xyz = 2;
+    optional int32 lumpiness_pixel = 3;
+    optional double lumpiness = 4;
+}
+
+message PavementBranch {
+    optional int32 skeleton_index = 1;
+    optional int32 branch_index = 2;
+    repeated PointInt pixel_list = 6;
+    repeated PointDouble llh_list = 7;
+    repeated double widths = 8;
+}
+
+message PavementSkeleton {
+    optional int32 skeleton_index = 1;
+    repeated PavementBranch branches = 2;
+    optional double crack_length = 3;
+    optional double area = 4;
+    optional int32 seg_type = 5;
+}
+
+message PavementContour {
+    repeated PointDouble llh_list = 1;
+    optional int32 pixel_area = 2;
+    optional double area = 3;
+    optional int32 seg_type = 4;
+}
+
+message PavementDistress {
+    optional distress_type.DistressContourType distress_contour_type = 1;
+    optional distress_type.DistressType distress_type = 2;
+    //
+    optional PavementBBox pavement_bbox = 10;
+    optional PavementSkeleton pavement_skeleton = 11;
+    optional PavementContour pavement_contour = 12;
+}

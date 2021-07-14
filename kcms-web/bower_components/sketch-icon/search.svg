@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+
+  <g id="24px_search_plain" transform="translate(1 1)">
+    <path d="M4 4L0 0" transform="translate(16 16)" id="Path" fill="none" fill-rule="evenodd" stroke="#9091a0" stroke-width="2" stroke-linecap="round" />
+    <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z" id="Oval" fill="none" fill-rule="evenodd" stroke="#9091a0" stroke-width="2" stroke-linecap="square" />
+    <path d="M0 4C0 1.79086 1.79086 0 4 0" transform="translate(4 4)" id="Path" fill="none" fill-rule="evenodd" stroke="#9091a0" stroke-width="2" stroke-linecap="round" />
+  </g> 
+</svg>
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">9091a0
+  <defs>
+    <path d="M0 0L26 0L26 26L0 26L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="Search-icon">
+    <path d="M0 0L26 0L26 26L0 26L0 0Z" id="Background" fill="none" fill-rule="evenodd" stroke="#525bf2" strole-width="2" />
+    <g clip-path="url(#mask_1)">
+      <path d="M9.8125 0C4.39063 0 0 4.39063 0 9.8125C0 15.2344 4.39063 19.625 9.8125 19.625C12.1016 19.625 14.207 18.8164 15.875 17.5L16.75 18.375C16.3828 19.0664 16.5117 19.9492 17.0938 20.5313L21.6875 25.1563C22.4023 25.8711 23.5664 25.8711 24.2813 25.1563L25.1563 24.2813C25.8711 23.5664 25.8711 22.4023 25.1563 21.6875L20.5313 17.0938C19.9453 16.5078 19.0664 16.4063 18.375 16.7813L17.5 15.9063C18.8242 14.2344 19.625 12.1133 19.625 9.8125C19.625 4.39063 15.2344 0 9.8125 0L9.8125 0ZM9.8125 1.8125C14.2305 1.8125 17.8125 5.39453 17.8125 9.8125C17.8125 14.2305 14.2305 17.8125 9.8125 17.8125C5.39453 17.8125 1.8125 14.2305 1.8125 9.8125C1.8125 5.39453 5.39453 1.8125 9.8125 1.8125L9.8125 1.8125ZM4.75 7.28125C4.23438 8.11719 3.9375 9.10156 3.9375 10.1563C3.9375 13.1836 6.37891 15.625 9.40625 15.625C10.5742 15.625 11.6719 15.2461 12.5625 14.625C12.3242 14.6523 12.0586 14.6563 11.8125 14.6563C7.89844 14.6563 4.75 11.5078 4.75 7.59375C4.75 7.48828 4.74609 7.38672 4.75 7.28125L4.75 7.28125Z" transform="translate(0.1875 0.1875)" id="Shape" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    </g>
+  </g>
+</svg> -->
+
+

@@ -1,0 +1,189 @@
+/*
+ * @Author: tao.w
+ * @Date: 2019-08-29 11:50:37
+ * @LastEditors: tao.w
+ * @LastEditTime: 2020-08-28 11:46:50
+ * @Description: 
+ */
+iD.modes.AddRoad = function (context) {
+    var mode = {
+        id: 'add-road',
+        button: 'road',
+        title: '',//t('modes.add_line.title'),
+        description: t('modes.add_road.description'),
+        key: 'Ctrl+Q',
+        enable: true
+    };
+
+    // var annotation = t('modes.add_road.description');
+    var highLightIds = context.selectedIDs();
+
+    function selectElements(flag) {
+        context.surface()
+            .selectAll(iD.util.entityOrMemberSelector(highLightIds, context.graph()))
+            .classed('selected', flag);
+    }
+
+    context.map().on('drawn.select', selectElements);
+
+    var behavior = iD.behavior.AddWay(context)
+        .tail(t('modes.add_line.tail'))
+        .on('start', start)
+        .on('startFromWay', startFromWay)
+        .on('startFromNode', startFromNode);
+
+    function start(loc) {
+
+        let xyz = iD.util.getPlyZ(context, loc);
+
+        if (xyz != null) {
+            loc[2] = xyz;
+        } else {
+            Dialog.alert("当前位置，无法获取高程值！");
+            context.enter(iD.modes.Browse(context))
+            return;
+        }
+
+        var wayLayer = iD.Layers.getCurrentModelEnableLayer(iD.data.DataType.ROAD);
+        var nodeLayer = iD.Layers.getCurrentModelEnableLayer(iD.data.DataType.ROAD_NODE);
+        var wayLayerId = wayLayer.id;
+        var nodeLayerId = nodeLayer.id;
+        var graph = context.graph(),
+            node = iD.Node({
+                identifier: nodeLayer.identifier,
+                layerId: nodeLayerId, loc: loc, modelName: iD.data.DataType.ROAD_NODE
+            }),
+            way = iD.Way({
+                identifier: wayLayer.identifier,
+                layerId: wayLayerId
+            });
+        way.modelName = iD.data.DataType.ROAD;
+        way.setTags(iD.util.getDefauteTags(way, wayLayer));
+        node.setTags(iD.util.getDefauteTags(node, nodeLayer));
+        // way.tags.isnewway = 'true';
+        context.perform(
+            iD.actions.AddEntity(node),
+            iD.actions.AddEntity(way),
+            iD.actions.AddVertex(way.id, node.id));
+        // add road envent
+        context.event.add({ 'type': 'road', 'entity': way });
+        context.enter(iD.modes.DrawLine(context, way.id, graph, '', 'road'));
+        //道路第一次点击地图生成start
+        iD.logger.editElement({
+            'tag': 'add_' + way.modelName + '_start',
+            'entityId': way.osmId(),
+            'modelName': way.modelName
+        });
+    }
+
+    function startFromWay(loc, edge) {
+
+        let xyz = iD.util.getPlyZ(context, loc);
+
+        if (xyz != null) {
+            loc[2] = xyz;
+        } else {
+            Dialog.alert("当前位置，无法获取高程值！");
+            context.enter(iD.modes.Browse(context))
+            return;
+        }
+
+        var wayLayer = iD.Layers.getCurrentModelEnableLayer(iD.data.DataType.ROAD);
+        var nodeLayer = iD.Layers.getCurrentModelEnableLayer(iD.data.DataType.ROAD_NODE);
+        var wayLayerId = wayLayer.id;
+        var nodeLayerId = nodeLayer.id;
+        var graph = context.graph(),
+            node = iD.Node({
+                layerId: nodeLayerId,
+                loc: loc,
+                identifier: nodeLayer.identifier,
+                modelName: iD.data.DataType.ROAD_NODE
+            }),
+            way = iD.Way({
+                identifier: wayLayer.identifier,
+                layerId: wayLayerId
+            });
+        way.modelName = iD.data.DataType.ROAD;
+
+        way.setTags(iD.util.getDefauteTags(way, wayLayer));
+        node.setTags(iD.util.getDefauteTags(node, nodeLayer));
+        // way.tags.isnewway = 'true';
+        context.perform(
+            iD.actions.AddEntity(node),
+            iD.actions.AddEntity(way),
+            iD.actions.AddVertex(way.id, node.id));
+
+        context.enter(iD.modes.DrawLine(context, way.id, graph, '', 'road'));
+    }
+
+    function startFromNode(node) {
+        var wayLayer = iD.Layers.getCurrentModelEnableLayer(iD.data.DataType.ROAD);
+        var nodeLayer = iD.Layers.getCurrentModelEnableLayer(iD.data.DataType.ROAD_NODE);
+        var wayLayerId = wayLayer.id;
+        var nodeLayerId = nodeLayer.id;
+        var way = iD.Way({
+            identifier: wayLayer.identifier,
+            layerId: wayLayerId
+        });
+        way.modelName = iD.data.DataType.ROAD;
+        way.setTags(iD.util.getDefauteTags(way, wayLayer));
+
+        // way.tags.isnewway = 'true';
+
+        var args = [];
+        var isBreakPoint = true;
+        var newWayFirstNode = node;
+        context.perform(iD.actions.Noop(), t('modes.add_road.description'));
+        if (node.modelName == iD.data.DataType.ROAD_NODE) {
+            var graph = context.graph();
+            var parentWays = graph.parentWays(node);
+            parentWays.forEach(function (way) {
+                if (way.first() != node.id && way.last() != node.id) {
+                    isBreakPoint = false;
+                }
+            });
+        }
+        if (!isBreakPoint || node.modelName != iD.data.DataType.ROAD_NODE) {
+            newWayFirstNode = iD.Node({
+                identifier: nodeLayer.identifier,
+                layerId: nodeLayerId,
+                loc: node.loc,
+                modelName: iD.data.DataType.ROAD_NODE
+            });
+            newWayFirstNode.setTags(iD.util.getDefauteTags(newWayFirstNode, nodeLayer));
+            args.push(iD.actions.AddEntity(newWayFirstNode));
+
+        }
+        // if(isBreakPoint){
+        //     args.push(iD.actions.SplitRoad([node.id], context));
+        // }
+        args.push(...[iD.actions.AddEntity(way),
+        iD.actions.AddVertex(way.id, newWayFirstNode.id)]);
+        context.replace.apply(this, args);
+        context.enter(iD.modes.DrawLine(context, way.id, graph, '', 'road'));
+
+    }
+
+    mode.enter = function () {
+        context.buriedStatistics().merge(1, iD.data.DataType.ROAD);
+        context.install(behavior);
+        var walklink = d3.select('g.layer.layer-walk')
+        walklink.classed("no-pointer-events", true);
+        //点击-在地图上添加道路按钮-激活状态-操作时增加埋点
+        iD.UserBehavior.logger({
+            'filter': 'none',
+            'type': 'click',
+            'tag': 'click_add_road',
+            'desc': '激活'
+        });
+    };
+
+    mode.exit = function () {
+        selectElements(true);
+        context.uninstall(behavior);
+        var walklink = d3.select('g.layer.layer-walk')
+        walklink.classed("no-pointer-events", false);
+    };
+
+    return mode;
+};

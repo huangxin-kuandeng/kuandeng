@@ -1,0 +1,24 @@
+syntax = "proto2";
+package kd.mapping.proto;
+
+message MatInfo {
+    optional int32 tile_x = 1;
+    optional int32 tile_y = 2;
+    optional int32 zoom = 3;
+}
+message SparseFlexSingleElement {
+    optional uint32 type = 1;
+    optional float low_height = 2;
+    optional float high_height = 3;
+}
+
+message SparseFlexSinglePixel {
+    optional uint32 row = 1;
+    optional uint32 col = 2;
+    repeated SparseFlexSingleElement element = 3;
+}
+
+message SparseFlexHeightMat {
+    repeated SparseFlexSinglePixel pixel = 1;
+    optional MatInfo mat_info = 2;
+}

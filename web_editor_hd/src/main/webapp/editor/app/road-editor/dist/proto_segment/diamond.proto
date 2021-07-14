@@ -1,0 +1,8 @@
+syntax = "proto2";
+import "common.proto";
+message DIAMOND {
+        optional PointFloat left = 1;//
+        optional PointFloat right = 2;//
+        optional PointFloat top = 3;//
+        optional PointFloat bot = 4;//
+}

@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package distress_type; //package声明符
+
+enum DistressContourType {
+    DISTRESS_CONTOUR_UNKNOWN = 0;
+    DISTRESS_CONTOUR_BBOX = 1;          // bounding box
+    DISTRESS_CONTOUR_SEGMENTATION = 2;  // segmentation
+    DISTRESS_CONTOUR_SKELETON = 3;      // skeleton
+    DISTRESS_CONTOUR_CONTOUR = 4;       // face
+}
+
+enum DistressType {
+     DISTRESS_UNKNOWN = 0;
+     DISTRESS_CRACK_V = 1;  // 纵向裂缝
+     DISTRESS_CRACK_H = 2;  // 横向裂缝
+     DISTRESS_CHAP = 3;     // 龟裂
+     DISTRESS_CRACK_BLOCK = 4; // 块状裂缝
+     DISTRESS_RUT = 5;          // 车辙
+     DISTRESS_SWELLING = 6;     // 拥包
+     DISTRESS_POTHOLE = 7;      //坑槽
+     DISTRESS_REPAIR_STRIP = 8;  // 条状修补
+     DISTRESS_REPAIR_BLOCK = 9;  // 块状修补
+}

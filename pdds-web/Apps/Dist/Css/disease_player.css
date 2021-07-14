@@ -1,0 +1,331 @@
+
+/*********************病害视频*********************/
+
+.disease_player{
+	width: 608px;
+    height: calc(100% - 97px);
+    display: none;
+    position: absolute;
+    top: 49px;
+    left: 0px;
+    /*left: -721px;*/
+    z-index: 125;
+    /*background-color: #1d232f;*/
+    border-right: 1px solid #000000;
+    padding: 24px 16px;
+    color: #FFFFFF;
+    
+    /*background: rgba(23,31,54,0.9);*/
+    /*background: rgba(23,31,54,1);*/
+    background: #1A2239;
+	box-shadow: 1px 0 0 0 #000920;
+}
+
+/*视频界面表头显示*/
+.disease_player .disease_player_header{
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+	margin-bottom: 24px;
+}
+.disease_player .disease_player_header b.disease_player_title{
+	height: 30px;
+	/*width: 30px;*/
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+	/*margin: 5px 0px;*/
+	float: left;
+	color: #5A7BEF;
+}
+.disease_player .disease_player_header b.disease_player_title span{
+	display: inline-block;
+	line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+	margin-right: 12px;
+	float: left;
+}
+.disease_player .disease_player_header b.disease_player_title span.iconfont{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background: #303d66;
+    border-radius: 15px;
+}
+.disease_player .disease_player_header a.disease_player_close{
+	float: right;
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 30px;		/*火狐*/
+	text-align: center;
+	font-weight: bold;
+	color: #626878;
+}
+.disease_player .disease_player_header a.disease_player_close:hover{
+	color: #FFFFFF;
+}
+
+/*视频界面图片显示*/
+.disease_player .disease_player_body{
+	position: relative;
+	float: left;
+}
+.disease_player .disease_player_body .player_image{
+	width: 608px;
+	/*height: 560px;*/
+	margin-bottom: 18px;
+	position: relative;
+}
+.disease_player .disease_player_body .player_image .canvas_image{
+	width: 608px;
+	height: 100%;
+	/*height: 560px;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.disease_player .disease_player_body .player_image .canvas_image canvas{
+	width: 608px;
+	height: 495px;
+}
+.disease_player .disease_player_body .player_image #canvas_three{
+	width: 608px;
+	height: 100%;
+	/*height: 560px;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.disease_player .disease_player_body .player_image svg{
+	width: 608px;
+	height: 100%;
+	/*height: 560px;*/
+    border-radius: 10px;
+}
+.disease_player .disease_player_body .player_image img{
+	width: 608px;
+	height: 100%;
+	/*height: 560px;*/
+    border-radius: 10px;
+}
+.disease_player_body .player_speed{
+	height: 20px;
+	width: 100%;
+    float: left;
+}
+.disease_player_body .player_speed input.player_speed_range {
+	width: 520px;
+	height: 8px;
+    float: left;
+    border-radius: 5px;
+    margin: 6px 0px;
+	
+    -webkit-appearance: none;
+    background: -webkit-linear-gradient(#537cf9, #537cf9) no-repeat, #39414c;
+    background-size: 0% 100%;
+}
+
+.disease_player_body .player_speed input.player_speed_range::-webkit-slider-runnable-track {
+    border-radius: 5px;
+	height: 8px;
+}
+.disease_player_body .player_speed input.player_speed_range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 1px;
+}
+.disease_player_body .player_speed p.player_speed_num{
+    float: right;
+    width: 100px;
+    height: 20px;
+    color: #FFFFFF;
+}
+.disease_player_body .player_speed p.player_speed_num input::-webkit-outer-spin-button,
+.disease_player_body .player_speed p.player_speed_num input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.disease_player_body .player_speed p.player_speed_num input{
+    float: left;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    background: #2d3143;
+    color: #FFFFFF;
+    border: none;
+    
+    -moz-appearance: textfield;
+}
+.disease_player_body .player_speed p.player_speed_num span{
+    float: left;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 20px;		/*火狐*/
+    font-size: 11px;
+    text-align: center;
+}
+
+/*视频控制按钮操作*/
+#highway_disease .disease_player_body .player_control{
+	/*margin-top: 27px;*/
+	/*float: left;*/
+	height: 32px;
+	/*width: 100%;*/
+	
+	/*margin: 0 auto;*/
+    /*position: absolute;*/
+    /*bottom: -67px;*/
+    /*left: 0px;*/
+    /*right: 0px;*/
+    width: 100%;
+	
+}
+#highway_disease .disease_player_body .player_control .player_button button{
+	width: 96px;
+	height: 40px;
+	float: left;
+	font-size: 14px;
+	margin-right: 10px;
+	color: #FFFFFF;
+	background-color: #2C3453;
+	border-radius: 20px 0px 0px 20px;
+	
+	height: 32px;
+	width: 32px;
+	padding: 0px;
+	text-align: center;
+    line-height: 32px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 32px;		/*火狐*/
+	border-radius: 4px;
+	background: none;
+}
+#highway_disease .disease_player_body .player_control .player_button button.play_image{
+	/*display: none;*/
+}
+#highway_disease .disease_player_body .player_control .player_button button.play_image span{
+	font-size: 14px;
+}
+#highway_disease .disease_player_body .player_control .player_button button.next_image{
+	/*border-radius: 0px 20px 20px 0px;*/
+	/*border-left: 1px solid #1b233a;*/
+	/*background: url(../Img/next.png);*/
+	/*margin-left: 10px;*/
+}
+
+#highway_disease .disease_player_body .player_control .player_button_image button span{
+	width: 32px;
+	height: 32px;
+	display: block;
+	margin: 0px;
+	background-image: url(../Img/pre.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+}
+#highway_disease .disease_player_body .player_control .player_button_image button span.icon_next_image{
+	background-image: url(../Img/next.png);
+}
+#highway_disease .disease_player_body .player_control .player_button button:hover{
+	background: #5167F7;
+}
+
+
+#highway_disease .disease_player_body .player_control>div{
+	float: left;
+}
+#highway_disease .disease_player_body .player_control .player_recog{
+	height: 16px;
+	font-size: 12px;
+	padding: 8px 0px;
+	margin-left: 34px;
+}
+#highway_disease .disease_player_body .player_control .player_info{
+    font-size: 12px;
+	color: #FFFFFF;
+	height: 32px;
+	/*line-height: 18px;*/
+}
+#highway_disease .disease_player_body .player_control .player_info .det_time{
+	height: 32px;
+	line-height: 32px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 32px;		/*火狐*/
+	width: 135px;
+}
+#highway_disease .disease_player_body .player_control .player_button_video{
+	display: none;
+}
+#highway_disease .disease_player_body .player_control .player_button{
+    margin: 0 auto;
+    position: absolute;
+    /*left: 0px;*/
+    right: 188px;
+    width: 74px;
+    height: 32px;
+    width: max-content;
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button{
+	float: right;
+	position: relative;
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button button{
+	background: #2C3453;
+	border-radius: 4px;
+	height: 32px;
+	width: 76px;
+	/*padding: 9px 14px;*/
+	line-height: 32px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 32px;		/*火狐*/
+    /*line-height: 14px;*/
+	font-size: 14px;
+	color: #FFFFFF;
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button button.player_restore{
+	width: 56px;
+	display: none;
+	margin-right: 14px;
+	float: left;
+	line-height: normal;
+	
+	opacity: 0.5;
+	background: #2C3453;
+	
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button button.player_speed{
+	width: 56px;
+	display: block;
+	position: absolute;
+	bottom: 0px;
+    right: 0px;
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button button b{
+	font-weight: normal;
+	float: left;
+	font-size: 14px;
+    height: 32px;
+    width: 28px;
+    
+    width: 48px;
+    background-image: url('../Img/toggle.png');
+    background-size: 14px 14px;
+    background-position: 0px 9px;
+    background-repeat: no-repeat;
+    text-align: right;
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button button:hover{
+	background: #5167F7;
+	opacity: 1;
+}
+#highway_disease .disease_player_body .player_control .player_toggle_button button.player_toggle{
+	margin-right: 0px;
+	padding: 0px 14px;
+}

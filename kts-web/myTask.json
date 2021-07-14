@@ -1,0 +1,140 @@
+{
+    "manageTask": [
+    	{
+    		"name" : "生成库清单",
+    		"list" : [
+		        {
+		            "batchname":"任务批次名称11432",
+		            "batchname1":"任务描述11324",
+		            "batchname2":"图片id1人为1",
+		            "batchname3":"任务id11发生的",
+		            "batchname4":"创建时间1发生的1",
+		            "batchname5":"创建人1公司1",
+		            "batchname6":"优先级11分倒萨",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        },
+		        {
+		            "batchname":"任务批次名称2饿挖2",
+		            "batchname1":"任务描述2就2",
+		            "batchname2":"图片id2他2",
+		            "batchname3":"任务id2一天2",
+		            "batchname4":"创建时间2 一天2",
+		            "batchname5":"创建人22他",
+		            "batchname6":"优先级2突然2",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        },
+		        {
+		            "batchname":"任务批次名称3引入3",
+		            "batchname1":"任务描述3 让她3",
+		            "batchname2":"图片id3 让她3",
+		            "batchname3":"任务id3 突然3",
+		            "batchname4":"创建时间3 人员 3",
+		            "batchname5":"创建人3 让她3",
+		            "batchname6":"优先级3让她 3",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        }
+    		]
+    	}
+    ],
+    "checkLibrary": [
+    	{
+    		"name" : "质检库清单",
+    		"list" : [
+		        {
+		            "batchname":"任务批次名称11鬼地方",
+		            "batchname1":"任务描述11地方",
+		            "batchname2":"图片id11时",
+		            "batchname3":"任务id11额",
+		            "batchname4":"创建时间11额",
+		            "batchname5":"创建人11日",
+		            "batchname6":"优先级11他",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        },
+		        {
+		            "batchname":"任务批次名称2日2",
+		            "batchname1":"任务描述22好",
+		            "batchname2":"图片id22时",
+		            "batchname3":"任务id2的2",
+		            "batchname4":"创建时间2个2",
+		            "batchname5":"创建人2好2",
+		            "batchname6":"优先级2时2",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        },
+		        {
+		            "batchname":"任务批次名称3好3",
+		            "batchname1":"任务描述3u3",
+		            "batchname2":"图片id3I3",
+		            "batchname3":"任务id3哦3",
+		            "batchname4":"创建时间3 皮3",
+		            "batchname5":"创建人3了3",
+		            "batchname6":"优先级3， 嘛3",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        }
+    		]
+    	}
+    ],
+    "testLibrary": [
+    	{
+    		"name" : "验收库清单",
+    		"list" : [
+		        {
+		            "batchname":"任务批次名称11",
+		            "batchname1":"任务描述11",
+		            "batchname2":"图片id11",
+		            "batchname3":"任务id11",
+		            "batchname4":"创建时间11",
+		            "batchname5":"创建人11",
+		            "batchname6":"优先级11",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        },
+		        {
+		            "batchname":"任务批次名称22",
+		            "batchname1":"任务描述22",
+		            "batchname2":"图片id22",
+		            "batchname3":"任务id22",
+		            "batchname4":"创建时间22",
+		            "batchname5":"创建人22",
+		            "batchname6":"优先级22",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        },
+		        {
+		            "batchname":"任务批次名称33",
+		            "batchname1":"任务描述33",
+		            "batchname2":"图片id33",
+		            "batchname3":"任务id33",
+		            "batchname4":"创建时间33",
+		            "batchname5":"创建人33",
+		            "batchname6":"优先级33",
+		            "batchname7":"状态1发的1",
+		            "batchname8":"制作人1发生的1",
+		            "batchname9":"制作领取时间人为11",
+		            "batchname10":"提取时间1 而我1"
+		        }
+    		]
+    	}
+    ]
+}

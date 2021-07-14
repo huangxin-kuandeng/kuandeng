@@ -1,0 +1,56 @@
+{
+	"pdds": "https://pdds.kuandeng.net/pdds/",
+	"krs": "https://krs.kuandeng.net/krs/",
+	"mainshoot": "https://tileort1.kuandeng.net/tile?x={x}&y={y}&z={z}",
+		   "datasets_adcode": "https://tile3d1.kuandeng.net/tile/",
+	"vector_tile": "https://tile2d1.kuandeng.net/tile?",
+	
+	
+	
+	
+	"cookie": ".kuandeng.com",
+	"_oooo_oooo_": "k92~20#DlxcdWyh1",
+	"z_height": 0.05,
+	"business": {
+		"nantong": {
+			"title": "南通 · 公路一张图",
+			"info_bounds": {
+				"west": 119.72974354954353,
+				"south": 31.60417245388869,
+				"east": 122.21390149943147,
+				"north": 32.830924758213115
+			},
+			"zoom": 9,
+			"center": [120.9718225213384, 32.21116836073824],
+			"link_list": {
+				"441400": [
+					{
+						"name":"G35 济广高速-广东平兴段",
+						"id":"G35"
+					}
+				],
+				"370200": [
+					{
+						"name":"FX 埠惜路",
+						"id":"FX"
+					},
+					{
+						"name":"LW 蓝王路",
+						"id":"LW"
+					}
+				],
+				"320600": [
+					{
+						"name":"G228 丹东-东兴",
+						"id":"G228"
+					},
+					{
+						"name":"S356 江北沿江公路",
+						"id":"S356"
+					}
+				]
+			}
+		}
+	}
+}
+

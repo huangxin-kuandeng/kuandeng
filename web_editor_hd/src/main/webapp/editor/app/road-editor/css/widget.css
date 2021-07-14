@@ -1,0 +1,444 @@
+/*************************************************/
+/******************* widget **********************/
+/*************************************************/
+.ui-helper-grid {
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.ui-explorer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.iconfont {
+    padding: 0 4px;
+    font-size: 16px;
+    border-radius: 3px;
+}
+.ui-explorer .iconfont {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+}
+.ui-explorer .iconfont.icon-jia:before { content: "\e624"; }
+.ui-explorer .iconfont.icon-jian:before { content: "\e624"; }
+.ui-explorer .iconfont.icon-jian {
+    transform: rotate(90deg);
+}
+
+.ui-explorer ul ul {
+    margin-left: 13px;
+}
+
+.ui-explorer input {
+    -webkit-appearance: checkbox;
+    vertical-align: middle;
+}
+
+.ui-dialog .ui-dialog-titlebar .icon-ar-left {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: white;
+}
+
+.ui-dialog .ui-dialog-titlebar .icon-ar-left:hover {
+    color: #5e84f6;
+}
+
+.ui-helper-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.ui-dialog .colorpicker {
+    padding: 0;
+}
+
+.colorpicker .ui-helper-grid {
+    width: 40px;
+    height: 20px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.ui-dialog {
+    position: fixed;
+    box-shadow: 1px 2px 8px 3px rgba(0, 0, 0, 0.35);
+    background: #ffffff;
+    border-radius: 3px;
+    z-index:1999;
+}
+.ui-dialog .ui-dialog-titlebar {
+    line-height: 34px;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5c6280), to(#4e557b));
+    border-radius: 4px 4px 0 0;
+}
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #fff;
+    padding: 0px 45px 0 18px;
+}
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    color: #fff;
+    cursor: pointer;
+    width: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    color: #5e84f6;
+}
+.ui-dialog .ui-dialog-content {
+    padding: 8px;
+}
+.ui-dialog .ui-dialog-content img {
+    vertical-align: middle;
+}
+.ui-dialog .ui-dialog-buttonpane {
+    position: relative;
+    padding: 9px 22px 9px 0;
+    overflow: hidden;
+}
+.ui-dialog .ui-dialog-buttonpane:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    background-color: #eee;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: right;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+    margin-left: 10px;
+    height: 2em;
+    border-radius: 3px;
+    --webkit-user-select: none;
+}
+.ui-dialog .ui-dialog-indicator {
+    position: absolute;
+    border: 8px solid transparent;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-top {
+    border-bottom-color: #d8d8d8;
+    top: -16px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-top::after {
+    border-bottom-color: #ffffff;
+    left: -7px;
+    top: -5px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-right {
+    border-left-color: #d8d8d8;
+    right: -16px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-right::after {
+    border-left-color: #ffffff;
+    left: -9px;
+    top: -8px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-bottom {
+    border-top-color: #d8d8d8;
+    bottom: -16px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-bottom::after {
+    border-top-color: #ffffff;
+    left: -8px;
+    top: -9px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-left {
+    border-right-color: #d8d8d8;
+    left: -16px;
+}
+.ui-dialog .ui-dialog-indicator.ui-dialog-indicator-left::after {
+    border-right-color: #ffffff;
+    left: -7px;
+    top: -8px;
+}
+.ui-dialog .ui-dialog-indicator::after {
+    content: '';
+    position: absolute;
+    border: 8px solid transparent;
+}
+.ui-dialog.ui-toast {
+    transition: all 1s;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: none;
+}
+.ui-dialog.ui-toast .ui-dialog-content {
+    text-align: center;
+    line-height: 56px;
+    color: white;
+    padding: 0 1em;
+    min-width: 170px;
+    font-size: 14px;
+}
+.ui-dialog.pic-player {
+    padding: 0 8px;
+}
+.ui-dialog.pic-player .ui-dialog-titlebar {
+    background: white;
+    line-height: 34px;
+}
+.ui-dialog.pic-player .ui-dialog-titlebar .ui-dialog-title {
+    padding-left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color: #41434a;
+}
+.ui-dialog.pic-player .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    right: 6px;
+    top: 0;
+    color: #41434a;
+    font-size: 18px;
+}
+.ui-dialog.pic-player .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    color: #5e84f6;
+}
+.ui-dialog.pic-player .ui-dialog-content {
+    padding: 0;
+}
+/*.ui-dialog.pic-player .ui-dialog-content .modal-body {*/
+    /*padding-bottom: 74px;*/
+/*}*/
+.ui-dialog.pic-player .ui-dialog-content .modal-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    padding-bottom: 76px;
+}
+.ui-dialog.pic-player .modal-footer {
+    border-top: none;
+    bottom: 74px;
+    padding: 8px 0 12px 0;
+    text-align: left;
+}
+/*.ui-dialog.pic-player .modal-footer > div {*/
+    /*display: inline-block;*/
+/*}*/
+.ui-dialog.pic-player .modal-footer > div > select {
+    color: #000000;
+    height: 20px;
+}
+.ui-dialog.pic-player .modal-footer > div .pic_player_direction {
+    width: 60px;
+}
+.ui-dialog.pic-player .modal-footer div.play-controller {
+    margin-left: 14px;
+}
+.ui-dialog.pic-player .modal-footer div.play-controller .playericon {
+    color: #414349;
+    padding: 0;
+    padding-left: 16px;
+    font-size: 18px;
+    vertical-align: top;
+}
+.ui-dialog.pic-player .modal-footer div.play-controller .playericon:first-child {
+    padding-left: 0;
+}
+.ui-dialog.pic-player .modal-footer div.compressSpan label.compress_original {
+    margin-left: 0;
+    color: white;
+    width: 42px;
+}
+.ui-dialog.pic-player .modal-footer div.compressPercent > select {
+    width: 55px;
+}
+.ui-dialog.pic-player .modal-footer div.playSpeed > select {
+    width: 46px;
+}
+
+
+.ui-dialog-titlebar{
+    background: #484f73;
+    color:white;
+    border-radius: 3%;
+    line-height: 40px;
+    font-size: 14px;
+    /*background: #484f73 !important;*/
+    /*color:white;*/
+    /*border-radius: 3%;*/
+    /*line-height: 40px !important;*/
+    /*font-size: 14px !important;*/
+}
+.ui-dialog-title{
+    font-weight:normal !important;
+    vertical-align: middle !important;
+}
+.ui-dialog-titlebar-close{
+    color: white ;
+    /*color: white !important;*/
+    margin: auto;
+    /* margin-right: 18px; */
+    /* margin-top: 5px !important; */
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.modal-dialog {
+    width:100%;
+    height:100%;
+}
+.modal-dialog.fullSize {
+    width: auto;
+    height: auto;
+}
+.modal-dialog.fullSize .carousel-inner>.item.active{
+    width:100%;
+    height:auto;
+}
+.modal-content {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /*background-color: #fff;*/
+    /*-webkit-background-clip: padding-box;*/
+    /*background-clip: padding-box;*/
+    /*border: 1px solid #999;*/
+    /*border: 1px solid rgba(0,0,0,.2);*/
+    /*border-radius: 6px;*/
+    /*outline: 0;*/
+    /*-webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);*/
+    /*box-shadow: 0 3px 9px rgba(0,0,0,.5)*/
+}
+.pic-player .modal-content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.pic-player .modal-content .flag-list-content {
+    width: 170px;
+    color: #41434a;
+    height: 100%;
+    margin-left: 10px;
+    overflow-y: auto;
+    padding-left: 10px;
+}
+.pic-player .modal-content .flag-list-content .pic-falg-type{
+    font-size:14px;
+}
+.pic-player .modal-content .flag-list-content .pic-falg-inf{
+    font-size:12px;
+}
+.pic-flag-inf .pic-flag-inf-direction{
+    /*width: 35px;*/
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+.pic-flag-inf .inf{
+    display: flex;
+}
+.pic-flag-inf .pic-flag-inf-roadName{
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 2px;
+    text-overflow: ellipsis;
+}
+.pic-player .picplayer-content{
+    width:100%;
+}
+
+/*轨迹标记样式*/
+.markDelete .div1header{
+	padding: 5px 10px;
+	border-bottom: 1px solid #D2D6DE;
+    margin-bottom: 10px;
+}
+.markDelete .div1header .close{
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+}
+.markDelete .div1header h4{
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0;
+}
+.markDelete .div1body p input{
+	margin-right: 10px;
+}
+.markDelete .div1body p{
+	margin-bottom: 14px;
+}
+.markDelete .div1body p label{
+	font-weight: normal;
+}
+.markDelete .div1body{
+	padding: 0px 10px;
+	font-size: 14px;
+}
+.markDelete .div1footer{
+	padding: 0px 10px;
+	margin-top: 20px;
+}
+.markDelete .div1footer #button2{
+	float: left;
+    line-height: 1em;
+	margin: 0;
+	font-weight: normal;
+    background-color: #23b7e5;
+    border: none;
+    color: #fff;
+}
+.markDelete .div1footer #button3{
+    float: right;
+    line-height: 1em;
+	margin: 0;
+    font-weight: normal;
+    line-height: 1;
+    color: #666;
+    padding: 5px 10px;
+    text-shadow: 0 1px 0 #fff;
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid #dadada;
+}
+.markDelete{
+	position: absolute;
+	z-index: 999;
+	display: none;
+	left: 700px;
+	width: 200px;
+	height: 220px;
+    top: 0;
+    background: #fff;
+    padding: 0px 0px 10px 0px;
+    border-radius: 3px;
+    border: 1px solid #d2d6de;
+}

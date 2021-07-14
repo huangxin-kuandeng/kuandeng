@@ -1,0 +1,85 @@
+.dialog_buttonStyle
+{
+    border: 0;
+    background-color: #5eb5f7;
+    width:115px;
+    height: 34px;
+    color: #fff;
+    font-size: 12px
+    text-align: center;
+}
+
+.dialog_cancel_buttonStyle
+{
+    border: 0;
+    background-color: #b9b9b9;
+    width:115px;
+    height: 34px;
+    color: #fff;
+    font-size: 12px
+    text-align: center;
+}
+
+
+.dialog_msg
+{
+    color: #666;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* 侧边栏提示样式 */
+#_Dialog_Sidebar{
+	position: fixed;
+	z-index: 9001;
+	left: 100%;
+	top: 0;
+}
+#_Dialog_Sidebar .dialog_listitem{
+	position: absolute;
+    border-radius: 5px;
+    border: 1px solid #000;
+    border-color: rgba(0,0,0,0.4);
+	left: 0;
+	padding: 10px 15px;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+    min-width: 200px;
+    max-width: 300px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    -webkit-transition: all 200ms;
+       -moz-transition: all 200ms;
+         -o-transition: all 200ms;
+            transition: all 200ms;
+}
+#_Dialog_Sidebar .dialog_listitem.show{
+	/*left: 100%;*/
+}
+#_Dialog_Sidebar .dialog_listitem.hide{
+	/*left: 0%;*/
+}
+.bg-success {
+    color: #fff;
+    background-color: #51a351;
+}
+.bg-info {
+    color: #fff;
+    background-color: #2f96b4;
+}
+.bg-warning {
+    color: #fff;
+    background-color: #f89406;
+}
+.bg-error {
+    color: #fff;
+    background-color: #bd362f;
+}
+.enableTollgateAttribute {
+    pointer-events:auto;
+}
+.disEnableTollgateAttribute {
+    pointer-events:none;
+}

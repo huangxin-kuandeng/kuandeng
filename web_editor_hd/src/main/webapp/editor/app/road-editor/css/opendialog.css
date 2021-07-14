@@ -1,0 +1,416 @@
+/* drag */
+.opendialog {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 300px;
+    height: 160px;
+    background: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    /*box-shadow: 0 1px 3px 2px #666;*/
+    z-index: 700;
+    display: none;
+}
+
+.opendialog .title {
+    position: relative;
+    height: 27px;
+    margin: 5px;
+}
+
+.opendialog .title h2 {
+    font-size: 14px;
+    height: 27px;
+    line-height: 24px;
+    border-bottom: 1px solid #A1B4B0;
+}
+
+.opendialog .title div {
+    position: absolute;
+    height: 19px;
+    top: 2px;
+    right: 0;
+}
+
+.opendialog .title a, a.open {
+    float: left;
+    width: 21px;
+    height: 19px;
+    display: block;
+    margin-left: 5px;
+    background: url(../../../dist/img/tool.png) no-repeat;
+}
+
+a.open {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -10px;
+    background-position: 0 0;
+}
+
+a.open:hover {
+    background-position: 0 -29px;
+}
+
+.opendialog .title a.min {
+    background-position: -29px 0;
+}
+
+.opendialog .title a.min:hover {
+    background-position: -29px -29px;
+}
+
+.opendialog .title a.max {
+    background-position: -60px 0;
+}
+
+.opendialog .title a.max:hover {
+    background-position: -60px -29px;
+}
+
+.opendialog .title a.revert {
+    background-position: -149px 0;
+    display: none;
+}
+
+.opendialog .title a.revert:hover {
+    background-position: -149px -29px;
+}
+
+.opendialog .title a.close {
+    background-position: -89px 0;
+}
+
+.opendialog .title a.close:hover {
+    background-position: -89px -29px;
+}
+
+.opendialog .content {
+    overflow: auto;
+    margin: -9px 5px;
+    width: 97%;
+    height: 90%;
+}
+
+.opendialog .resizeBR {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    cursor: nw-resize;
+    background: url(img/resize.png) no-repeat;
+}
+
+.opendialog .resizeL, .opendialog .resizeT, .opendialog .resizeR, .opendialog .resizeB, .opendialog .resizeLT, .opendialog .resizeTR, .opendialog .resizeLB {
+    position: absolute;
+    background: #000;
+    overflow: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.opendialog .resizeL, .opendialog .resizeR {
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: w-resize;
+}
+
+.opendialog .resizeR {
+    right: 0;
+}
+
+.opendialog .resizeT, .opendialog .resizeB {
+    width: 100%;
+    height: 5px;
+    cursor: n-resize;
+}
+
+.opendialog .resizeT {
+    top: 0;
+}
+
+.opendialog .resizeB {
+    bottom: 0;
+}
+
+.opendialog .resizeLT, .opendialog .resizeTR, .opendialog .resizeLB {
+    width: 8px;
+    height: 8px;
+    background: #FF0;
+}
+
+.opendialog .resizeLT {
+    top: 0;
+    left: 0;
+    cursor: nw-resize;
+}
+
+.opendialog .resizeTR {
+    top: 0;
+    right: 0;
+    cursor: ne-resize;
+}
+
+.opendialog .resizeLB {
+    left: 0;
+    bottom: 0;
+    cursor: ne-resize;
+}
+
+.opendialog .button{
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    color: #000;
+    text-align: center;
+    left: 38%;
+    height: 19px;
+}
+.opendialog .button div{
+    float: left;
+    width: 10%;
+    bottom: 0px;
+}
+
+/* tagmark_dialog css */
+.tagmark_dialog_html{
+	width: 100%;
+	/*height: 100%;*/
+	padding-bottom: 15px;
+}
+.tagmark_dialog_buttons{
+	margin-top: 10px
+}
+
+.tagmark_dialog_html textarea  {
+    resize: vertical;
+    font:normal 12px/20px 'Helvetica Neue', Arial, sans-serif;
+}
+
+.tagmark_dialog_html textarea,
+.tagmark_dialog_html input[type=text],
+.tagmark_dialog_html input[type=search],
+.tagmark_dialog_html input[type=number],
+.tagmark_dialog_html input[type=url],
+.tagmark_dialog_html input[type=tel],
+.tagmark_dialog_html input[type=email] {
+    background-color: white;
+    border:1px solid #ccc;
+    padding:5px 10px;
+    height:30px;
+    width: 100%;
+ /*   border-radius:4px;*/
+    text-overflow: ellipsis;
+    -webkit-transition: all 200ms;
+       -moz-transition: all 200ms;
+         -o-transition: all 200ms;
+            transition: all 200ms;
+}
+
+.tagmark_dialog_html textarea:focus,
+.tagmark_dialog_html input:focus {
+    background-color: #F1F1F1;
+}
+
+.tagmark_dialog_html input[type="checkbox"],
+.tagmark_dialog_html input[type="radio"] {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+.tagmark_dialog_html button[disabled]{
+	cursor: no-drop;
+	color: #999;
+}
+.loading-mask {
+	display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.loading-mask.hide{
+	display: none;
+}
+.loading-mask .info{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    padding: 0;
+    margin: auto;
+    word-break: break-all;
+	white-space: pre-wrap;
+}
+
+.taskinfo_dialog_context {
+    height: 560px;
+    overflow-y: auto;
+}
+
+/* 任务信息弹窗 */
+.taskinfo_dialog_html{
+    text-align: left;
+    font-size: 14px;
+    word-break: break-word;
+    padding: 0px 10px;
+}
+.taskinfo_dialog_html .row{
+	margin-bottom: 10px;
+}
+.taskinfo_dialog_html .row .title{
+	font-weight: bold;
+}
+.taskinfo_dialog_html .row .line{
+	font-size: 13px;
+}
+.taskinfo_dialog_html .row .line + .line{
+	margin-top: 10px;
+}
+.taskinfo_dialog_html .row + .row{
+	padding-top: 1em;
+	border-top: 1px solid #999999;
+}
+
+/* CHECK_TAG dialog*/
+.checktag_dialog_html{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.checktag_dialog_html .list-select {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    width: calc(25% - 1px);
+    border: 1px solid #CCC;
+    border-left: 0px;
+    border-top: 0px;
+}
+.checktag_dialog_html .list-select:first-child {
+    width: calc(25% - 2px);
+    border-left: 1px solid #CCC;
+}
+.checktag_dialog_html .label-name{
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    padding: 3px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #CCC;
+}
+.checktag_dialog_html .select-options{
+    position: relative;
+    line-height: 24px;
+    text-align: center;
+    height: calc(100% - 25px);
+    overflow-y: auto;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+.checktag_dialog_html .option{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.checktag_dialog_html .option.selected{
+    background-color: #00b9ff;
+}
+.checktag_dialog_html .row{
+    text-align: left;
+}
+.checktag_dialog_html .row + .row{
+    padding-top: 5px;
+}
+.checktag_dialog_html .row input,
+.checktag_dialog_html .row select{
+    width: 100%;
+    padding: 2px 5px;
+    box-sizing: border-box;
+}
+.checktag_dialog_html .disabled input,
+.checktag_dialog_html .disabled select,
+.checktag_dialog_html .disabled .select-options{
+    color: #666;
+}
+.checktag_dialog_html .row .col{
+    width: 100%;
+    border: none;
+    height: auto;
+    display: inline-block;
+}
+.checktag_dialog_html .row .col .label-name{
+    width: 80px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
+    vertical-align: middle;
+}
+.checktag_dialog_html .row .col .content{
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 80px);
+    text-align: left;
+    padding: 0;
+}
+.checktag_dialog_html .row .option {
+    display: inline-block;
+    width: auto;
+    padding: 0 8px;
+    vertical-align: middle;
+}
+
+.potree-panel .panel-body{
+    position: relative; 
+    width: 100%;
+    height: 100%;
+}
+
+.tollgate_submit {
+    bottom: 8px;
+    left: 30%;
+    position: absolute;
+}
+#tollgat_dialog_html .tollgate_field_content {
+    height: 387px;
+    overflow-y: auto;
+}
+.tollgate_submit div {
+    float: left;
+    padding-right: 10px;
+}
+.tollgate_submit .blue {
+    background: #63b4fd;
+}
+.tollgate_submit .gray {
+    background: #d8d8d8;
+}

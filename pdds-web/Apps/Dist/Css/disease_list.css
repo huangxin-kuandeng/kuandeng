@@ -1,0 +1,403 @@
+
+/*********************病害列表*********************/
+
+#highway_disease .disease_list{
+	width: 312px;
+	height: calc(100% - 89px);
+	position: absolute;
+	top: 49px;
+	left: 0px;
+	z-index: 111;
+	background-color:#1A2239;
+	/*background: rgba(23,31,54,0.90);*/
+	border-right: 1px solid #000000;
+	padding: 20px 16px;
+	color: #FFFFFF;
+}
+#highway_disease .disease_list>div{
+	float: left;
+}
+#highway_disease .disease_list .no_list_child{
+	width: 72px;
+	height: 68px;
+	position: absolute;
+	top: 236px;
+	left: 50%;
+	margin-left: -36px;
+	background-image: url('../Img/no_data.png');
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: 16px 0px;
+}
+#highway_disease .disease_list .no_list_child span{
+	width: 72px;
+	height: 68px;
+	font-size: 12px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: nowrap;
+}
+
+/*列表头部样式*/
+#highway_disease .disease_list .disease_list_head{
+	height: 24px;
+	width: 100%;
+	position: relative;
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+#highway_disease .disease_list .disease_list_head div{
+	float: left;
+	font-size: 12px;
+	height: 24px;
+    line-height: 24px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 24px;		/*火狐*/
+    color: #FFFFFF;
+    /*opacity: 0.5;*/
+}
+#highway_disease .disease_list .disease_list_head .disease_list_num{
+	opacity: 0.5;
+}
+#highway_disease .disease_list .disease_list_head .disease_list_screen{
+	float: right;
+}
+/*排序功能样式*/
+#highway_disease .disease_list .disease_list_head .disease_list_sort{
+	position: absolute;
+	width: max-content;
+	left: 0px;
+	right: 0px;
+	margin: 0 auto;
+}
+.disease_list_sort span.disease_list_sort_icon{
+	float: left;
+	height: 24px;
+	width: 12px;
+	opacity: 0.5;
+	background-image: url(../Img/sort.png);
+	background-size: 12px 12px;
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+}
+#highway_disease .disease_list .disease_list_head .disease_list_sort ul{
+	float: left;
+	/* width: 123px; */
+	width: 140px;
+}
+/* .ASSET_INSPECTION #highway_disease .disease_list .disease_list_head .disease_list_sort ul{
+	width: 140px !important;
+} */
+.disease_list_sort ul li{
+    width: 48px;
+    list-style: none;
+    padding: 0px 6px;
+    border-right: 1px solid rgba(235, 235, 235, 0.2);
+    height: 12px;
+    line-height: 12px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 12px;		/*火狐*/
+    margin: 6px  0px;
+    float: left;
+    text-align: center;
+}
+.ASSET_INSPECTION .disease_list_sort ul li:last-child{
+	border: none;
+}
+.PAVEMENT_DISTRESS .disease_list_sort ul li:nth-child(2){
+	border: none;
+}
+.ASSET_INSPECTION .disease_list_sort ul li[type="2"]{
+	display: none;
+}
+.ASSET_INSPECTION .disease_list_sort ul li[type="3"],
+.ASSET_INSPECTION .disease_list_sort ul li[type="4"]{
+	width: 25px;
+}
+.PAVEMENT_DISTRESS .disease_list_sort ul li[type="3"],
+.PAVEMENT_DISTRESS .disease_list_sort ul li[type="4"]{
+	display: none;
+}
+.disease_list_sort ul li a{
+	float: left;
+	color: #FFFFFF;
+	opacity: 0.5;
+	font-size: 12px;
+	width: 100%;
+    text-align: center;
+}
+.disease_list_sort ul li a:hover{
+	opacity: 1;
+	color: #FFFFFF !important;
+}
+.disease_list_sort ul li.active a{
+	opacity: 1;
+	color: #5673FF;
+	font-weight: bold;
+	cursor: default;
+}
+.disease_list_sort ul li.active a:hover{
+	color: #5673FF !important;
+}
+
+/*筛选功能样式*/
+.disease_list_screen a.screen_link{
+	float: right;
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	padding: 0px;
+	margin: 6px 0px;
+	background-image: url(../Img/screen.png);
+	background-size: 100% 100%;
+	opacity: 0.5;
+}
+.disease_list_screen a.screen_link:hover{
+	opacity: 1;
+}
+.disease_list_screen a.screen_link.active{
+	opacity: 1;
+	background-image: url(../Img/screen_active.png);
+}
+
+/*列表内容样式*/
+.disease_list_body{
+    /*width: 100%;*/
+    /*width: 332px;*/
+    width: 312px;
+    color: #91949d;
+    max-height: calc(100% - 68px);
+    /* max-height: calc(100% - 38px); */
+    overflow-y: auto;
+    /*margin-bottom: 64px;*/
+    counter-reset: number;
+}
+.disease_list_body::-webkit-scrollbar {
+    width: 0;
+}
+.disease_list_body .disease_list_li{
+	counter-increment: number;
+	min-height: 92px;
+	background-color: #262F4A;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	border: 1px solid #262F4A;
+}
+.disease_list_body .disease_list_li:hover{
+	/*border: 1px solid #00FFC8;*/
+	border: 1px solid rgba(0,255,200,0.30);
+	box-shadow: 0 0 16px 0 rgba(0,250,200,0.10);
+}
+.disease_list_body .disease_list_li div.child_head{
+	height: 20px;
+	/*line-height: 44px;*/
+	padding: 8px 14px 8px 16px;
+	margin: 0px;
+	background-color: #2C3453;
+    border-radius: 8px 8px 0px 0px;
+}
+.disease_list_body .disease_list_li div.child_head span{
+	float: left;
+	color: #FFFFFF;
+	height: 20px;
+	line-height: 20px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 20px;		/*火狐*/
+	margin-right: 12px;
+	font-size: 16px;
+}
+.disease_list_body .disease_list_li div.child_head span.child_head_name{
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.disease_list_body .disease_list_li div.child_head span.child_head_name:before{
+    content: counter(number);
+    /*content: attr(data-id);*/
+    font-size: 14px;
+    height: 20px;
+    float: left;
+    background: #EC3A4E;
+    border-radius: 10px;
+    margin-right: 12px;
+    font-family: HiraginoSansGB-W6;
+    text-align: center;
+    color: #FFFFFF;
+    min-width: 10px;
+    padding: 0px 5px;
+}
+.disease_list_body .disease_list_li div.child_head span.child_head_id{
+	/*width: 20px;*/
+	font-size: 12px;
+	font-weight: bold;
+	border-radius: 10px;
+	text-align: center;
+	min-width: 10px;
+    padding: 0px 5px;
+	background-color: #ec3a4e;
+}
+.disease_list_body .disease_list_li div.child_head span.child_head_time{
+	float: right;
+	color: #FFFFFF;
+	opacity: 0.5;
+	font-size: 12px;
+	margin: 0px;
+	/*width: 70px;*/
+    text-align: right;
+}
+
+.disease_list_body .disease_list_li div.child_body{
+	min-height: 40px;
+	font-size: 12px;
+	padding: 8px 8px;
+}
+.disease_list_body .disease_list_li div.child_body>p{
+	min-height: 16px;
+	margin: 0px;
+}
+p>.child_body_name{
+	height: 16px;
+	line-height: 16px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 16px;		/*火狐*/
+	width: 36px;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #313A5A;
+}
+.disease_list_body .disease_list_li div.child_body p.child_body_place{
+	margin-bottom: 8px;
+}
+p.child_body_place .child_body_place_value{
+	height: 16px;
+	line-height: 16px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 16px;		/*火狐*/
+	color: #FFFFFF;
+	opacity: 0.7;
+	font-size: 14px;
+	margin-left: 6px;
+	/*font-weight: bold;*/
+	/*display: inline-block;*/
+	
+    display: table-cell;
+    padding-left: 6px;
+    word-break: break-all;
+	
+}
+p.child_body_grade span{
+	float: left;
+	height: 16px;
+	margin-right: 6px;
+	line-height: 16px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 16px;		/*火狐*/
+	font-size: 12px;
+}
+.ASSET_INSPECTION p.child_body_grade span.child_body_grade_value{
+    opacity: 0.7 !important;
+	color: #FFFFFF !important;
+}
+p.child_body_grade span.child_body_grade_value{
+	color: #4A8A00;
+	font-size: 13px;
+	display: inline-block;
+}
+p.child_body_grade span.child_body_grade_value.grade_1{
+	color: #63AB88;
+}
+p.child_body_grade span.child_body_grade_value.grade_2{
+	color: #F7931E;
+}
+p.child_body_grade span.child_body_grade_value.grade_3{
+	color: #FF3D53;
+}
+p.child_body_grade span.iconfont{
+	color: #ec3a4e;
+    font-size: 18px;
+    font-weight: bold;
+}
+p.child_body_grade span.iconfont.right{
+	color: #4a90e2;
+}
+p.child_body_grade span.iconfont.down{
+	color: #71925b;
+}
+p.child_body_grade span.child_body_grade_time{
+	float: right;
+	color: #FFFFFF;
+	opacity: 0.5;
+	margin-right: 0px;
+}
+
+/*病害列表底部*/
+.disease_list_foot{
+    left: 0px;
+    right: 0px;
+	width: 18px;
+	height: 18px;
+	bottom: 12px;
+	display: none;
+    margin: 0 auto;
+	position: absolute;
+	text-align: center;
+}
+.disease_list_foot a{
+	float: left;
+	width: 18px;
+	height: 18px;
+	opacity: 0.4;
+	cursor: auto;
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-image: url(../Img/loading@2x.gif);
+}
+
+/*病害列表侧边栏收缩按钮*/
+.open_disease_list{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	height: 100%;
+	width: 14px;
+	/*left: 360px;*/
+	right: -12px;
+	z-index: 109;
+	display: block;
+}
+.open_disease_list a{
+	width: 12px;
+	height: 12px;
+	font-size: 12px;
+	padding: 36px 0px;
+	position: absolute;
+	background: #1A2239;
+    border: 1px solid #000000;
+	border-radius: 0px 15px 15px 0px;
+    border-left: 1px solid #1A2239;
+	top: calc(50% - 43px);
+}
+.open_disease_list a span{
+	top: 50%;
+	right: 2px;
+	width: 12px;
+	opacity: 0.5;
+	height: 12px;
+	display: block;
+	margin-top: -6px;
+	position: absolute;
+	background-size: 12px 12px;
+	background-repeat: no-repeat;
+	background-image: url(../Img/left_arrow.png);
+}
+.open_disease_list a span:hover{
+	opacity: 1;
+}
+.open_disease_list a.right_arrow span{
+	background-image: url(../Img/right_arrow.png);
+}

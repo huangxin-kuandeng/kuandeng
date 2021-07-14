@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package block_type; //package声明符
+enum BlockType {
+    LANE = 0;
+    ROADSIGN = 1;
+    LAMP_POLE = 2;// obsolete
+    LAMP_HEAD = 3;// obsolete
+    GROUNDSYMBOL = 4;
+    GROUND = 5;
+    RETINAPOLE = 6; // pole from retina mask json
+    //
+    PAVEMENT_DISTRESS = 100;
+}
+

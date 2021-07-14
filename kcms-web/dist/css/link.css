@@ -1,0 +1,185 @@
+table tbody tr td {
+    max-width: 100px;
+    overflow: hidden;
+}
+table thead tr th {
+	white-space: nowrap;
+}
+/*采集线路管理CSS样式管理*/
+.mapControl{
+	width: 300px;
+	height: 40px;
+	padding: 5px;
+	background: #FFFFFF;
+	border: 1px solid #00C0EF;
+	position: absolute;
+    z-index: 1001;
+    top: 10px;
+    left: 55px;
+}
+#leafletMap .openToggle{
+    position: absolute;
+    z-index: 1110;
+    background: #FFFFFF;
+    padding: 5px;
+    top: 100px;
+    left: 0px;
+    border: 1px solid #000000;
+}
+#leafletMap .carStatus{
+    position: absolute;
+    z-index: 1122;
+    background: #FFFFFF;
+    padding: 5px;
+	right: 10px;
+    bottom: 100px;
+    border: 1px solid #000000;
+}
+#leafletMap .carStatus p{
+    height: 35px;
+    line-height: 35px;
+}
+#leafletMap .carStatus p span:nth-child(1){
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+#leafletMap .carStatus p span{
+	float: left;
+}
+#leafletMap .carStatus p img{
+    width: 30px;
+    height: 30px;
+}
+#leafletMap .linkStatus{
+    position: absolute;
+    z-index: 1122;
+    background: #FFFFFF;
+    padding: 5px;
+	right: 10px;
+    bottom: 10px;
+    border: 1px solid #000000;
+}
+#leafletMap .linkStatus p span:nth-child(1){
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+/*采集线路管理--设备列表*/
+#leafletMap .deviceList{
+	position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1111;
+	background: #FFFFFF;
+    height: 150px;
+    width: 350px;
+    border: 1px solid #000000;
+	cursor: auto;
+    font-size: 13px;
+}
+#leafletMap .deviceList h5{
+    height: 20px;
+    padding-left: 5px;
+    line-height: 20px;
+    border-bottom: 1px solid #000;
+}
+#leafletMap .deviceList h5 a{
+    float: right;
+    margin-right: 10px;
+}
+#leafletMap .deviceList .deviceBody{
+    float: left;
+    width: 100%;
+    padding: 5px;
+    height: 130px;
+    overflow: auto;
+}
+#leafletMap .deviceList .deviceBody a{
+	float: left;
+	margin: 2px 5px;
+	cursor: pointer;
+	color: #000000;
+    min-width: 50px;
+    height: 22px;
+    text-align: center;
+}
+#leafletMap .deviceList .deviceBody a.status_1{
+	color: #FF0000;
+}
+#leafletMap .deviceList .deviceBody a.active{
+    color: #0000FF;
+    border-bottom: 2px solid #0000FF;
+    font-weight: bold;
+}
+#leafletMap .regionList{
+	/*display: none;*/
+	position: absolute;
+    left: 0px;
+    top: 100px;
+    z-index: 1111;
+	background: #FFFFFF;
+    max-height: 550px;
+    padding: 5px;
+    width: 350px;
+    border: 1px solid #000000;
+	cursor: auto;
+}
+#leafletMap .regionList .modal-header{
+    padding: 5px;
+}
+#leafletMap .regionList .closeToggle{
+	float: right;
+}
+.my-div-icon{
+    border-radius: 0px;
+    transform: translate3d(923px, 419px, 0px);
+    z-index: 1111;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000;
+}
+.leaflet-left{
+    left: initial;
+    right: 0;
+}
+/*修改leaflet本身样式*/
+.leaflet-left .leaflet-control {
+    margin-right: 18px;
+}
+.leaflet-control-layers.leaflet-control{
+	margin-top: 90px;
+}
+.my-point-icon{
+	background: #666;
+	border-radius: 6px;
+}
+.ellipsisTitle{
+	width: 100%;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.linkImage{
+	display: none;
+	position: absolute;
+	z-index: 1111;
+	width: 500px;
+	border: 1px solid #999;
+	top: 10px;
+	right: 150px;
+	background: #FFFFFF;
+}
+.linkImage h5{
+    padding: 5px;
+    font-size: 14px;
+}
+.linkImage h5 span.glyphicon{
+	float: right;
+	cursor: pointer;
+}
+.linkImage img{
+	width: 100%;
+}

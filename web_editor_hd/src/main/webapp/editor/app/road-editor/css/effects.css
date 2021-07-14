@@ -1,0 +1,122 @@
+.effects-group.KDSEditor-button-wrap {
+    margin: 0 10px;
+    margin-bottom: 10px;
+}
+
+.effects-group.KDSEditor-button-wrap>button {
+    /*background: rgba(0, 0, 0, 0.2);*/
+}
+
+.effects-group.KDSEditor-button-wrap>button:hover {
+    /*background: rgba(255, 255, 255, 0.2);*/
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.effects-group.KDSEditor-button-wrap>button.active {
+    /*background: rgba(255, 255, 255, 1);*/
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #000;
+}
+
+.effects-group.KDSEditor-button-wrap>button.active .icon-text {
+    /*color: #000;*/
+    color: #FFF;
+}
+
+.effects-group.KDSEditor-button-wrap>button .for-border {
+    border-right: 1px solid #999;
+}
+
+.effects-group.KDSEditor-button-wrap>button.active .for-border {
+    /*border-right: 1px solid #FFF;*/
+    border-right: 1px solid #333;
+}
+
+.effects-group.KDSEditor-button-wrap>button:last-child .for-border {
+    border-right: none;
+}
+
+.effects-group.KDSEditor-button-wrap .KDSEditor-icon {
+    background: url(../../../dist/img/effect/road/road_effect1.png) 0 0 no-repeat;
+}
+
+.icon-text:before {
+    content: none;
+}
+
+.effects-group.KDSEditor-button-wrap .KDSEditor-icon.icon-text {
+    background: none;
+    color: #FFF;
+    font-size: 14px;
+    width: auto;
+    text-indent: 0;
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+.effects-group.KDSEditor-button-wrap .owner-ship {
+    background-position: 4px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .status {
+    background-position: -26px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .divider-dref {
+    background-position: -26px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .effects-task-distinction {
+    background-position: -232px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .divider-area {
+    background-position: 4px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .lane-highlight {
+    background-position: -55px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .divider-attr-highlight {
+    background-position: -55px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .road-highlight {
+    background-position: -86px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .fc {
+    background-position: -86px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .linktype {
+    background-position: -56px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .forbid-info {
+    background-position: -120px 0px;
+}
+
+.effects-group.KDSEditor-button-wrap .limit-line {
+    background-position: -150px 0px;
+}
+
+.effects-group.KDSEditor-button-wrap .nodeID {
+    background-position: -176px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .roadID {
+    background-position: -206px 4px;
+}
+
+.effects-group.KDSEditor-button-wrap .navitype {
+    background: url(../../../dist/img/effect/road/NT.png) 0 0 no-repeat;
+    background-position: 0px 4px;
+
+}
+
+.effects-group.KDSEditor-button-wrap .walkFT {
+    background: url(../../../dist/img/effect/road/FT.png) 0 0 no-repeat;
+
+}

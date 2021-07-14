@@ -1,0 +1,53 @@
+syntax = "proto2";
+//import "common.proto";
+import "crosbuck.proto";
+import "diamond.proto";
+import "ellipse.proto";
+import "hexagon.proto";
+import "octagon.proto";
+import "other.proto";
+import "rectangle.proto";
+import "triangle_tip_inv.proto";
+import "triangle_tip_up.proto";
+import "sign_shape.proto";
+import "class_id.proto";
+
+message OCRINFO {
+  optional float score = 1; // 识别置信度
+  optional string text = 2; // ocr文本内容
+  optional string label = 3; // 牌子ocr文本对应语义类型
+}
+
+enum NonGroundDiscreteObjectType {
+    Sign = 0; // 路牌
+    MileStone = 1; // 里程碑和里程桩
+}
+
+message RoadSign{
+    optional class_id.ClassId sign_type = 1;//路牌类型
+    optional sign_shape.SignShape sign_shape = 2;//路牌形状
+    optional float class_confidence = 3;//识别可信度
+    optional string sign_src=4;//路牌的原图
+
+
+
+    optional ELLIPSE ellipse= 6;
+    optional TRIANGLE_TIP_UP triangle_tip_up = 7;//
+    optional TRIANGLE_TIP_INV triangle_tip_inv= 8;
+    optional RECTANGLE rectangle = 9;//
+    optional DIAMOND diamond= 10;
+    optional HEXAGON hexagon= 11; //High speed mileage card
+    optional OCTAGON octagon= 12;//
+
+    optional CROSBUCK crosbuck= 15;
+    optional OTHER other= 16;
+    optional string first_type = 20; // 二次分类类型
+    optional string second_type = 21; // 二次分类类型
+    optional string content = 22;
+
+    optional OCRINFO ocr_info = 23; // 路牌上提取的OCR信息
+    optional int32 parent_block_id = 24; // 复合牌的子牌对应的父牌block_id
+
+    optional NonGroundDiscreteObjectType non_ground_discrete_obj_type = 30;
+
+}

@@ -1,0 +1,243 @@
+@charset "utf-8";
+/*base*/
+
+input,select,label,img{vertical-align:middle}
+textarea{overflow:auto}
+input,textarea{outline: none;}
+
+
+/*1 预处理任务包展示    .evalGallery */
+.evalGallery{
+    overflow: auto;
+    background: rgb(0,0,0,.8);
+    min-height: 100%;
+    height: auto;
+    top: 0px;
+    width: 100%;
+    z-index: 3366;
+    position: fixed;
+    display: none;
+
+}
+#yxh_article_assess{ 
+    width: calc(100% - 10px);
+     height: auto; margin: 0px; position: absolute;min-width: 1250px; 
+
+}
+.evalGallery .slider_box_assess{
+    margin: 0px;
+    height: calc(100% - 40px);
+   
+    position: relative;
+    width: calc(100% - 200px);
+    min-width: 1050px;
+    /* background: rgb(30,30,30,.8); */
+} 
+.evalGallery .mask_assess{height:10%;overflow:hidden;background:#000;opacity:0.7;filter:alpha(opacity:70);width:100%;position:absolute;left:0;bottom:0;z-index:-1;}
+.evalGallery .silder_con_assess{overflow:hidden;position:absolute; top:5%}
+.evalGallery .silder_panel_assess{width:750px;height:auto;overflow:hidden;float:left;position:relative;}
+.evalGallery .silder_panel_assess img{width:750px;height:auto;display:block;overflow:hidden;overflow:hidden;padding: 0px 10px;}
+.evalGallery .dec_assess{
+    overflow: hidden;
+    z-index: 9;
+    height: 100%;
+    width: 100px;
+    top: 100px;
+    left: calc(100% - 200px);
+    position: absolute;
+    padding: 0px;
+    min-width: 100px;
+    /* height:10%;bottom:1px;overflow:hidden;z-index:9; */
+}
+.evalGallery .dec_assess li{float:left;padding:0px;border:1px solid #fff;margin:5px;display:inline;position:relative; height: 40px;}
+.evalGallery a.f_l_assess{
+    display: block; text-align: center;
+}
+.evalGallery a.f_l_assess p{
+    padding: 4px;
+}
+/* .evalGallery .galleryPaginator ul.pagination li a{
+    background-color: #222;
+    } */
+
+/* .evalGallery .silder_nav li.current{border:3px solid #7acf39;margin:8px 2px;} */
+.evalGallery .silder_nav li.current{border:1px solid #7acf39;} */
+.evalGallery .silder_nav li,.silder_nav img{display:block;width:70px;height:40px;overflow:hidden;}
+.evalGallery .silder_nav_mark li{display:block;width:70px;overflow:hidden;}
+.evalGallery .silder_nav_mark li label{width:100%;font-weight: 400;padding: 2px;}
+.evalGallery .silder_nav_mark li label input{vertical-align: top;}
+.evalGallery .silder_nav_mark li{
+    float:left;padding:0px;display:inline;position:relative;box-sizing: border-box;
+}
+.evalGallery .tagQuality{
+    bottom: 80px;
+    overflow: hidden;
+    z-index: 9;
+    position: absolute;
+    color: white;
+    top: 100px;
+    left: calc(100% - 100px);
+    height: 100%;
+    width: 100px;
+    padding: 0px;
+    min-width: 150px;
+    min-height: 600px;
+    text-align: left;
+}
+.evalGallery .tagQuality li{
+    display: inline-block;
+    box-sizing: border-box;
+    /* background: rgba(0,0,0,.5); */
+    height: 50px;
+    width: 100%;
+    overflow: visible;  
+    visibility: hidden; 
+     /* margin-top:20px;float:left;display:inline;  background: rgba(0,0,0,.5); */
+
+}
+.evalGallery .tagQuality li.current{
+    visibility: visible;
+
+}
+
+.evalGallery ul.pagination li a{
+    background-color: #222;
+    }
+    .evalGallery  ul.pagination li a.beenVisited{
+        background-color: #0001;
+    }
+    .evalGallery  ul.pagination li a.eval_active{
+        border: 2px solid #090;
+    }
+#quotaInfo::-webkit-scrollbar {
+    display: none
+ }
+ #colorInfo::-webkit-scrollbar {
+    display: none
+ }
+ #subColorInfo::-webkit-scrollbar {
+    display: none
+ }
+ #colorInfo li::marker{
+     content: none;
+ }
+
+ .evalGallery .infoBar{
+    width: 200px;
+    height: calc(100% - 50px);
+    position: absolute;
+    /* background-color: rgba(30,30,30,0.8);
+     */
+    top: 0px;
+    left: calc(100% - 196px);
+    margin: 0 auto;
+    padding: 0px 15px;
+    color: #bbb;
+    line-height: 20px;
+    top: 10px;
+}
+#colorInfo{
+    width:100%;
+    border:none;
+    height: 45%;
+    padding:5px;
+    color:#bbb;
+    word-break: break-all;
+    /* overflow-y: auto; */
+    /* background: rgba(0,0,0,0); */
+}
+#subColorInfo{
+    overflow: scroll;
+    height: 100%;
+    padding: 5px;
+}
+
+textarea#quotaInfo{
+    width:100%;
+    border:none;
+    height:40%;
+    padding:5px;
+    margin:10px 0px;
+    color:#bbb;    
+    background: transparent;
+}
+.evalGallery .titleContent{
+    width:100%;
+    padding:8px;
+    color:#bbb;
+    border-bottom:1px dashed rgba(187,187,187,0.5);
+}
+.evalGallery .titleContent_main{
+    width:100%;
+    padding:8px 20px;
+    color:#bbb;
+    font-weight: 700;
+}
+.evalGallery .orgPic{
+    left: calc((100% - 1000px) / 2);
+    width: 800px;
+    position: relative;
+    bottom: 0px;
+}
+.evalGallery .evalPic{
+    left: calc((100% - 1000px) / 2);
+    width: 800px;
+    position: absolute;
+    opacity: 0.4;
+    bottom: 0px;
+}
+.evalGallery .subtitle{
+    text-align: center;
+    color: #fff;
+}
+.evalGallery .Pics{
+    vertical-align: middle;
+    /* min-height: initial; */
+    /* min-width: 800px; */
+    /* overflow: auto; */
+    height: auto;
+    width: auto;
+    position: relative;
+}
+.evalGallery .galleryPaginator{
+    bottom: 0px;
+    text-align: center;
+width: calc(100% - 200px);
+height: 40px;
+/* position: absolute; */
+}
+/* 2 评估图展示   .projectPreGallery */
+#yxh_article{ width: 1020px; margin: 20px auto 0px;}
+.projectPreGallery .slider_box{margin:0px auto 0px auto;height:550px;overflow:hidden;position:relative;width:900px;} 
+.projectPreGallery .silder_con{overflow:hidden;position:absolute;}
+.projectPreGallery .silder_panel{width:900px;height:500px;overflow:hidden;float:left;position:relative;}
+.projectPreGallery .silder_panel img{width:900px;height:500px;display:block;overflow:hidden;overflow:hidden}
+.projectPreGallery .silder_nav li{float:left;padding:0px;border:1px solid #fff;margin:2px;display:inline;position:relative;}
+.projectPreGallery .silder_nav li.current{border:3px solid #7acf39;margin:15px 2px;}
+.projectPreGallery .silder_nav li,.silder_nav img{display:block;width:70px;height:34px;overflow:hidden;}
+.projectPreGallery .slider_box a.prev,.slider_box a.next{display:block;width:45px;height:100px;line-height:999em;overflow:hidden;z-index:9;position:absolute;cursor:pointer;margin:85px 0 0 0;background:url(images/silder_btn.gif) no-repeat;}
+.projectPreGallery .slider_box a.prev{left:0;background-position:left 0;}
+.projectPreGallery .slider_box a.next{right:0;background-position:right 0;} 
+.projectPreGallery .silder_intro{position:absolute;left:30;bottom:0;z-index:9;width:400px;height:40px;overflow:hidden;color:#fff;padding-left:20px;}
+.projectPreGallery .silder_intro h3{font-size:20px;font-weight:bold;margin:10px 0 5px 0;height:22px;line-height:22px;}
+.projectPreGallery .silder_intro p{font-size:12px;line-height:20px;}
+.projectPreGallery .dec{
+    height:10%;bottom:1px;overflow:hidden;z-index:9;
+}
+.projectPreGallery .dec li{margin-top:20px;float:left;display:inline;}
+.projectPreGallery .galleryPaginator ul.pagination li a{
+    background-color: #222;
+}
+/* a标签伪类visited不生效：在href为#时不生效或是有浏览器缓存影响 */
+/* .projectPreGallery .galleryPaginator ul.pagination li a:link{
+    color:#600;
+} 
+.projectPreGallery .galleryPaginator ul.pagination li a:visited{
+    color:#060;
+}  
+.projectPreGallery .galleryPaginator ul.pagination li a:hover, 
+.projectPreGallery .galleryPaginator ul.pagination li a:active{
+    color: rgb(100, 102, 0);
+} */
+
+

@@ -1,0 +1,18 @@
+syntax = "proto2";
+import "common.proto";
+import "class_id.proto";
+message GroundSymbol  {
+    optional string track_point_id = 1;//轨迹点编号
+    optional int32 type = 2;
+    repeated PointInt points = 3 ;//轮廓凸包
+    optional int32 nearby_image_edge_type = 4;
+    optional int32 shield_type = 5;
+    optional float ground_symbol_confidence = 6;
+    optional class_id.ClassId sub_type = 7;//classid
+    optional float sub_confidence = 8;
+
+    optional string first_type = 10;
+    optional string second_type = 11;
+    optional string content = 12;
+    optional string source_image = 13;
+}

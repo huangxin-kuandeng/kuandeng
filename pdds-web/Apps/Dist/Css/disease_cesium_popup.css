@@ -1,0 +1,228 @@
+
+.mapboxgl-popup{
+	max-width: initial !important;
+}
+.mapboxgl-popup .mapboxgl-popup-tip{
+	display: none !important;
+}
+.mapboxgl-popup .mapboxgl-popup-content{
+	height: 115px;
+	min-width: 289px;
+	padding: 0px !important;
+}
+
+/*cesium气泡弹窗功能样式*/
+.mapbox_popup_dom .mapboxgl-popup-content{
+	border-radius: 8px;
+}
+.mapbox_popup{
+    /* display: none; */
+    padding: 20px;
+    color: #121f3e;
+    position: absolute;
+    z-index: 110;
+    border-radius: 8px;
+    
+	background: rgba(23, 31, 54, 0.9);
+	border: 1px solid rgba(0, 255, 200, 0.3);
+	box-shadow: 0 0 16px 0 rgba(0, 250, 200, 0.1);
+	border-radius: 8px;
+	min-width: 247px;
+	min-height: 73px;
+}
+.PAVEMENT_DISTRESS .mapbox_popup{
+	height: auto;
+}
+.mapbox_popup .popup_img{
+	float: left;
+	width: 96px;
+	height: 96px;
+}
+.mapbox_popup .popup_img img{
+	width: 100%;
+	height: 100%;
+    border-radius: 5px;
+}
+.mapbox_popup .popup_content{
+	float: left;
+	height: 96px;
+	/*padding-left: 16px;*/
+	/*width: calc(100% - 114px);*/
+	width: max-content;
+    min-width: calc(100% - 114px);
+    min-width: 247px;
+    height: 73px;
+}
+
+.mapbox_popup .popup_content h4.popup_content_head{
+	margin: 0px;
+	font-size: 14px;
+	/*margin: 6px 0px;*/
+	margin-bottom: 9px;
+	height: 16px;
+	font-weight: normal;
+	line-height: 16px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 16px;		/*火狐*/
+	
+	color: #FFFFFF;
+}
+.mapbox_popup .popup_content h4.popup_content_head b{
+	float: left;
+	font-weight: normal;
+}
+.mapbox_popup .popup_content h4.popup_content_head span{
+	float: left;
+	width: 36px;
+	height: 16px;
+	font-size: 12px;
+	margin-left: 8px;
+	text-align: center;
+	background: #EC3A4E;
+	border-radius: 100px;
+	background-color: #63AB88;
+	color: rgba(255, 255, 255, 1);
+}
+.mapbox_popup .popup_content h4.popup_content_head span.grade_2{
+	background-color: #F7931E;
+}
+.mapbox_popup .popup_content h4.popup_content_head span.grade_3{
+	background-color: #FF3D53;
+}
+.mapbox_popup .popup_content h4.popup_content_head span.grade_9{
+	width: 50px;
+	background-color: #999999;
+}
+.ASSET_INSPECTION .mapbox_popup .popup_content h4.popup_content_head span.child_body_grade_value{
+    display: none;
+}
+.mapbox_popup .popup_content p{
+	float: left;
+	height: 14px;
+	margin-top: 3px;
+	font-size: 12px;
+	line-height: 20px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 20px;		/*火狐*/
+	
+	color: rgba(255, 255, 255, 0.7);
+}
+.mapbox_popup .popup_content p.child_body_place{
+	margin-right: 14px;
+	padding-right: 14px;
+	border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+.mapbox_popup .popup_content p span{
+	float: left;
+	line-height: 14px !important;
+}
+.mapbox_popup .popup_content p span.icon_image{
+	background-position: 0px 1px !important;
+}
+.mapbox_popup .popup_content .image_buttons{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: 24px;
+	margin-top: 7px;
+}
+.ASSET_INSPECTION .mapbox_popup .popup_content .image_buttons{
+	margin-top: 14px;
+}
+.mapbox_popup .popup_content .image_texts{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: 24px;
+	margin-top: 7px;
+	padding-left: 16px;
+	background-size: 12px 12px;
+	background-position: 0px 4px;
+	background-repeat: no-repeat;
+	background-image: url(../Img/road_asset.png);
+}
+.mapbox_popup .popup_content .type_none{
+	display: none !important;
+}
+.mapbox_popup .popup_content .type_block{
+	display: block !important;
+}
+.mapbox_popup .popup_content .image_texts span{
+    float: left;
+    font-size: 12px;
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.mapbox_popup .popup_content .image_buttons button{
+	float: left;
+	width: 56px;
+	height: 24px;
+	color: #879CFE;
+	font-size: 12px;
+	margin-right: 10px;
+	border-radius: 100px;
+	background: rgba(81, 103, 247, 0.25);
+}
+.mapbox_popup .popup_content .image_buttons button:hover{
+	color: #FFFFFF;
+	background-color: #5167F7;
+}
+
+p.child_body_grade .child_body_grade_value{
+	color: #4A8A00;
+}
+.mapbox_popup .popup_content p.child_body_grade .child_body_grade_time{
+	color: #FFFFFF;
+	font-size: 12px;
+	text-align: right;
+	color: rgba(255, 255, 255, 1);
+	/*color: rgba(255, 255, 255, 0.5);*/
+}
+.mapbox_popup .popup_content p.child_body_grade .child_body_grade_value{
+	font-size: 12px;
+}
+
+/*地图上右键--弹窗*/
+.cesium_popup_mark{
+	top: 300px;
+	right: 300px;
+	height: auto;
+	z-index: 8888;
+	display: none;
+	position: fixed;
+	padding: 6px 0px;
+	width: max-content;
+	border-radius: 4px;
+	background-color: rgba(248, 251, 255, 0.6);
+}
+.cesium_popup_mark ul{
+	float: left;
+}
+.cesium_popup_mark ul li a{
+	float: left;
+	width: auto;
+	height: 26px;
+	color: #333333;
+	font-size: 14px;
+	text-align: left;
+	line-height: 26px;
+	padding: 0px 20px;
+}
+.cesium_popup_mark ul li:hover a{
+	color: #FFFFFF;
+	background-color: rgba(81, 103, 247, 0.85);
+}
+.cesium_popup_mark.remove_mark{
+	top: 400px;
+	right: 400px;
+	
+	width: 96px;
+	height: 38px;
+	padding: 0px;
+}
+.cesium_popup_mark.remove_mark ul li a{
+	/*width: 96px;*/
+	height: 38px;
+	line-height: 38px;
+	border-radius: 4px;
+}

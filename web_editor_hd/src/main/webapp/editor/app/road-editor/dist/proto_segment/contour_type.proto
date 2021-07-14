@@ -1,0 +1,63 @@
+syntax = "proto2";
+
+package contour_type;
+enum ContourType {
+  COMMON_DIVIDER = 0;                  //!< (255, 69, 0)    # 车道标线-白色 - CommonDivider = 101;  普通车道线
+  LEFT_DIVIDER = 1;                    //!< (255, 192, 203) # 左侧道路边缘线 - LeftDivider = 102;   左边缘线
+  RIGHT_DIVIDER = 2;                   //!< (139, 0, 139)   # 右侧道路边缘线 - RightDivider = 103;  右边缘线
+  DECELERATION_LINE = 3;               //!< (32, 128, 192)  # 纵向减速标线 - DecelerationLine = 109; 纵向减速标线
+  SPECIAL_DIVIDER = 4;                 //!< (192, 128, 255) # 专用车道标线 - SpecialDivider = 105; 专用车道线
+  STOP_LANE = 5;                       //!< (255, 128, 64)  # 停止线 - StopLane = 1002; 停止线
+  IN_OUT_DIVIDER = 6;                  //!< (128, 128, 0)   # 出入口标线 - InOutDivider = 104;  出入口线
+  TEXT_SYMBOL = 7;                     //!< (0, 0, 255)     # 文字符号类
+  CHEVRON_MARKING = 8;                 //!< (0, 255, 0)     # 导流线（鱼刺线） - ChevronMarking = 1000; 鱼刺线
+  ROAD = 9;                            //!< (128, 64, 128)  # 道路
+  CARS_AND_OTHER_OBJECT = 10;          //!< (128, 0, 0)     # 车辆及路面上其他物体
+  EXPANSION_JOINT = 11;                //!< (128, 128, 192) # 路面连接带 - ExpansionJoint = 300; 道路伸缩缝（路面连接带）
+  OTHER_AREA = 12;                     //!< (64, 64, 32)    # 其他 - OtherArea = 108; 地面车道以外其他区域
+  DIVIDER_OLD = 13;                    //!< (255, 20, 147)  # 旧车道线
+  CURB = 14;                           //!< (127, 255, 0)   # 路缘石 - BorderStone = 107; 路沿石
+  REFLECTOR = 15;                      //!< (50, 205, 50)   # 反光标
+  SKY = 16;                            //!< (135, 206, 235) # 天空
+  SIGN = 17;                           //!< (255, 0, 255)   # 路牌
+  POLE = 18;                           //!< (255, 140, 0)   # 杆
+  BARRIER = 19;                        //!< (0, 191, 255)   # 栏杆 - ![AMBIGUOUS]
+  TOP_REGION_VERTICAL = 20;            //!< (255, 250, 240) # 顶部区域-垂面
+  TOP_REGION_HORIZONTAL = 21;          //!< (0, 206, 209)   # 顶部区域-平面
+  CURB_HORIZONTAL = 22;                //!< (105, 105, 105) # 路缘石-平面
+  TRAFFIC_LIGHT_LAMP_CAP = 23;         //!< (255, 99, 71)   # 信号灯灯头
+  BUS = 24;                            //!< (210, 105, 30)  # 客车(公交车或大巴)
+  TRUCKS = 25;                         //!< (245, 222, 179) # 卡车
+  MOVING_OBJECT = 26;                  //!< (218, 165, 32)  # 路面上可移动物体
+  PRIVILEGED_CARS = 27;                //!< (85, 107, 47)   # 特权车
+  MOTORCYCLE_OR_ELECTRIC_BICYCLE = 28; //!< (152, 251, 152) # 摩托车或电动车 - ![AMBIGUOUS]
+  BICYCLES = 29;                       //!< (72, 209, 204)  # 自行车
+  PEDESTRIANS = 30;                    //!< (123, 104, 238) # 行人(小孩)
+  PAVEMENT = 31;                       //!< (188, 143, 143) # 人行道 - ![AMBIGUOUS]
+  TRASH_BIN = 32;                      //!< (176, 196, 222) # 垃圾桶
+  ADVERTISING_BOARD = 33;              //!< (230, 230, 250) # 广告牌
+  BUILDINGS = 34;                      //!< (119, 136, 153) # 建筑物
+  VEGETATION = 35;                     //!< (189, 183, 107) # 草木
+  TRICYCLE = 36;                       //!< (221, 160, 221) # 三轮车
+  WALL_BARRIER = 37;                   //!< (0, 0, 139)     # 墙护栏 - ![AMBIGUOUS]
+  MANHOLE_COVER = 38;                  //!< (178, 34, 34)   # 井盖
+  MOVABLE_BARRIER = 39;                //!< (65, 105, 225)  # 可移动栅栏 - ![AMBIGUOUS]
+  YELLOW_DIVIDER = 40;                 //!< (255, 165, 0)   # 车道标线-黄色 - YellowDivider = 110; // !< 双黄线/黄线
+  CROSS_WALK = 41;                     //!< (128, 192, 192) # 人行横道 - CrossWalkZone = 1004;  人行横道
+  DECELERATION_ZONE = 42;              //!< (128, 128, 255) # 减速标线/减速带 - DecelerationZone = 1003;  减速带
+  STOP_NET = 43;                       //!< (255, 255, 0)   # 停止网格标线 - StopNet = 1005;  停止网格带
+  WHITE_DASHED_DIVIDER = 44;           //!< (127, 255, 212) # 车道标线-白虚线
+  CLIPPED_DIVIDER = 45;                //!< (238, 130, 238) # 虚实线_虚线 - ClippedDivider = 120; // !< 虚线和实线识别到一起的情况下，被分割出来的虚线
+  DISTANCE_CONFIRMATION_LINE = 46;     //!< (255, 128, 255) # 车距确认线
+  OTHER_DIVIDER = 47;                  //!< (112, 128, 144) # 路面其他车道线
+  ANTI_COLLISION_BARREL = 48;          //!< (250, 128, 114) # 防撞桶
+  LEFT_YELLOW_DIVIDER = 49;            //!< (205, 90, 106)  # 左黄线
+  RIGHT_YELLOW_DIVIDER = 50;           //!< (205, 0, 0)     # 右黄线
+  CONVEX_BARRIER = 51;                 //!< (0, 250, 154)   # 凸型屏障 - ![AMBIGUOUS]
+  PROTECTIVE_FENCE = 52;               //!< (5, 107, 47)    # 防护栏 - ![AMBIGUOUS]
+  SOUND_INSULATION_FENCE = 53;         //!< (238, 232, 170) # 隔音护栏 - ![AMBIGUOUS]
+  FIXED_FENCE = 54;                    //!< (205, 92, 92)   # 固定围栏 - ![AMBIGUOUS]
+  CAR_HEAD = 55;                       //!< (0, 128, 128)   # 采集车车头
+  VIRTUAL_DIVIDER_CURB = 254;          //!< (0, 139, 139)   # 虚拟车道线-路缘石
+  IGNORE = 255;                        //!< (0, 0, 0)       # Ignore
+}

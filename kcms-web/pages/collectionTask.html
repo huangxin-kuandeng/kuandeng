@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>采集监控平台</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!--加载CSS、JS文件配置-->
+	<script src="../init.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="overflow: hidden;">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>采集监控平台</b></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs userName">用户异常</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <p class="userName">用户登录系统异常</p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat" onclick="window.location.reload()">刷新</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat" onclick="currentUser.signout()">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p class="userName">用户异常</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li>
+          <a  href="collectionProject.html">
+            <span> 采集项目管理</span>
+          </a>
+        </li>
+        <li class="active">
+          <a  href="collectionTask.html">
+            <span> 采集任务管理</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="collectionVersion.html">
+            <span> 采集版本管理</span>
+          </a>
+        </li>
+        <li>
+          <a href="collectionRegion.html">
+            <span> 采集区域管理</span>
+          </a>
+        </li>
+        <li>
+          <a href="collectionLink.html">
+            <span> 采集线路管理</span>
+          </a>
+        </li>
+        <li>
+          <a href="collectionHistory.html">
+            <span> 采集历史管理</span>
+          </a>
+        </li>
+        <li>
+          <a href="collectionCarGroup.html">
+            <span> 设备分组管理</span>
+          </a>
+        </li>
+    
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+				采集任务管理
+        <small class="userName" >用户异常</small>
+      </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+			<div class="row">
+        <!-- 弹出界面 -->
+				<div class="testmodal"></div>
+        <div class="detailmodal"></div>
+				<div class="viewModal"></div>
+        <div class="littlemodal"></div>
+				<div class="modalPicker"></div>
+				<!-- 主界面 -->
+        <div class="primaryDiv">
+          <div  class="primaryHeader"></div>
+          <div  class="primaryBody"></div>
+        </div>
+			</div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+		<div id="loading" onclick="$.spopView({text:'请耐心等待...'})">
+			<img src="../dist/img/loading.gif" title="等待中">
+		</div>
+    <!-- To the right -->
+    <div class="hidden-xs">宽凳科技</div>
+  </footer>
+
+</div>
+<!-- 单独配置文件加载 -->
+<script type="text/javascript" src="common_init.js" ></script>
+<script type="text/javascript" src="../dist/js/collectionTask/task.js" ></script>
+
+</body>
+</html>

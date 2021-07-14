@@ -1,0 +1,91 @@
+.qc_block {
+    background: #fff;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    cursor:pointer;
+}
+
+.qc_correct_icon {
+    float:left;
+    clear:both;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    margin-top: 2px;
+    background: url(../../../dist/img/ac/ac_correct.png) no-repeat;
+}
+
+
+.qc_warning_icon {
+    float:left;
+    clear:both;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    margin-top: 2px;
+    background: url(../../../dist/img/ac/ac_warning.png) no-repeat;
+}
+
+.qc_block_title {
+    padding: 4px;
+    padding-left: 20px;
+    background: #f1f8ff;
+    color: black;
+    cursor:hand;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #cbcbcd;
+}
+.qc_block_title_over {
+    padding: 4px;
+    padding-left: 20px;
+    background:#cff5ff;
+    color: black;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #cbcbcd;
+}
+.qc_block_title_span {
+     color: black;
+     background: transparent;
+ }
+.qc2_block_title_span {
+    color: black;
+    background: transparent;
+    padding-left: 25px;
+}
+.qc2_block_title_status {
+    color: black;
+    background: transparent;
+    padding-right: 5px;
+    float: right;
+}
+.qc_block_title_select {
+    border: 0px;
+    padding: 0px;
+    float: right;
+    background: transparent;
+    font-family: 微软雅黑;
+    font-size: 12px;
+
+}
+
+.qc_block_error {
+    padding: 4px;
+    padding-left: 45px;
+    color: red;
+}
+
+.qc_block_memo {
+    padding: 4px;
+    padding-left: 45px;
+    background-color: #fafafa;
+    color: gray;
+    word-break: break-all;
+}
+
+
+.qc_block_blank {
+    height: 60px;
+    background: transparent;
+}

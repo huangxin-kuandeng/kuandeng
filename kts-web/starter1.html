@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>标注管理系统</title>
+	<script src="config.js"></script>
+	<script src="KeyWord.js" type="text/javascript" charset="utf-8"></script>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="diagram-viewer/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- 日期选择插件 -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datetimepicker.css">
+
+  <!--switch.css-->
+  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="dist/css/spop/spop.min.css">
+
+  <!-- Google Font -->
+  <!--<link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
+  <link rel="stylesheet" href="dist/css/dialog.css">
+  <link rel="stylesheet" href="dist/css/operbylot.css">
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>标注管理系统</b></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+        	<!-- 
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="border-right:1px solid black;border-left:1px solid black;color: black;">
+              <i class="fa fa-briefcase"></i>
+              <span class="danger">工具箱</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">工具栏</li>
+              <li>
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                    	shp数据下载
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    	畸变图片下载
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        	 -->
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="" class="user-image" alt="头像">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="" class="img-circle" alt="头像">
+
+                <p class="userName">
+                  
+                  <small> </small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">详情</a>
+                </div>
+                <div class="pull-right">
+                  <a href="" class="btn btn-default btn-flat Signout" onclick="user.signout()">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <!--<li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>-->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="" class="img-circle" alt="头像">
+        </div>
+        <div class="pull-left info">
+          <p class="userName"></p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">功能菜单</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li class='collectionTask' style="display: none;"><a href="#"><i class=""></i> <span>当前任务</span></a></li>
+        <li class='MyTask' style="display: none;"><a href="#"><i class=""></i> <span>我的任务</span></a></li>
+        <!--<li class='claimTask'><a href="#"><i class=""></i> <span>申领任务</span></a></li>-->
+        <!--<li class='returnTask' style="display: none;"><a href="#"><i class=""></i> <span>返修管理</span></a></li>-->
+        <!--<li class='releaseTask' style="display: none;"><a href="#"><i class=""></i> <span>等待返修</span></a></li>-->
+        <!--<li class='manageTask' style="display: none;"><a href="#"><i class=""></i> <span>标注管理</span></a></li>-->
+        <li class='manageHistory' style="display: none;"><a href="#"><i class=""></i> <span>标注历史</span></a></li>
+        <!--<li class='manageClassify'><a href="#"><i class=""></i> <span>分类管理</span></a></li>-->
+        <!--<li class='taskQuality'><a href="#"><i class=""></i> <span>作业质量</span></a></li>-->
+        <!--<li class='imageTask'><a href="#"><i class=""></i> <span>图片下载</span></a></li>-->
+        <li class='imgMain' style="display: none;"><a href="#"><i class=""></i> <span>类型标注</span></a></li>
+        <li class='imgCheck' style="display: none;"><a href="#"><i class=""></i> <span>类型质检</span></a></li>
+        <li class='imgAccept' style="display: none;"><a href="#"><i class=""></i> <span>类型验收</span></a></li>
+        <!--<li class='waitLabelTask'><a href="#"><i class=""></i> <span>待标注任务</span></a></li>-->
+        <li class='baseCraft' style="display: none;"><a href="#"><i></i> <span>工艺管理</span></a></li>
+        <li class='importManage' style="display: none;"><a href="#"><i></i> <span>导入管理</span></a></li>
+        <li class='searchMark' style="display: none;"><a href="#"><i></i> <span>标注成果</span></a></li>
+        <li class='taskPack' style="display: none;"><a href="#"><i></i> <span>任务包管理</span></a></li>
+        <li class='pickupAtMap' style="display: none;"><a href="#"><i></i> <span>挑图项目</span></a></li>
+        <li class='efficiencyStatistics' style="display: none;"><a href="#"><i></i> <span>效率统计</span></a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1 style="padding: 15px 15px 0 15px;">登录成功！</h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+  	<span class="upload"></span>
+		<div id="loading" onclick="releaseTask.createView()">
+			<img src="dist/img/loading.gif" title="等待中">
+		</div>
+  	
+    <strong class="aTask">
+    	宽凳科技
+    </strong>
+    
+  </footer>
+</div>
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="diagram-viewer/js/jquery/jquery.progressbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/jquery/jquery.asyncqueue.js" type="text/javascript" charset="utf-8"></script>
+<!--配置文件-->
+<script src="dist/js/boot.js"></script>
+<!--登陆系统-->
+<script src="dist/js/jquery.oauth2-client.js"></script>
+<!--用户登录与退出-->
+<script src="dist/js/user.js"></script>
+<!--功能配置-->
+<script src="dist/js/util.js" type="text/javascript" charset="utf-8"></script>
+<!--工具组件-->
+<script src="dist/js/operByLot.js"></script>
+
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- 日期选择插件 -->
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datetimepicker.min.js"></script>
+<script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!--当前任务与历史任务界面-->
+<script src="dist/js/main.js"></script>
+<script src="dist/js/containerLog.js"></script>
+
+<!--监控界面与流程-->
+<script src="diagram-viewer/js/jstools.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/raphael.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/Color.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/ActivityImpl.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/ActivitiRest.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/LineBreakMeasurer.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/ProcessDiagramGenerator.js" type="text/javascript" charset="utf-8"></script>
+<script src="diagram-viewer/js/ProcessDiagramCanvas.js" type="text/javascript" charset="utf-8"></script>
+<!--任务的操作与分配-->
+<script src="diagram-viewer/js/taskManage.js" type="text/javascript" charset="utf-8"></script>
+<!--任务的质检报告-->
+<script src="diagram-viewer/js/taskCheck.js" type="text/javascript" charset="utf-8"></script>
+<!--index的重要执行函数-->
+<script src="diagram-viewer/js/Options.js" type="text/javascript" charset="utf-8"></script>
+<!--进入子流程或查看检查报告的判断-->
+<script src="diagram-viewer/js/handelFlag.js" type="text/javascript" charset="utf-8"></script>
+
+<!--创建任务界面-->
+<script src="dist/js/createTask.js" type="text/javascript" charset="utf-8"></script>
+<!--我的任务界面-->
+<script src="dist/js/mytask.js" type="text/javascript" charset="utf-8"></script>
+<!--申领任务界面-->
+<script src="dist/js/claimTask.js" type="text/javascript" charset="utf-8"></script>
+<!--监控界面复用代码-->
+<script src="dist/js/monitor.js" type="text/javascript" charset="utf-8"></script>
+<!--图片下载界面-->
+<script src="dist/js/imageTask.js" type="text/javascript" charset="utf-8"></script>
+<!--标注质检与验收界面-->
+<script src="dist/js/manage/testAndCheck.js" type="text/javascript" charset="utf-8"></script>
+<!--标注质检与验收界面-->
+<script src="dist/js/manage/manageTask.js" type="text/javascript" charset="utf-8"></script>
+<!--等待标注任务--基于文件创建标注任务-->
+<script src="dist/js/manage/waitLabelTask.js" type="text/javascript" charset="utf-8"></script>
+<!--标注任务历史列表-->
+<script src="dist/js/manage/manageHistory.js" type="text/javascript" charset="utf-8"></script>
+<!--标注类型管理列表-->
+<script src="dist/js/manage/manageClassify.js" type="text/javascript" charset="utf-8"></script>
+<!--标注任务作业质量列表-->
+<script src="dist/js/manage/taskQuality.js" type="text/javascript" charset="utf-8"></script>
+<!--查看返修任务-->
+<script src="dist/js/manage/returnTask.js" type="text/javascript" charset="utf-8"></script>
+<!--创建返修任务-->
+<script src="dist/js/manage/releaseTask.js" type="text/javascript" charset="utf-8"></script>
+<!--二次标注-->
+<script src="dist/js/classify/imageList.js" type="text/javascript" charset="utf-8"></script>
+<script src="dist/js/classify/imgMain.js" type="text/javascript" charset="utf-8"></script>
+<script src="dist/js/classify/imgCheck.js" type="text/javascript" charset="utf-8"></script>
+<script src="dist/js/classify/imgAccept.js" type="text/javascript" charset="utf-8"></script>
+<script src="dist/js/zooming.js" type="text/javascript" charset="utf-8"></script>
+<script src="dist/css/spop/spop.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+<!--<script>
+	var jsUri = "<script type='text/javascript' src='"+ window.WEB_EDITOR + "editor/api/map-editor-v1.0.0.min.js'></"+"script>";
+	document.write(jsUri);
+</script>-->
+
+
+<script src="diagram-viewer/js/Polyline.js" type="text/javascript" charset="utf-8"></script>
+<script src="dist/js/qunee-min2.6.1.2.js"></script>
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+</body>
+</html>

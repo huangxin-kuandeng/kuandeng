@@ -1,0 +1,11 @@
+syntax = "proto2";
+import "common.proto";
+import "class_id.proto";
+message HoleInfo {
+    repeated PointInt hole_p = 1;
+    repeated int32 hole_type = 2;
+}
+message Ground {
+    optional int32 type = 2;
+    repeated HoleInfo hole_info = 5 ;//地面内部轮廓
+}

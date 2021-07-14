@@ -1,0 +1,264 @@
+
+html,body,ul,li,p,select,img{
+	padding: 0px;
+	margin: 0px;
+	font-family: "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "Heiti SC" !important;
+}
+body{
+	overflow: inherit !important;
+}
+ul,li{
+	list-style: none;
+}
+input:focus,
+button:focus {
+    outline: none;
+}
+#highway_disease{
+	width: 100%;
+	min-width: 1280px;
+	/*min-width: 1440px;*/
+	height: 100vh;
+	min-height: 720px;
+	/*min-height: 900px;*/
+	position: relative;
+	/*background-color: #1c2330;*/
+	background-color: #FFFFFF;
+	/*overflow: hidden;*/
+	overflow: auto;
+	font-family: "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "Heiti SC";
+}
+#highway_disease .cesium-widget,#highway_disease .cesium-widget canvas{
+	background: #10172D;
+}
+#highway_disease a{
+	text-decoration: none;
+}
+.btn{
+	/*height: 30px;*/
+	height: 36px;
+	border: none;
+	/*padding: 5px 30px;*/
+	
+	width: 144px;
+	/*line-height: 36px;*/
+	text-align: center;
+	
+	color: #9598a2;
+	/*font-size: 12px;*/
+	font-size: 15px;
+	cursor: pointer;
+	margin-right: 10px;
+	border-radius: 5px;
+	background-color: #32384a;
+}
+.btn.btn-primary{
+	background-color: #5167F7;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+a{
+    cursor: pointer;
+}
+a:hover{
+    color: #526fd5;
+}
+
+/*修改checkBox默认样式*/
+#highway_disease label.checkbox_label{
+	cursor: pointer;
+}
+#highway_disease label input[type=checkbox]{
+  display: none;
+}
+#highway_disease label .checkbox_b{
+    height: 16px;
+    width: 16px;
+    float: left;
+	margin-right: 11px;
+	cursor: pointer;
+    display: inline-block;
+    background-image: url('../Img/checkbox.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+	border-radius: 2px;
+}
+#highway_disease label input[type=checkbox]:hover + .checkbox_b{
+    background-image: url('../Img/checkbox_hover.png');
+}
+#highway_disease label input[type=checkbox]:checked + .checkbox_b{
+    background-image: url('../Img/checkbox_ed.png');
+}
+
+/*单选表单RADIO*/
+#highway_disease .label{
+	float: left;
+}
+#highway_disease .label input{
+	float: left;
+	font-size: 12px;
+	color: #FFFFFF;
+	margin-right: 6px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+#highway_disease .label input[type="radio"] + label::before {
+    content: "\a0";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+    border-radius: 50%; 
+    border: 1px solid #FFFFFF;
+    line-height: 8px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 8px;		/*火狐*/
+    padding: 3px;
+    
+    opacity: 0.7;
+}
+#highway_disease .label input[type="radio"]:checked + label::before {
+    background-color: #5A7BEF;
+    border: 1px solid #5A7BEF;
+    opacity: 1;
+    padding: 3px;
+    background-clip: content-box;
+}
+#highway_disease .label span{
+	font-size: 12px;
+	color: #FFFFFF;
+}
+/*遮罩*/
+#mask_model{
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0.4;
+	z-index: 6666;
+	display: none;
+	position: fixed;
+	background: #0C1120;
+	box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+} 
+
+/*用户权限设置*/
+#user_role{
+	left: 0px;
+	top: 49px;
+	z-index: 222;
+	padding: 40px;
+	position: fixed;
+	width: calc(100% - 80px);
+	background-color: #EFEFF0;
+	height: calc(100% - 129px);
+}
+#user_role h3{
+	color: #333333;
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 30px;
+}
+#user_role div{
+    float: left;
+	border-radius: 8px;
+    padding: 12px 40px;
+    margin-bottom: 12px;
+	padding-bottom: 0px;
+    background: #FFFFFF;
+    width: calc(100% - 80px);
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+#user_role div p{
+	float: left;
+	width: 100%;
+	height: auto;
+	color: #333333;
+	font-size: 14px;
+	line-height: 14px;
+	margin-bottom: 12px;
+}
+#user_role div p:last-child{
+	margin-bottom: 0px;
+}
+#user_role div p label,
+#user_role div p span{
+	float: left;
+	height: 14px;
+	margin-bottom: 12px;
+}
+#user_role div:first-of-type{
+	padding-bottom: 12px;
+}
+#user_role div:first-of-type p label,
+#user_role div:first-of-type p span{
+	margin-bottom: 0px;
+}
+#user_role div p label{
+	width: 106px;
+}
+#user_role div p.citylists span{
+	cursor: pointer;
+	margin-right: 24px;
+}
+#user_role div p.citylists span b{
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-right: 4px;
+	border-radius: 100px;
+	border: 1px solid #999999;
+}
+#user_role div p.citylists span.active b{
+	width: 6px;
+	height: 6px;
+	border: 4px solid #5167F7;
+}
+
+.allow_select{
+	opacity: 1 !important;
+    background-size: 14px 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../Img/箭头@2x.png);
+}
+
+/* mapbox地图聚类样式 */
+.mapboxgl-map .convergeGroup{
+	height: 20px;
+	color: #FFFFFF;
+	min-width: 10px;
+	font-size: 14px;
+	padding: 5px 10px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 100px;
+	background-color: #EC3A4E;
+	font-family: Hiragino Sans GB,PingFang SC,Microsoft YaHei,Heiti SC;
+}
+/* mapbox地图自定义标签样式 */
+.mapboxgl-map .positionMarkLabel{
+	width: 22px;
+	height: 22px;
+	background-size: 22px;
+	background-repeat: no-repeat;
+	background-image: url(../Img/mark_label_1.png);
+}
+/* mapbox地图视频播放定位点样式 */
+.mapboxgl-map .playerPoint{
+	width: 36px;
+	height: 36px;
+	background-size: 36px;
+	background-repeat: no-repeat;
+	background-image: url(../Img/position.png);
+}
+
+
+body.rearViewNot .button_control{
+	pointer-events: none;
+	cursor: default;
+	opacity: 0.5;
+}

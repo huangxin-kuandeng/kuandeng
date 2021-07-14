@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bd910e20-3ab5-4c01-a06a-4b867d749a44" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/AdminLTE.min.css" afterPath="$PROJECT_DIR$/dist/css/AdminLTE.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/dialog.css" afterPath="$PROJECT_DIR$/dist/css/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/main.js" afterPath="$PROJECT_DIR$/dist/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/starter1.html" afterPath="$PROJECT_DIR$/starter1.html" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="starter1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/starter1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1505720319744" expanded="false" signature="14243:14253" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1505720414809" expanded="true" signature="715:859" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="857:859" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="9738:10165" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="9738:10280" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="9738:10284" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="9776:10067" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="10195:10274" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="10327:10394" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="10415:11665" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="10431:11205" ph="{&quot;serverUrl&quot;: 'http://192.168.120.24:18016/gds-web'...}" />
+                <marker date="1505720414809" expanded="true" signature="10555:10663" ph="//..." />
+                <marker date="1505720414809" expanded="true" signature="10810:10876" ph="//..." />
+                <marker date="1505720414809" expanded="true" signature="11302:11597" ph="{&quot;name&quot;: &quot;google&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="11697:13179" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="11985:12385" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="12090:12379" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12147:12369" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12445:12735" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12546:12709" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12645:12685" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12773:13177" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12877:12930" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="12963:13122" ph="{&quot;nodes&quot;: nodes...}" />
+                <marker date="1505720414809" expanded="true" signature="13043:13118" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13224:13607" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13421:13464" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13510:13604" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13642:13964" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13715:13946" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13772:13858" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="13986:14159" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="14183:16673" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="14402:14664" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="14736:14744" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="14796:15803" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="15202:15798" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="15464:15706" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="15494:15606" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="15737:15781" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="15807:16649" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="15822:16644" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="16103:16552" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="16133:16245" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="16259:16452" ph="//..." />
+                <marker date="1505720414809" expanded="true" signature="16583:16627" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="16703:17319" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="16812:17315" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="16945:17293" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="16986:17034" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17039:17289" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17122:17282" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17194:17276" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17298:17312" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17373:17980" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17434:17955" ph="{&quot;type&quot;: &quot;GET&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="17687:17786" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17718:17776" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="17850:17948" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="18019:19214" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="18021:18084" ph="//..." />
+                <marker date="1505720414809" expanded="true" signature="19185:19210" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="19253:20759" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="19267:20755" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+                <marker date="1505720414809" expanded="true" signature="19395:20589" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="20352:20582" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="20653:20751" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="20798:21067" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="20944:21020" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="21112:21375" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="21239:21332" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="21278:21326" ph="{...}" />
+                <marker date="1505720414809" expanded="true" signature="21412:21472" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/starter1.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="896" />
+    <option name="height" value="635" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="kts-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kts-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/develop2" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="D:/Program Files/nodejs/node" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd910e20-3ab5-4c01-a06a-4b867d749a44" name="Default" comment="" />
+      <created>1505706648530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1505706648530</updated>
+      <workItem from="1505706649668" duration="114000" />
+      <workItem from="1505706785423" duration="614000" />
+      <workItem from="1505715199899" duration="626000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1354000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/starter1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1505720319744" expanded="false" signature="14243:14253" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1505720414809" expanded="true" signature="715:859" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="857:859" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="9738:10165" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="9738:10280" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="9738:10284" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="9776:10067" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10195:10274" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10327:10394" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10415:11665" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10431:11205" ph="{&quot;serverUrl&quot;: 'http://192.168.120.24:18016/gds-web'...}" />
+            <marker date="1505720414809" expanded="true" signature="10555:10663" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="10810:10876" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="11302:11597" ph="{&quot;name&quot;: &quot;google&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="11697:13179" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="11985:12385" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="12090:12379" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12147:12369" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12445:12735" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12546:12709" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12645:12685" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12773:13177" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12877:12930" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12963:13122" ph="{&quot;nodes&quot;: nodes...}" />
+            <marker date="1505720414809" expanded="true" signature="13043:13118" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13224:13607" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13421:13464" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13510:13604" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13642:13964" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13715:13946" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13772:13858" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13986:14159" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14183:16673" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14402:14664" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14736:14744" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14796:15803" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15202:15798" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="15464:15706" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15494:15606" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15737:15781" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15807:16649" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15822:16644" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="16103:16552" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16133:16245" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16259:16452" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="16583:16627" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16703:17319" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16812:17315" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16945:17293" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16986:17034" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17039:17289" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17122:17282" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17194:17276" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17298:17312" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17373:17980" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17434:17955" ph="{&quot;type&quot;: &quot;GET&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="17687:17786" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17718:17776" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17850:17948" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="18019:19214" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="18021:18084" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="19185:19210" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="19253:20759" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="19267:20755" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="19395:20589" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20352:20582" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20653:20751" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20798:21067" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20944:21020" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21112:21375" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21239:21332" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21278:21326" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21412:21472" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/starter1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1505720319744" expanded="false" signature="14243:14253" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1505720414809" expanded="true" signature="715:859" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="857:859" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="9738:10165" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="9738:10280" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="9738:10284" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="9776:10067" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10195:10274" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10327:10394" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10415:11665" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="10431:11205" ph="{&quot;serverUrl&quot;: 'http://192.168.120.24:18016/gds-web'...}" />
+            <marker date="1505720414809" expanded="true" signature="10555:10663" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="10810:10876" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="11302:11597" ph="{&quot;name&quot;: &quot;google&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="11697:13179" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="11985:12385" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="12090:12379" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12147:12369" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12445:12735" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12546:12709" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12645:12685" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12773:13177" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12877:12930" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="12963:13122" ph="{&quot;nodes&quot;: nodes...}" />
+            <marker date="1505720414809" expanded="true" signature="13043:13118" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13224:13607" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13421:13464" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13510:13604" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13642:13964" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13715:13946" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13772:13858" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="13986:14159" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14183:16673" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14402:14664" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14736:14744" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="14796:15803" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15202:15798" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="15464:15706" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15494:15606" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15737:15781" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15807:16649" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="15822:16644" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="16103:16552" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16133:16245" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16259:16452" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="16583:16627" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16703:17319" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16812:17315" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16945:17293" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="16986:17034" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17039:17289" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17122:17282" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17194:17276" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17298:17312" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17373:17980" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17434:17955" ph="{&quot;type&quot;: &quot;GET&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="17687:17786" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17718:17776" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="17850:17948" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="18019:19214" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="18021:18084" ph="//..." />
+            <marker date="1505720414809" expanded="true" signature="19185:19210" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="19253:20759" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="19267:20755" ph="{&quot;type&quot;: &quot;get&quot;...}" />
+            <marker date="1505720414809" expanded="true" signature="19395:20589" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20352:20582" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20653:20751" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20798:21067" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="20944:21020" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21112:21375" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21239:21332" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21278:21326" ph="{...}" />
+            <marker date="1505720414809" expanded="true" signature="21412:21472" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/starter1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1505720319744" expanded="false" signature="14243:14253" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+syntax = "proto2";
+package start_type; //package声明符
+enum StartType {
+     BOUNDARY_POINT = 0;
+
+     LEFT_EDGE = 2;
+     RIGHT_EDGE = 3;
+     TOP_EDGE = 4;
+     DOWN_EDGE = 5;
+
+     FENCE_SHELTER = 6;
+     VEHICLE_SHELTER = 7;
+     STONE_SHELTER = 8;
+     OTHER = 9;
+
+     BOUNDARY_STOP = 10;
+
+
+}

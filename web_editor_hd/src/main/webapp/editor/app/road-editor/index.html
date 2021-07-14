@@ -1,0 +1,208 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>高精数据编辑</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='initial-scale=1.0 maximum-scale=1.0'>
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+    <meta http-equiv='X-UA-Compatible' content='IE=9; IE=8; IE=7; IE=EDGE' />
+    
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../../js/lib/layui/assets/layui/css/layui.css">
+    <link rel="stylesheet" href="../../js/lib/layui/assets/common.css"/>
+    <script type="text/javascript">window.KDSEditorLibraryPath = '../../';</script>
+	<!-- <script src="../../js/lib/three.js/build/three.js"></script> -->
+    <script type="text/javascript" src="./boot.js"></script>
+    <script src="../../js/lib/layui/assets/layui/layui.js"></script>
+<!-- 
+    <script src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+	<script src="../../js/lib/spectrum/spectrum.js"></script>
+	<script src="../../js/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../../js/lib/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../../js/lib/other/BinaryHeap.js"></script>
+	<script src="../../js/lib/tween/tween.min.js"></script>
+	<script src="../../js/lib/proj4/proj4.js"></script>
+	<script src="../../js/lib/openlayers3/ol.js"></script>
+	<script src="../../js/lib/i18next/i18next.js"></script>
+	<script src="../../js/lib/jstree/jstree.js"></script>
+	<script src="../../js/build/potree/potree.js"></script>
+	<script src="../../js/lib/plasio/js/laslaz.js"></script>
+	<script src="../../js/lib/Cesium/Cesium.js"></script> -->
+
+    <!--<script type="text/javascript" src="./boot-product.js"></script>-->
+    <script type="text/javascript" src="../../config.js"></script>
+    <!--
+    <script type="text/javascript" src="http://10.17.131.231/api/editor-api-v4.0.9/js/editor.min.js"></script>
+    -->
+</head>
+<body onload="init()">
+<!--
+<div id='id-container' style='margin-left: 200px;top:100px;width: 1000px;height:400px;'></div>
+ -->
+<!--地图面板-->
+<div id='id-container'></div>
+<div class='panorama panoram-hide'>
+    <div class='panorama-container'></div>
+    <div class="panorama-change">
+        <div id="soso" class ="qqmap"></div>
+        <div id="baidu" class ="baidumap"></div>
+
+    </div>
+</div>
+<script type='text/javascript'>
+    window.version = 'v7.0.3';
+//    performance.webkitClearResourceTimings();   //清空缓存
+//    performance.webkitSetResourceTimingBufferSize(10000);
+    d3.xhrSetup({
+        timeout: 180000
+    });
+    var editor ;         //编辑器
+    function init(){
+//  	console.log('%c页面加载完成，用时：' + (new Date().getTime() - START_DATE.getTime()) + 'ms ', 'font-size: 16px; color: red; font-weight: bold;');
+//  	console.log('%c加载script标签数量：' + document.getElementsByTagName('script').length, 'font-size: 16px; color: blue; font-weight: bold;');
+        url  = window._init_url || 'http://192.168.5.34:13910/kd-config-server/web-prod.json';
+        d3.json(url,function(err,data){
+            // console.log("web-dev.json", err,data);
+//          if(data){
+//              Object.assign(iD.config.URL, data.url);
+//          }
+            iD.config.updateConfigUrl(data && data.url);
+            iD.User.checkUserLoginStatus();
+            initEdit();
+        });
+    }
+    //console.log("%c", "padding:50px 300px;line-height:120px;background:url('http://www.shayiming.cn/img/Rabbit.gif') no-repeat;");
+    function OpenMapEditor(cfg) {
+        var opt = {
+            //ui: false,//false 即所有的UI都不显示,缺省或true即正常显示
+            ui: {panel: true, bar: true, zoom: true, titlelayer: true},//对应UI显示或隐藏
+            center:  [116.376415,39.986574],
+            zoom: 10, 
+            wkt:true,
+            maxZoom: 25,
+            //minZoom: 25,
+            editableLevel: 16,
+            loadPanorama: true,
+            cache: true,
+            serverUrl : cfg.URL.gds_web,
+            searchUrl : 'http://apis.kd.com/gss/simple?key=d111175e022c19f447895ad6b72ff259552d1b38ec6f097469186c976bc1937d11c918cbad3b0a18',
+            dvrServiceUrl : cfg.URL.dvr_web,
+            picServiceUrl : cfg.URL.pic_web,
+            picOssServerUrl:cfg.URL.pic_oss_url
+        }
+        editor = new MapEditor('id-container', opt);//面板实例化初始化操作
+
+        editor.context.locale("zh-CN").assetPath('../../dist/');
+
+    }
+
+    //加载GDS图层信息，启动编辑器
+    function initEdit(){
+        iD.config.loadLayers(function(msg) {
+            if (msg.length) {
+                //数据初始化成功，启动编辑器
+                OpenMapEditor(iD.config) ;
+                /* 20180601 v9.5.1 不需要默认数据层
+                for (var i=0; i<msg.length; i++) {
+                    iD.config.layers.push( msg[i]) ;
+                    iD.config.allLayerIds.push(msg[i].layerId);
+                    //添加导航图层
+                    var layer = new DataLayer({
+                        id: msg[i].layerId.toString(),
+                        editable: false,
+                        display: false,
+                        split: true,
+                        models:[msg[i].layerName],
+                        type: msg[i].layerName,
+                        label: {
+                        	display: false
+                        }
+                    });
+                    iD.util.setLayerLabelField(layer);
+                    editor.addDataLayer(layer);
+                    var layerInfo = iD.Layers.getLayerById(msg[i].layerId);
+                    layerInfo.modelEntity(iD.ModelEntitys[msg[i].layerName]);
+                }
+                */
+            }else{
+                console.log('模型返回错误')
+                return;
+            }
+
+            window.onresize=function()
+            {
+                //重绘地图。验证100毫秒执行。
+                editor.getMap().contextResize()
+                setTimeout( editor.context.map().redraw,100);
+                d3.select(".panorama-container").style("height",d3.select("#id-container").style("height"));
+                d3.select(".map-controls").style("top",d3.select("#KDSEditor-bar").style("height"));
+            }
+
+            editor.addListener('click', function(entity,coord){
+                var iframeWindow = d3.select(".panorama-container iframe")[0][0];
+                if(iframeWindow){
+                    var xy = editor.context.projection.invert([coord[0],coord[1]]);
+                    iframeWindow.contentWindow.setCenter(xy[0],xy[1]);
+                }
+            });
+
+            //设置街景显示隐藏功能
+            function setPano(isDisplay){
+                if(isDisplay){
+                    var center = editor.getCenter();
+                    var url = "./soso.htm?lon="+center[0]+"&lat="+center[1]+"&zoom="+editor.getZoom();
+                    d3.select("#id-container").style("width",'50%');
+                    d3.select(".panorama-container").style("height",d3.select("#id-container").style("height"));
+                    d3.select(".panorama-container").html('<iframe'+' id =soso src='+url+'></iframe>');
+                    d3.select(".panorama").classed("panoram-hide",false);
+
+                    d3.select(".panorama").on("click",(function(){
+                        if(!d3.event) return;
+                        center = editor.getCenter();
+                        if(d3.event.target.id ===d3.select(".panorama-container iframe").attr("id")) return;
+
+                        if(d3.event.target.id ==="soso"){
+                            url = "./soso.htm?lon=";
+                        }else{
+                            url = "./baidu.htm?lon=";
+                        }
+                        url+= center[0]+"&lat="+center[1]+"&zoom="+editor.getZoom();
+                        d3.select(".panorama-container").html('<iframe '+' id ='+d3.event.target.id+ ' src='+url+'></iframe>');
+                    }));
+
+                    var height = d3.select("#KDSEditor-content").property("clientHeight");
+                    var width = d3.select("#KDSEditor-content").property("clientWidth");
+                    editor.getMap().dimensions([width,height]);
+                    editor.setCenter(editor.getCenter());
+                }else{ƒl
+                    d3.select(".panorama").classed("panoram-hide",true);
+                    d3.select("#id-container").style("width",'100%');
+                    d3.select(".panorama-container").html("");
+                    var height = d3.select("#KDSEditor-content").property("clientHeight");
+                    var width = d3.select("#KDSEditor-content").property("clientWidth");
+                    editor.getMap().dimensions([width,height]);
+                    editor.setCenter(editor.getCenter());
+                }
+                window.onresize();
+            }
+
+            //监听面板中街景状态事件，来控制显示隐藏街景用
+            editor.context.ui().layermanager.on('pano.pano', function(layerId, isDisplay) {
+                setPano(isDisplay);
+            });
+            
+            
+            iD.User.isOauthLogin && iD.User._oauthLogin();
+        }) ;
+    }
+
+
+    function setCenter(lon,lat){
+        if(editor.getCenter()[0] !=lon && editor.getCenter()[1] !=lat){
+            editor.setCenter([lon,lat]);
+        }
+    }
+</script>
+</body>
+</html>

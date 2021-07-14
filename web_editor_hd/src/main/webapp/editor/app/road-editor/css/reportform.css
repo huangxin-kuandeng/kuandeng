@@ -1,0 +1,231 @@
+/*报表查询*/
+
+/*整体样式*/
+#reportform #ReportForm {
+  	position: absolute;
+    padding: 0;
+    left: 0;
+    bottom: 0px;
+    background-color: #fff;
+    z-index: 310;
+    height: 240px;
+    width: 100%;
+    overflow: auto;
+    display: none;
+}
+#reportform #ReportForm .reportform-header{
+  	position: relative;
+  	width: 100%;
+  	height: 30px;
+    border-bottom: 1px solid #DDD;
+}
+#reportform #ReportForm .fm-btn{
+    padding: 2px 8px;
+    display: inline-block;
+    background-color: #DDD;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    height: 30px;
+    line-height: 24px;
+    font-size: 16px;
+}
+#reportform #ReportForm .fm-btn:hover{
+	background-color: #EEE;
+}
+#reportform #ReportForm .fm-btn.active{
+	background-color: #EEE;
+}
+#_reportform_close{
+	position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+/*
+#_reportform_close{
+	position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #DDD;
+    border: 1px solid #CCC;
+    cursor: pointer;
+}
+#_reportform_close:hover{
+	background-color: #EEE;
+}
+*/
+/*内容头部样式*/
+#reportform #ReportForm #reportFormTable .table-header{
+	padding: 5px 10px 0 10px;
+	position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+#reportform #ReportForm #reportFormTable .table-header thead{
+	border-right: none;
+	font-weight: bold;
+}
+#reportform #ReportForm #reportFormTable .table-header thead tr th{
+	padding: 2px 10px;
+	text-align: center;
+	border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    word-break: break-all;
+    white-space: normal;
+}
+/*
+#reportform #ReportForm .table-header{
+	width: 100%;
+  	padding: 5px 10px 0 10px;
+  	font-weight: bold;
+    text-align: center;
+    display: block;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#reportform #ReportForm .table-header th{
+  	padding: 2px 10px;
+  	text-align: center;
+	border-right: 1px solid #DDDDDD;
+	display: table-cell;
+	border: 1px solid #DDDDDD;
+	border-bottom: none;
+    width: 80px;
+}
+#reportform #ReportForm .table-header .table-th:first-child{
+	border-left: 1px solid #DDDDDD;
+	width: 50px;
+}
+*/
+#reportform #ReportForm #reportFormTable #example3 table tr td{
+	border: 1px solid #DDDDDD;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#reportform #ReportForm #reportFormTable{
+  	font-size: 14px;
+    /*overflow-y: auto;*/
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 210px;
+    bottom: 0;
+}
+#reportform #ReportForm #reportFormTable .reportform-table-wrap{
+  	padding: 0 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 180px;
+    overflow-y: auto;
+}
+#reportform #ReportForm #reportFormTable .reportform-table-wrap::-webkit-scrollbar{
+  	width: 11px;
+}
+
+#reportform #ReportForm #reportFormTable #example3{
+  	font-size: 12px;
+    border: none;
+}
+
+#reportform #ReportForm .table-header tr th:first-child,
+#reportform #ReportForm #reportFormTable #example3 table tr td:first-child{
+	width: 80px;
+}
+#reportform #ReportForm .table-header tr th:nth-child(2),
+#reportform #ReportForm #reportFormTable #example3 table tr td:nth-child(2){
+	width: 100px;
+}
+#reportform #ReportForm .table-header tr th:nth-child(3),
+#reportform #ReportForm #reportFormTable #example3 table tr td:nth-child(3){
+	width: 150px;
+}
+#reportform #ReportForm .table-header tr th:nth-child(4),
+#reportform #ReportForm #reportFormTable #example3 table tr td:nth-child(4){
+	width: 150px;
+}
+#reportform #ReportForm #reportFormTable #example3 .td{
+	/*white-space: nowrap;*/
+	overflow: hidden;
+	padding: 0 5px 0 5px;
+	/*border: 1px solid #DDDDDD;*/
+    box-sizing: border-box;
+}
+/*所有头部内容的样式*/
+#reportform #ReportForm #reportFormTable #example3 tr th{
+	padding: 5px;
+}
+
+/*第四列头部内容的样式*/
+#reportform #ReportForm #reportFormTable #example3 tbody tr th:nth-of-type(5){
+	min-width: 400px;
+	overflow: hidden;
+}
+
+/*内容整体样式*/
+#reportform #ReportForm #reportFormTable #example3 tbody{
+	border-left: 1px solid #DDDDDD;
+}
+#reportform #ReportForm #reportFormTable #example3 tbody tr th{
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+/*内容鼠标滑上添加样式*/
+#reportform #ReportForm #reportFormTable #example3 tbody tr:hover{
+  	background: #f5f5f5;
+  	cursor: pointer;
+}
+
+#example3 tbody tr.active{
+	background:#CCCCCC
+}
+/*右上角浮动按钮*/
+.report-button{
+    margin-bottom: 10px;
+}
+.report-button #button2{
+	display: none;
+}
+.report-button #button5{
+    display: none;
+}
+/*右上角浮动按钮*/
+.report-button #button3{
+	display: none;
+}
+.report-button > button{
+	width: auto;
+	height: 40px;
+	font-size: 12px;
+    border-radius: 4px;
+	padding: 0px 10px;
+}
+
+#example3 button.active{
+	color:#008000
+}
+#example3 button{
+    background: none;
+    height: 100%;
+}
+#example3 button.disabled{
+    color: #999;
+}
+#example3 button.disabled.active{
+    color: #80b780;
+}
+
+.accuracy-button > button{
+    width: auto;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 0px 10px;
+}

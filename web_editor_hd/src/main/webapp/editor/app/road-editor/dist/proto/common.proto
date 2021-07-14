@@ -1,0 +1,140 @@
+syntax = "proto2";
+package kd.mapping.proto;
+
+message UtcTime {
+  required uint32 secs = 1;
+  required uint32 nsecs = 2;
+};
+
+message Vector3d {
+  optional double x = 1 [ default = 0.0 ];
+  optional double y = 2 [ default = 0.0 ];
+  optional double z = 4 [ default = 0.0 ];
+};
+
+message BLH {
+  required double lat = 1;
+  required double lng = 2;
+  required double height = 3;
+};
+
+message POSE {
+  required double lat = 1;
+  required double lng = 2;
+  required double height = 3;
+  required double yaw = 4;
+  required double pitch = 5;
+  required double roll = 6;
+};
+
+message LocalXYZ {
+  required sint32 x = 1; // int32_t(x * 1000)
+  required sint32 y = 2; // int32_t(y * 1000)
+  required sint32 z = 3; // int32_t(z * 1000)
+};
+
+message TileXYZ {
+  required uint32 x = 1; // int32_t((x - xo) * 1000)
+  required uint32 y = 2; // int32_t((y - yo) * 1000)
+  required uint32 z = 3; // int32_t(z * 1000)
+};
+
+message RawLidarPoint {
+  required uint32 radius = 1;    // 250 * (0~200)
+  required uint32 elevation = 2; // 10000 * (-pi/2~pi/2)
+  required sint32 azimuth = 3;   // 10000 * (0~2pi)
+};
+
+message LidarPointExtendInfo {
+  optional uint32 intensity = 1;
+
+  optional uint32 channel = 2;
+
+  // added in v2.2.1
+  optional uint32 pos_quality = 3;
+
+  // added in v2.2.1
+  // 63 if lidar point not covered by camera
+  /*
+  0	其它  64,64,32
+  1	ignore  0,0,0
+  2	车道标线-白色 255,69,0
+  3	车道标线-黄色 255,165,0
+  4	左侧车道边缘线 255,192,203
+  5	右侧车道边缘线 139,0,139
+  6	出入口标线 128,128,0
+  7	纵向减速标线  32,128,192
+  8	专用车道标线  192,128,255
+  9	导流线（鱼刺线）  0,255,0
+  10	路面连接带 128,128,192
+  11	文字、符号箭头类  0,0,255
+  12	可移动物体 128,0,0
+  13	道路  128,64,128
+  14	停止线 255,128,64
+  15	减速标线/减速带  128,128,255
+  16	人行横道  128,192,192
+  17	停止网格标线  255,12,8255
+  18	高速车距确认标线  255,128,255
+  19	路牌  255,0,255
+  20	杆 255,140,0
+  21	天空  135,206,235
+  22	路缘石 127,255,0
+  23	防护栏 0,191,255
+  24	灯 255,69,0
+  25	井盖  178,34,34
+  26	可移动栅栏 65,105,225
+  27    顶部区域  255,250,240
+  28    路缘石平面 105,105,105
+  29    overhead平面 0,206,209
+  */
+  optional uint32 img_seg_type = 4;
+};
+
+message LidarElementPoint {
+
+  required BLH point = 1;
+
+  required UtcTime time = 2;
+}
+
+message PointInt {
+	optional int32 x = 1;
+	optional int32 y = 2;
+}
+
+message PointFloat {
+	optional float x = 1;
+	optional float y = 2;
+	optional float z = 3;
+}
+
+message RotatedRect {
+	optional PointFloat p1 = 1;
+	optional PointFloat p2 = 2;
+	optional PointFloat p3 = 3;
+	optional PointFloat p4 = 4;
+}
+
+message Rect {
+	optional PointInt left_top = 1;
+	optional int32 width = 2;
+	optional int32 height = 3;
+}
+
+message FitLine {
+	optional float vx = 1;
+    optional float vy = 2;
+    optional float x0 = 3;
+    optional float y0 = 4;
+    optional double u1 = 5;
+    optional double v1 = 6;
+    optional double u2 = 7;
+    optional double v2 = 8;
+}
+
+message Vector4 {
+	optional double v1 = 1;
+	optional double v2 = 2;
+	optional double v3 = 3;
+	optional double v4 = 4;
+}

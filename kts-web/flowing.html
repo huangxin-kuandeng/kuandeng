@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>任务流</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <style>
+        body{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body    style="">
+<div id="canvas" style="width: 100%; height: 100%">
+
+</div>
+<!-- qunee 2.6.1.2-->
+<script src="dist/js/qunee-min2.6.1.2.js"></script>
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<script>
+    //获取URL中的任务ID
+    if(!window.getI18NString){getI18NString = function(s){return s;}}
+    var taskId = location.search.split('taskId=')[1]?location.search.split('taskId=')[1]:'1';
+    var flowingSupport;
+    var flowingLine; //任务流圈
+    var timeout = null;
+    var _time = 3500;
+    var closeId = '15';
+    var imgPath ='./dist/img/flowing/';
+    var clickArr = ['7','13','14'];
+    var stateCorrespondUrl={
+        '7':'http://192.168.5.34:40020/web_editor/editor/app/road-editor/index.html',
+        '13':'http://192.168.5.34:40020/web_editor/editor/app/road-editor/index.html',
+        '14':'http://192.168.5.34:50020/web_editor/editor/app/road-editor/index.html',
+        '15':'http://192.168.5.34:50020/web_editor/editor/app/road-editor/index.html'
+    }
+    var stateMap={
+        '0':"新建",
+        '1': "已分配",
+        '4':"上传开始",
+        '5': "上传结束",
+        '6':"开始识别",
+        '7': "结束识别",
+        '8': "开始重建",
+        '9': "结束重建",
+        '10':"开始地图要素坐标转换",
+        '11':"结束地图要素坐标转换",
+        '12': "开始融合",
+        '13': "结束融合",
+        '14': "编辑中",
+        '15': "编辑完成"
+//            '16': "关闭"
+    };
+    var stateArr = Object.entries(stateMap);
+    var stateKeys = Object.keys(stateMap);
+    //动太效果≈
+    function FlowingSupport(graph) {
+        this.flowMap = {};
+        this.graph = graph;
+    }
+    FlowingSupport.prototype = {
+        flowMap: null,
+        length: 0,
+        gap: 40,
+        graph: null,
+        addFlowing: function (edgeOrLine, count, byPercent) {
+            var flowList = this.flowMap[edgeOrLine.id];
+            if(!flowList){
+                flowList = this.flowMap[edgeOrLine.id] = [];
+                this.length++;
+            }
+            count = count || 1;
+            while(--count >= 0){
+                var ui = new Q.ImageUI("dist/img/flow.png");
+                ui.layoutByPath = true;
+                ui.position = {x: 0, y: 0};
+                ui.size = {width: 20};
+                ui._state = edgeOrLine._state;
+                ui.renderColor = "#F00";
+                flowList.push(ui);
+                flowList.byPercent = byPercent;
+                edgeOrLine.addUI(ui);
+            }
+        },
+        removeFlowing: function(id){
+            var flowList = this.flowMap[id];
+            if(!flowList){
+                return;
+            }
+            var edgeOrLine = this.graph.getElement(id);
+            if(edgeOrLine){
+                flowList.forEach(function(ui){
+                    edgeOrLine.removeUI(ui);
+                })
+            }
+            this._doRemove(id);
+        },
+        removeOtherFlowing:function(id){
+            var flowList = Object.keys(this.flowMap);
+            if(!flowList){
+                return;
+            }
+            for(var i=0,len=flowList.length;i<len;i++){
+                if(flowList[i] == id){
+                    continue;
+                }
+                this.removeFlowing(flowList[i]);
+            }
+        },
+        getStateFlowing:function(state){
+            var flowList = Object.values(this.flowMap);
+            if(!flowList){
+                return null;
+            }
+            for(var i=0,len=flowList.length;i<len;i++){
+                if(flowList[i][0]._state == state){
+                    return flowList[i][0];
+                }
+            }
+            return null;
+        },
+        removeAllFlowing:function(){
+            var flowList = Object.keys(this.flowMap);
+            if(!flowList){
+                return;
+            }
+            for(var i=0,len=flowList.length;i<len;i++){
+                this.removeFlowing(flowList[i]);
+            }
+        },
+        _doRemove: function(id){
+            delete this.flowMap[id];
+            this.length--;
+        },
+        timer: null,
+        perStep: 10,
+        stop: function(){
+            clearTimeout(this.timer);
+        },
+        start: function(){
+            if(this.timer){
+                clearTimeout(this.timer);
+            }
+            var offset = 0;
+            var scope = this;
+            scope.timer = setTimeout(function A() {
+                if (!scope.length) {
+                    scope.timer = setTimeout(A, 2000);
+                    offset = 0;
+                    return;
+                }
+                offset += 1;
+                for(var id in scope.flowMap){
+                    var ui = scope.graph.getUI(id);
+                    if(!ui){
+                        scope._doRemove(id);
+                        continue;
+                    }
+                    var lineLength = ui.length;
+                    if(!lineLength){
+                        continue;
+                    }
+                    var flowList = scope.flowMap[id];
+                    if(flowList.byPercent){
+                        var x = offset * 2;
+                        var gap = 15;
+                        scope.flowMap[id].forEach(function(ui){
+                            ui.position = {x: (x % 100) / 100, y: 0};
+                            x += gap;
+                        });
+                    }else{
+                        var x = offset * scope.perStep;
+                        scope.flowMap[id].forEach(function(ui){
+                            ui.position = {x: x % lineLength, y: 0};
+                            x += scope.gap;
+
+                        });
+                    }
+                    scope.graph.invalidateUI(ui);
+
+                    //dashed line
+                    var data = ui.data;
+                    if(data instanceof Q.Edge){
+                        if(data.getStyle(Q.Styles.EDGE_LINE_DASH)){
+                            data.setStyle(Q.Styles.EDGE_LINE_DASH_OFFSET, -offset);
+                        }
+                    }else if(data instanceof Q.ShapeNode){
+                        if(data.getStyle(Q.Styles.SHAPE_LINE_DASH)) {
+                            data.setStyle(Q.Styles.SHAPE_LINE_DASH_OFFSET, -offset);
+                        }
+                    }
+                }
+                scope.timer = setTimeout(A, 200);
+            }, 200);
+        }
+    }
+
+    function destroy(){
+        flowingSupport.stop();
+    }
+
+    //状态刷新
+    function updateState(){
+
+        $.ajax( {
+            type : "get",
+            url : "http://192.168.5.34:30040/kts/task/"+taskId,
+            success : function(msg) {
+                if(!msg.result){
+                    console.log('返回错误');
+                    return ;
+                }
+                let _state =msg.result.state.toString();
+                var keyIndex = stateKeys.indexOf(_state);
+                var noedgedeState = stateKeys[keyIndex+1];
+                if(!flowingSupport.getStateFlowing(noedgedeState)){
+//                if(!flowingSupport.getStateFlowing(_state)){
+                    flowingSupport.removeOtherFlowing(flowingLine.id);
+                }
+
+                timeout = window.setTimeout(function(){
+                    updateState();
+                }, _time);
+                updateFlowing(_state.toString());
+                if(_state==closeId){
+                    window.clearTimeout(timeout);
+                    console.log('停止');
+                    flowingSupport.removeAllFlowing();
+                    flowingLine.setStyle(Q.Styles.SHAPE_STROKE_STYLE, "#2c2c2c");
+                    flowingLine.name = "任务："+taskId+" 已完成";
+                    return;
+                }
+//                console.log(msg);
+            },
+            error: function(){
+                console.log('异常',url);
+            }
+        });
+    }
+    function updateFlowing(state){
+        var keyIndex = stateKeys.indexOf(state);
+        var gedeId  = 'noedgede'+stateKeys[keyIndex+1];
+        if(window[gedeId] && !flowingSupport.getStateFlowing(stateKeys[keyIndex+1])){
+            flowingSupport.addFlowing(window[gedeId] , 1);
+        }
+        updateGedeLabel(state);
+    }
+    function updateGedeLabel(state){
+        var name;
+//        var keyIndex = stateKeys.indexOf(state);
+        var finished = '已完成';
+        var nodeName;
+        var url;
+        for(var i=0,len=stateKeys.length;i<len;i++){
+            name= 'noedgede'+stateKeys[i];
+            nodeName = 'node'+stateKeys[i];
+
+            url = imgPath+stateKeys[i]+'_3.png';
+            if(window[nodeName] && window[nodeName].image !=url){
+                window[nodeName].image = url;
+            }
+//            console.log('nodeName: ',nodeName,window[nodeName].image);
+            if(window[name] && window[name].name != finished){
+                window[name].name = finished;
+                window[name].setStyle(Q.Styles.EDGE_COLOR, "#2c2c2c");
+            }
+            if(state==stateKeys[i]){
+                name= 'noedgede'+stateKeys[i+1];
+//                nodeName = 'node'+stateKeys[i+1];
+                if(window[nodeName]){
+                    window[nodeName].image = imgPath+stateKeys[i]+'_2.png';
+                }
+
+                if(window[name]){
+                    window[name].name = '进行中';
+                    window[name].setStyle(Q.Styles.EDGE_COLOR, "#1afa29");
+                }
+                return ;
+            }
+        }
+    }
+    $(function () {
+        /**
+         * This file is part of Qunee for HTML5.
+         * Copyright (c) 2016 by qunee.com
+         **/
+
+//        timeout = window.setTimeout(updateState, _time);
+
+
+
+        var startPointX = -800;
+        var startPointY= -50;
+
+        var graph = new Q.Graph(canvas);
+        flowingSupport = new FlowingSupport(graph);
+        var nameID='';
+        for(var i=0,len=stateArr.length;i<len;i++){
+            nameID = stateArr[i][0];
+            window['node'+nameID] = graph.createNode( stateArr[i][1], startPointX+(i*150), -startPointY);
+            window['node'+nameID].image = imgPath+nameID+'_1.png';  // Q.Graphs.server;
+            window['node'+nameID]._state = nameID;
+
+            if(clickArr.includes(nameID)){
+                window['node'+nameID].clickable = true;
+            }
+            if(i!=0){
+                window['noedgede'+nameID] = graph.createEdge("未进行", window['node'+ stateArr[i-1][0]], window['node'+nameID]);
+                window['noedgede'+nameID].setStyle(Q.Styles.EDGE_COLOR, "#bdbdbd");
+                window['noedgede'+nameID]._state = nameID;
+                window['noedgede'+nameID].setStyle(Q.Styles.EDGE_LINE_DASH, [8, 4, 1, 4]);
+                window['noedgede'+nameID].edgeType = Q.Consts.EDGE_TYPE_HORIZONTAL_VERTICAL;
+            }
+        }
+
+
+
+        flowingLine = graph.createShapeNode("任务："+taskId+" 进行中");
+        flowingLine.moveTo(-800, -50);
+        flowingLine.lineTo(1200, -50);
+        flowingLine.curveTo(1400, -50, 1400, 150, 1200, 150);
+        flowingLine.lineTo(-800, 150);
+        flowingLine.curveTo(-1000, 150, -1000, -50, -800, -50);
+        flowingLine.closePath();
+        flowingLine.setStyle(Q.Styles.SHAPE_STROKE_STYLE, "#36f726");
+        flowingLine.setStyle(Q.Styles.SHAPE_LINE_DASH, [8, 5, 0.1, 6]);
+        flowingLine.setStyle(Q.Styles.SHAPE_STROKE, 3);
+        flowingLine.setStyle(Q.Styles.LINE_CAP, "round");
+        flowingLine.setStyle(Q.Styles.SHAPE_OUTLINE_STYLE, "#edf726");
+        flowingLine.setStyle(Q.Styles.LAYOUT_BY_PATH, false);
+
+        flowingSupport.addFlowing(flowingLine, 1, true);
+//        flowingSupport.addFlowing(line2, 2, true);
+        if($('.Q-Canvas').length>1){
+            $('.Q-Canvas')[1].remove();
+        }
+        graph.callLater(function(){
+            flowingSupport.start();
+        })
+
+        graph.addCustomInteraction({
+//            onstart: function(evt, graph){
+//                console.log("start");
+//            },
+            onclick: function(evt, graph){
+                Q.log("click");
+                var ui = graph.getUIByMouseEvent(evt);
+                if(ui && ui.data.clickable){
+                    window.open(stateCorrespondUrl[ui.data._state]);
+//                    console.log("Clicked at - '" + ui.data.name + "'");
+                }
+            }
+        });
+        updateState();
+    });
+</script>
+</body>
+</html>

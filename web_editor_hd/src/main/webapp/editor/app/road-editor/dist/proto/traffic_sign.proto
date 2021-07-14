@@ -1,0 +1,80 @@
+syntax = "proto2";
+package kd.mapping.proto;
+import "common.proto";
+
+enum TrafficSignShape {
+  UNKNOWN = 0;
+  SQUARE = 1;
+  ROUND = 2;
+  TRIANGLE = 3;
+}
+
+message Corners {
+  //
+  optional BLH top_left = 1;
+  optional BLH top_right = 2;
+  optional BLH bottom_left = 3;
+  optional BLH bottom_right = 4;
+}
+
+message Pixel {
+  optional int32 pixel_x = 1;
+  optional int32 pixel_y = 2;
+}
+
+message TrafficSign {
+  optional TrafficSignShape type = 1;
+  //
+  optional BLH n1 = 2;
+  //
+  optional BLH n2 = 3;
+  //
+  optional BLH n = 4;
+  //
+  optional double width = 5 [ default = 0.0 ];
+  //
+  optional double height = 6 [ default = 0.0 ];
+  //
+  optional BLH c0 = 7;
+  //
+  optional double area = 8 [ default = 0.0 ];
+  //
+  optional Corners sign_points = 10;
+  //
+  repeated BLH sign_convex_points = 11;
+  //
+  optional string track_id = 12;
+  //
+  repeated Pixel pixels = 13;
+  //
+  optional string shape = 14;
+  //
+  optional int32 frame_id = 17;
+  //
+  optional string track_point_id = 18;
+  //
+  optional double score = 20 [ default = 1.0 ];
+  //
+  optional string sign_src = 21;
+  //
+  repeated LidarElementPoint point_cloud = 25;
+  //
+  optional string sign_type1 = 26;
+  //
+  optional string sign_type2 = 27;
+  //
+  optional string sign_cont = 28;
+  //
+  repeated string sub_signs_type1 = 29;
+  //
+  repeated string sub_signs_type2 = 30;
+  //
+  repeated string sub_signs_cont = 31;
+  //
+  optional int32 sign_id = 32;
+}
+
+message TrafficSigns {
+  optional string track_id = 1;
+  repeated TrafficSign traffic_signs = 2;
+}

@@ -1,0 +1,101 @@
+.wrapper{
+	background-color: #FFFFFF !important;
+}
+/*查询条件*/
+.search_param{
+	margin-top: 10px;
+	margin-left: 10px;
+	float: left;
+	/*position: absolute;*/
+	width: calc(100% - 420px);
+}
+.search_param .form_child{
+	float: left;
+	width: 200px;
+	margin-bottom: 10px;
+	/*margin-right: 10px;*/
+}
+.search_param .form_child label{
+	float: left;
+	max-width: 80px;
+	margin-bottom: 0px;
+}
+.search_param .form_child input,
+.search_param .form_child select{
+	float: left;
+	padding: 0px;
+    height: 22px;
+    line-height: 20px;
+    width: 120px;
+}
+.search_param .form_child button{
+	height: 20px;
+	font-size: 10px;
+	padding: 0px 10px;
+	line-height: 20px;
+}
+/*信息汇总*/
+.search_info{
+	/*position: absolute;*/
+	float: right;
+	margin-top: 10px;
+	margin-right: 0px;
+	width: 400px;
+}
+.search_info h4{
+	margin: 0px;
+}
+.search_info .info_summary{
+	padding: 5px;
+    max-height: 100px;
+    overflow-x: auto;
+}
+.search_info .info_summary p{
+	margin: 0px;
+}
+/*列表*/
+.search_body{
+	float: left;
+	width: 100%;
+}
+.input_select{
+	z-index: 99;
+	padding: 0px;
+	display: none;
+	cursor: default;
+	overflow-y: auto;
+	max-height: 300px;
+	overflow-x: hidden;
+	position: absolute;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+}
+.input_select li{
+	padding: 2px;
+}
+.input_select li:hover{
+	background-color: #55ACEE;
+}
+
+#markResultTable .manage button{
+	padding: 5px;
+}
+
+.modal-body .image_result{
+	width: 79%;
+	margin-right: 1%;
+	height: 100%;
+}
+.modal-body .image_result img{
+	width: 100%;
+	height: 100%;
+}
+.modal-body .info_result{
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+.modal-body .info_result textarea{
+	width: 100%;
+	height: 100%;
+}

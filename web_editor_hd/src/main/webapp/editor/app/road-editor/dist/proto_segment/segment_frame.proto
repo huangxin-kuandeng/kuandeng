@@ -1,0 +1,12 @@
+syntax = "proto2";
+import "blocks.proto";
+import "seg_contour.proto";
+
+message SegmentFrame{
+    optional string track_id = 1;//轨迹编号
+    optional string track_point_id = 2;//轨迹点编号
+    optional int32 frame_id = 3;//帧号，从1开始
+    repeated Blocks block = 4;//每个轮廓的信息
+    repeated SegContour seg_contours = 5;//seg图每个原始轮廓
+    optional string version = 9;// 要素提取服务的版本
+}

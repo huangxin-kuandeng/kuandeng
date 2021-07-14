@@ -1,0 +1,18 @@
+{
+    "url": {
+        "buried_point": "http://10.11.5.112:38888/",
+        "forward_intersection": "http://srv-11.gzproduction.com:20430/service/frontintersectex",
+        "kcs_edit": "http://10.11.5.80:13530/kcs-edit/",
+        "kd_auth_server": "http://srv-10.gzproduction.com:13920/kd-auth-server/",
+        "kd_tag": "http://10.11.5.80:13130/kd-tag/",
+        "kds_data": "http://srv-10.gzproduction.com/kds-data-v2/",
+        "kds_meta": "http://srv-10.gzproduction.com/kds-meta/",
+        "kms": "http://10.11.5.80:13320/kms/",
+        "krs": "http://srv-10.gzproduction.com/krs/",
+        "kts": "http://10.11.5.81:13300/kts/",
+        "projectDispatch": "http://10.11.5.81:12900/",
+        "task_frame": "http://10.11.5.81:12900/",
+        "track_image": "http://10.11.5.248:9527/prd/",
+        "track_location": "http://192.168.8.10:1973/beijing/cache/query"
+    }
+}

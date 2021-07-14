@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="X-Frame-Option" content="SAMEORIGIN">
+  <title>公路病害平台</title>
+  <link rel="shortcut icon" href="./Apps/Dist/Img/favicon1.ico" >
+  <script src="./Apps/Dist/Js/jquery/jquery-3.4.1.min.js"></script>
+  <script src="./Apps/Dist/Js/lodash/lodash.min.js"></script>
+	<script src="./Apps/Dist/Js/spop/spop.min.js"></script>
+  <script src="./Apps/Dist/Js/config.js"></script>
+  <script src="./Apps/Dist/Js/boot.js"></script>
+  <script src="./Apps/Dist/Js/methed.js"></script>
+  
+  <style>
+      @import url(./Build/Cesium/Widgets/widgets.css);
+      @import url(./Apps/Dist/Js/spop/spop.min.css);
+      @import url(./Apps/Dist/Css/disease_header.css);
+      @import url(./Apps/Dist/Css/disease_model.css);
+      @import url(./Apps/Dist/Css/iconfont.css);
+  </style>
+</head>
+<body>
+	<div id="user_role">
+		<h3>账户设置</h3>
+		<div>
+			<p>
+				<label>会员名 :</label>
+				<span class="user_name"></span>
+			</p>
+			<p>
+				<label>登录邮箱 :</label>
+				<span class="user_name"></span>
+			</p>
+		</div>
+		<div>
+			<p class="citylists">
+				<label>默认显示城市 :</label>
+			</p>
+		</div>
+	</div>
+	<div id="highway_disease">
+		<!--header-->
+		<div class="data_header">
+			<div class="button_list">
+				<!--<h3></h3>-->
+				<h3>
+					<!--<img class="user_logo" src="./Apps/Dist/Img/chengshi@2x/beijing.png" />-->
+					<img src="./Apps/Dist/Img/logo_new.png" />
+				</h3>
+				<div class="business_name">
+					<a class="business_open" title="">
+						公路损坏检测和管理
+						<span class="iconfont iconxiasanjiao"></span>
+					</a>
+					<ul class="business_list">
+						<li class="active">公路损坏检测和管理</li>
+						<li>其他业务</li>
+					</ul>
+				</div>
+			</div>
+			<div class="button_other">
+				<a href="#" class="" title="用户">
+					<span class="user_name"></span>
+					<span class="users_select">›</span>
+				</a>
+				<ul class="user_install" style="right: 16px;">
+					<li class="user_handle" title="退出当前用户">退出</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="./Apps/Dist/Main/user.js"></script>
+<!-- <script src="./Apps/Dist/Js/user_config.js"></script> -->

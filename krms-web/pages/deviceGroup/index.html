@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>设备分组管理</title>
+  <!--<link rel="shortcut icon" href="../../dist/img/favicon1.ico" >-->
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <script type="text/javascript" src="../../config.js" ></script>
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="../../dist/css/main.css">
+	<!--spop提示信息-->
+	<link rel="stylesheet" href="../../bower_components/spop/spop.min.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<div class="header">
+			<h4 style="margin:0px;">设备分组管理</h4>
+		</div>
+    <div class="bodyInfo">
+			<div class="CameraButtons" style="margin-bottom:10px;">
+		    <a class="btn btn-social btn-success createGroup">
+        	<i class="fa fa-plus"></i> 新增设备组
+        </a>
+	    </div>
+    </div>
+    <div class='testmodal'></div>
+		<div class='devicemodal'></div>
+		<div class='modalPicker'></div>
+		
+    <div class="box box-primary box-solid">
+			<div class="box-header with-border">
+      	<h3 class="box-title">设备分组管理</h3>
+    	</div>
+			<div class="searchType" style="padding: 10px;float: left;">
+				<select class="form-control" style="width:200px;float:left;">
+        	<option value="id">根据设备组id查找</option>
+        	<option value="name">根据设备组名称查找</option>
+        </select>
+        <input type="text" class="form-control searchTypeValue" placeholder="回车搜索" onfocus="this.placeholder=''" onblur="this.placeholder='回车搜索'" style="float:left;width:130px;margin:0px 5px;">
+    	</div>
+    	<div class="box-body"></div>
+    	
+    	
+    </div>
+		<div id="loading" onclick="$.spopView({text:'请耐心等待...'})">
+			<img src="../../dist/img/loading.gif" title="等待中">
+		</div>
+	</div>
+</body>
+</html>
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!--配置文件-->
+<script src="../../boot.js"></script>
+<!--功能配置-->
+<script src="../../dist/js/util.js" type="text/javascript" charset="utf-8"></script>
+<!--登陆系统-->
+<script src="../../dist/js/jquery.oauth2-client.js"></script>
+<!--配置文件-->
+<script src="../../dist/js/login.js"></script>
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!--spop提示信息-->
+<script src="../../bower_components/spop/spop.min.js"></script>
+<script src="./main.js"></script>
+

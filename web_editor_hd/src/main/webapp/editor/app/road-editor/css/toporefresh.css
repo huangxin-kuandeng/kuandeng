@@ -1,0 +1,70 @@
+
+#topoRefresh{
+    width: 160px;
+    height: 40px;
+    float: left;
+	margin-left: 5px;
+    position: relative;
+    border-radius: 5px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+#topoRefresh>button{
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 38px;
+    text-align: left;
+    padding-left: 10px;
+    position: absolute;
+    border-radius: 5px 0px 0px 5px;
+}
+#topoRefresh ul.topo-refresh-menu{
+    top: 40px;
+    left: -1px;
+    margin: 0px;
+    padding: 0px;
+    width: 160px;
+	display: none;
+    border-radius: 5px;
+	position: absolute;
+	background: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+#topoRefresh ul.topo-refresh-menu button{
+	width: 100%;
+    height: 38px;
+    text-align: left;
+    padding-left: 10px;
+}
+#topoRefresh ul.topo-refresh-menu li:first-child,
+#topoRefresh ul.topo-refresh-menu li:first-child button{
+    border-radius: 5px 5px 0px 0px;
+}
+#topoRefresh ul.topo-refresh-menu li:last-child,
+#topoRefresh ul.topo-refresh-menu li:last-child button{
+    border-radius: 0px 0px 5px 5px;
+}
+#topoRefresh ul.topo-refresh-menu li button:hover{
+	background-color: rgba(0,0,0,0.1);
+}
+#topoRefresh span{
+    top: 0px;
+    right: 0px;
+    width: 40px;
+    color: #000;
+    height: 40px;
+	cursor: pointer;
+    font-size: 24px;
+	font-weight: bold;
+    line-height: 34px;
+    text-align: center;
+    position: absolute;
+	transform: rotate(-90deg);
+}
+#topoRefresh span.refresh-toggle-top{
+	/* transform: rotate(-90deg); */
+}
+#topoRefresh span.refresh-toggle-bottom{
+	transform: rotate(90deg);
+}

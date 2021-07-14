@@ -1,0 +1,332 @@
+
+
+/*********************地图界面*********************/
+#highway_disease #cesium_map_parent{
+	width: 100%;
+	height: calc(100% - 49px);
+}
+#highway_disease #cesium_map_parent .cesium_map_left{
+	width: 345px;
+	height: 100px;
+	float: left;
+}
+#highway_disease #cesium_map_parent #cesium_map{
+	/*width: 100%;*/
+	/*height: calc(100% - 63px);*/
+	width: calc(100% - 345px);
+	height: 100%;
+	float: left;
+	background-color: #10172D;
+}
+
+/*cesium地图的控制组件*/
+#highway_disease #cesium_map_parent .cesium_control{
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	margin-top: -122px;
+	z-index: 109;
+}
+#highway_disease #cesium_map_parent .cesium_control>div{
+	width: 22px;
+	height: 25px;
+	margin: 0 auto;
+	padding: 0px 1px;
+	margin-bottom: 2px;
+	border-radius: 2px;
+	background: rgba(255, 255, 255, 0.6);
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.1);
+}
+#highway_disease #cesium_map_parent .cesium_control>div:hover,
+#highway_disease #cesium_map_parent .cesium_control>div.active{
+	background: rgba(255, 255, 255, 1);
+}
+#highway_disease #cesium_map_parent .cesium_control>div.full_screen{
+	height: 24px;
+}
+#highway_disease #cesium_map_parent .cesium_control>div.zoom_in,
+#highway_disease #cesium_map_parent .cesium_control>div.zoom_level{
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+#highway_disease #cesium_map_parent .cesium_control>div.zoom_in{
+	border-radius: 2px 2px 0px 0px;
+}
+#highway_disease #cesium_map_parent .cesium_control>div.zoom_out{
+	height: 24px;
+	margin-bottom: 2px;
+	border-radius: 0px 0px 2px 2px;
+}
+
+#cesium_map_parent .cesium_control>div a{
+	float: left;
+    width: 22px;
+    height: 24px;
+    display: block;
+    color: #0F1935;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+}
+#cesium_map_parent .cesium_control>div.full_screen a{
+    background-position: 5px;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/home.png);
+}
+#cesium_map_parent .cesium_control>div.zoom_in a,
+#cesium_map_parent .cesium_control>div.zoom_level a{
+	border-bottom: 1px solid #31384C;
+}
+#cesium_map_parent .cesium_control>div.cesium_layers a{
+    background-position: 5px;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/map_layers.png);
+}
+#cesium_map_parent .cesium_control>div.cesium_search{
+	position: relative;
+}
+#cesium_map_parent .cesium_control>div.cesium_search input.cesium_search_value{
+	position: absolute;
+	right: 40px;
+	top: 0px;
+	
+	white-space: nowrap;
+	border: solid 1px #444444;
+    background-color: rgba(40,40,40,.7);
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    width: 0px;
+    display: none;
+    height: 40px;
+    font-size: 12px;
+    margin: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+	
+	line-height: 40px; 			/*IE8*/
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 40px;		/*火狐*/
+	
+}
+
+#cesium_map_parent .cesium_control>div.cesium_move{
+	width: 63px;
+	height: 63px;
+	border-radius: 32px;
+	margin-bottom: 15px;
+	position: relative;
+}
+#cesium_map_parent .cesium_control .cesium_move span{
+	position: absolute;
+	display: block;
+	font-size: 12px;
+	color: #121F3E;
+	text-align: center;
+	height: 6px;
+	width: 6px;
+	cursor: pointer;
+	
+	line-height: 6px; 			/*IE8*/
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 6px;		/*火狐*/
+}
+#cesium_map_parent .cesium_control .cesium_move span.cesium_move_text{
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: #121F3E;
+	border: 1px solid #3F475C;
+	margin: 0 auto;
+	top: 50%;
+	left: 0px;
+	right: 0px;
+	margin-top: -19px;
+	border-radius: 20px;
+	
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 38px;		/*火狐*/
+}
+#cesium_map_parent .cesium_control .cesium_move span.cesium_move_up{
+    width: 0;
+    height: 0;
+    border-width: 0 3px 4px;
+    border-style: solid;
+    border-color: transparent transparent #0F1935;
+	top: 5px;
+	left: 50%;
+	margin-left: -3px;
+}
+#cesium_map_parent .cesium_control .cesium_move span.cesium_move_left{
+	left: 3px;
+	top: 50%;
+	margin-top: -3px;
+}
+#cesium_map_parent .cesium_control .cesium_move span.cesium_move_right{
+	right: 3px;
+	top: 50%;
+	margin-top: -3px;
+}
+#cesium_map_parent .cesium_control .cesium_move span.cesium_move_down{
+	transform: rotate(90deg);
+	bottom: 3px;
+	margin: 0 auto;
+	left: 0px;
+	right: 0px;
+}
+
+/*cesiumNavigationContainer--隐藏部分插件--比例尺样式*/
+#distanceLegendDiv{
+	display: none !important;
+}
+.cesium-widget-cesiumNavigationContainer .distance-legend{
+	border: none;
+	background: none;
+	display: block !important;
+}
+.cesium-widget-cesiumNavigationContainer .distance-legend .distance-legend-scale-bar{
+	left: 29px !important;
+	width: 75px !important;
+	border-bottom: 2px solid #fff;
+	text-align: center !important;
+	box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+.cesium-widget-cesiumNavigationContainer .distance-legend .nav_logo{
+    right: 75px;
+    margin: 0px;
+    bottom: 8px;
+    height: 14px;
+    padding: 0px;
+    right: 115px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 24px;
+	position: absolute;
+    width: max-content;
+    text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000;
+}
+.cesium-widget-cesiumNavigationContainer .distance-legend .distance-legend-label{
+    text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000;
+}
+/*图层*/
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list{
+	top: 102px;
+	right: 26px;
+	padding: 16px;
+	display: none;
+	position: absolute;
+	border-radius: 4px;
+	width: max-content;
+    height: max-content;
+	padding-bottom: 0px;
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.10);
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li{
+	/*height: 16px;*/
+	line-height: 16px;
+	margin-bottom: 16px;
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li label{
+    width: 100%;
+    height: 16px;
+    display: block;
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li label span{
+	float: left;
+	color: #000000;
+	font-size: 14px;
+	font-family: HiraginoSansGB-W3;
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li span.radio_label{
+    height: 14px;
+	display: block;
+    color: #000000;
+	cursor: pointer;
+	font-size: 14px;
+	margin: 14px 0px;
+	margin-left: 12px;
+	line-height: 14px;
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li span.radio_label:last-child{
+	margin-top: 0px;
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li span.radio_label b{
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    border-radius: 100px;
+    border: 1px solid rgba(81, 103, 247, 0.5);
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li span.radio_label.active b {
+    width: 6px;
+    height: 6px;
+    border: 4px solid #5167F7;
+}
+
+
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li label .checkbox_b{
+	margin-right: 12px;
+	background-image: url(../Img/checkbox_1.png);
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li label .checkbox_b:hover{
+	background-image: url(../Img/checkbox_1.png);
+}
+#highway_disease #cesium_map_parent .cesium_control ul.layer_list li label input[type=checkbox]:checked + .checkbox_b {
+    background-image: url(../Img/checkbox_ed_1.png);
+}
+
+
+.player_video svg path{
+	fill-opacity: 0 !important;
+	/*stroke-width: 2 !important;*/
+}
+.player_video .leaflet-marker-icon{
+	display: none;
+    color: #EC3A4E;
+	font-size: 12px;
+	height: auto !important;
+	width: max-content !important;
+    text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+.player_video .leaflet-marker-icon.current_text{
+	font-size: 14px;
+}
+.player_video .leaflet-marker-icon:hover{
+    color: #00FFC8;
+}
+
+.mapboxgl-canvas-container{
+	cursor: auto !important;
+}
+#cesium_map_parent ul.PQIlegend{
+	width:250px;
+	height:24px;
+	background: #ffffff66;
+	position: fixed;
+    left: calc(100% - 300px);
+    top: calc(100% - 40px);
+	z-index: 1;
+	text-align: center;
+	font-size: 12px;
+    padding-top: 8px;
+    border-radius: 10px;
+}
+#cesium_map_parent li.PQIlegend_text{
+	margin-left:8px; 
+	width: 30px;
+	height:8px;
+	float: left;
+}
+#cesium_map_parent li.PQIlegend_icon{
+	margin-left:4px; 
+	width: 20px;
+	height:8px;	
+	float: left;
+}

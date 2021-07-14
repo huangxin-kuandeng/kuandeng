@@ -1,0 +1,120 @@
+
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: visible;
+}
+.slide-item-body ul li {
+    width: 33.333%;
+    float: left;
+    display: block;
+    height: 200px;
+    padding-top: 42px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    height: inherit;
+    padding-top: 0;
+    border-radius: 0;
+    color: #000;
+    z-index: 10002
+}
+.new-img img {
+    width: 100%;
+    height: auto;
+    border: none;
+    display: block
+}
+.slide-item {
+    width: 1264px;
+    padding: 0px 6px;
+	position: absolute;
+    z-index: 11;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    top: 30%;
+}
+.new-body {
+    padding: 20px 20px 40px
+}
+.new-body-title {
+    line-height: 24px;
+    font-size: 14px;
+    overflow: hidden;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.slide-item-body {
+    /*margin-left: -70px;*/
+}
+.slide-item-body ul li {
+	width: 402px !important;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.slide-item-body ul {
+    padding-top: 10px;
+    overflow: visible
+}
+
+
+.next {
+    position: absolute;
+    top: 35%;
+    z-index: 10;
+    cursor: pointer;
+    -moz-background-size: 60px;
+    -webkit-background-size: 60px;
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    right: auto;
+    left: -62px;
+    height: 60px;
+    width: 60px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease
+}
+
+.next-bg {
+    background-image: url(./btn-fl1.png)
+}
+
+
+.prev {
+    position: absolute;
+    top: 35%;
+    z-index: 10;
+    cursor: pointer;
+    -moz-background-size: 60px;
+    -webkit-background-size: 60px;
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    right: -64px;
+    height: 60px;
+    width: 60px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease
+}
+
+.prev-bg {
+    background-image: url(./btn-fr1.png)
+}
+

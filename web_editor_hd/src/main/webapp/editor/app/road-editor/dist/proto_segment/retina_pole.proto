@@ -1,0 +1,14 @@
+syntax = "proto2";
+import "retina_pole_type.proto";
+
+message RetinaPole{
+    optional pole_type.PoleTypeId pole_type = 1;//目前无定义
+    optional float score = 2;//识别可信度
+    optional string src = 3;//原图 暂时不写，空置
+    optional pole_type.BBOX bbox = 4;// bbox
+    optional pole_type.ClassId sub_type = 5;//classid
+
+    optional string first_type = 20; // 二次分类类型 目前无定义
+    optional string second_type = 21; // 二次分类类型 目前无定义
+
+}

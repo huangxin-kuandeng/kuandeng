@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>用户登录</title>
+<link rel="shortcut icon" href="./Apps/Dist/Img/favicon1.ico" >
+<!-- Custom Theme files -->
+<!--<link href="./Apps/Dist/login/login.css" rel="stylesheet" type="text/css" media="all"/>-->
+<link href="./Apps/Dist/login/login.min.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="./Apps/Dist/Js/spop/spop.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="./Apps/Dist/Js/jquery/jquery-3.4.1.min.js"></script>
+<script src="./Apps/Dist/login/crypto-js.min.js"></script>
+<script src="./Apps/Dist/Js/methed.js"></script>
+<script src="./Apps/Dist/Js/spop/spop.min.js"></script>
+<script src="./Apps/Dist/login/boot.js"></script>
+
+</head>
+<body>
+<div class="login-logo">
+	
+</div>
+<div class="login-top-background">
+	<div class="top-bg-title">
+		<h2></h2>
+		<h4></h4>
+		<p></p>
+		<button class="login_button" title="登录">登录</button>
+	</div>
+</div>
+<div class="login">
+	<div class="login-top">
+		<div class="col-md-12 userName">
+			<label><span>请输入正确的</span>用户名/邮箱</label>
+			<input type="text" value="" >
+			<span class="errorView"></span>
+		</div>
+		<div class="col-md-12 passWord">
+			<label><span>请输入正确的</span>密码</label>
+			<input type="password" value="" >
+			<span class="errorView"></span>
+		</div>
+		<div class="col-md-12 userCode">
+			<label><span>请输入正确的</span>验证码</label>
+			<input type="text" value="" >
+			<span class="errorView"></span>
+			<div class="userCodeImage">
+				<img src="" class="changeCodeImage" alt="验证码" title="刷新验证码" />
+				<a href="#" class="changeCodeImage" title="换一换">换一换</a>
+			</div>
+		</div>
+		<div class="forget">
+			<div class="label">
+			    <input type="radio" id="female" checked="checked" />
+			    <label for="female">记住我</label>
+			</div>
+			<!--<label>
+				<input type="radio" />
+				<span>记住我</span>
+			</label>-->
+			<!--<a href="#" title="忘记密码">忘记密码</a>-->
+		</div>
+	    <button class="submit_button" title="登录">登录</button>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+<script>
+	$(document).ready(function (){
+		
+		window.password_radio = true;
+		window.verifyCodeId = null;
+		
+		let userInfo = $.getLocalStorage('userInfo') || '{}',
+			newUserInfo = JSON.parse(userInfo);
+			        
+		newUserInfo = newUserInfo.isCatch ? newUserInfo : {};
+			        
+		let _username = newUserInfo.userName || '',
+            atobPassWord = newUserInfo.passWord || '',
+            _password = window.atob(atobPassWord);
+		
+		$('.userName input').val(_username);
+		$('.passWord input').val(_password);
+		
+		/*取消选中--记住选项*/
+		$('.forget .label input').click(function(){
+			window.password_radio = !window.password_radio;
+			this.checked = window.password_radio;
+		})
+		$('.login-top .col-md-12 input').keydown(function(e){
+			if(e.keyCode == 13){
+				submit_login();
+			}
+		})
+		/*点击登录--进入登录界面*/
+		$('button.login_button').click(function(){
+			$('.top-bg-title').css('display', 'none');
+			$('.login-top-background').css('opacity', '0.5');
+			$('.login').fadeIn(100);
+		})
+		
+		/*点击登录--进入主页面*/
+		$('button.submit_button').click(function(){
+			submit_login();
+		})
+		
+		/*点击验证码图片、换一换按钮，改变验证码图片*/
+		$('.changeCodeImage').click(function(){
+			loadVerifyCode();
+		})
+		
+		/*登录当前用户*/
+		function submit_login(){
+			let userName = $('.userName input').val(),
+				passWord = $('.passWord input').val(),
+				verifyCode = $('.userCode input').val(),
+				
+				key = CryptoJS.enc.Utf8.parse(config_url.key),
+				password = CryptoJS.enc.Utf8.parse(passWord),
+            	encrypted = CryptoJS.AES.encrypt(password, key, {mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7});
+            	encryptedPwd = encrypted.toString(),
+				
+				formData = new FormData();
+			
+			formData.append('username', userName);
+			formData.append('password', encryptedPwd);
+			formData.append('verifyCodeId', window.verifyCodeId);
+			formData.append('verifyCode', verifyCode);
+			
+			$('.userName').removeClass('error');
+			$('.passWord').removeClass('error');
+			$('.userCode').removeClass('error');
+			
+			if(!userName){
+				$.errorView('用户名不能为空！');
+				loadVerifyCode();
+				return;
+			}else if(!passWord){
+				$.errorView('用户密码不能为空！');
+				loadVerifyCode();
+				return;
+			}else if(!verifyCode){
+				$.errorView('验证码不能为空！');
+				loadVerifyCode();
+				return;
+			}
+			btn_disabled(true);			//禁用按钮
+			let _url = config_url.pdds+'user/loginPlus';
+		    $.ajax( {
+		        type : 'POST',
+		        url : _url,
+	        	async : true,
+				processData: false,
+				contentType: false,
+		        data : formData,
+		        success : function(data) {
+		        	btn_disabled();			//启用按钮
+		        	var _dom = null;
+					if(data.code == '20001'){
+						_dom = 'userName';
+					}else if(data.code == '20002'){
+						_dom = 'passWord';
+					}else if(data.code == '20008'){
+						_dom = 'userCode';
+					}
+					
+					if(data.code != '0'){
+						$.errorView(data.message);
+						inputError(_dom);
+						return;
+					}
+					
+					var token = data.result.token;
+					if(!token){
+						$.errorView('登录失败：token不存在！');
+						return;
+					}
+					
+					$.removeLocalStorage('userInfo');
+					
+					var btoaPassWord = window.btoa(passWord);
+					$.setLocalStorage('userInfo',{
+						'userName': userName,
+						'cnName': data.result.name,
+						'passWord': btoaPassWord,
+						'isCatch': window.password_radio
+					})
+
+					$.errorView('登录成功',true);
+					$.setCookie({
+						name: 'token',
+						value: token
+					})
+					
+					login_html();
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			   		console.log(XMLHttpRequest.status+'---'+XMLHttpRequest.readyState+'---'+textStatus);
+		            $.errorView('系统异常');
+		        }
+			});
+		}
+		
+		/*登录按钮--禁用/启用*/
+		function btn_disabled(type=false){
+			var _disabled = type ? 'disabled' : false;
+			$('.submit_button').attr('disabled', _disabled);
+		}
+		
+		/*登陆成功跳转页面*/
+		function login_html(){
+			var timeout = setTimeout(function(){
+				let _url = './index.html';
+				window.open(_url, '_self');
+			},200)
+		}
+		
+		/*用户名、密码、验证码错误*/
+		function inputError(dom){
+			$('.'+dom).addClass('error');
+			loadVerifyCode();
+		}
+		
+		/*去加载验证码ID*/
+		function loadVerifyCode(){
+			let _url = config_url.pdds+'verifyCode/getVerifyCodeId';
+			$.getAjaxNoToken({
+				url: _url,
+				callback: function(data){
+					if(data.code != '0'){
+						$.errorView('验证码获取失败！');
+						return;
+					}
+					
+					window.verifyCodeId = data.result || '';
+					var code_img = config_url.pdds+'verifyCode/img?verifyCodeId='+window.verifyCodeId;
+					$('.userCode .userCodeImage img').attr('src', code_img);
+					
+				}
+			})
+		}
+		
+		loadVerifyCode();
+		
+    });
+	
+</script>

@@ -1,0 +1,7 @@
+syntax = "proto2";
+import "common.proto";
+message ELLIPSE {
+        optional PointInt center = 1;//轮廓的中心点像素坐标
+        optional float width = 2;//轮廓宽度
+        optional float height = 3;//轮廓长度
+}

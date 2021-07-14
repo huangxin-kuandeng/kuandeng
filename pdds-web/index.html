@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-Frame-Option" content="SAMEORIGIN">
+    <title>公路养护与管理系统</title>
+    <link rel="shortcut icon" href="./Apps/Dist/Img/favicon1.ico">
+    <script src="./Build/Cesium/Cesium.js"></script>
+    <script src="./Apps/Dist/lib/mapbox-gl.js"></script>
+    <!-- <script src="./Build/CesiumUnminified_1/Cesium.js"></script> -->
+    <!-- <script src="./Apps/Dist/Js/projection/viewerCesiumNavigationMixin.min.js"></script> -->
+    <script src="./Apps/Dist/Js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./Apps//Dist/lib/turf.min.js"></script>
+    <script src="./Apps/Dist/Js/jquery/pagination.js"></script>
+    <script src="./Apps/Dist/swiper/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="./Apps/Dist/Js/bootstrap-table-master/bootstrap-table.min.js"></script>
+    <script src="./Apps/Dist/Js/bootstrap-table-master/bootstrap-table-zh-CN.min.js"></script>
+    <script src="./Apps/Dist/Js/lodash/lodash.min.js"></script>
+    <script src="./Apps/Dist/Js/spop/spop.min.js"></script>
+    <script src="./Apps/Dist/Js/config.js"></script>
+    <script src="./Apps/Dist/Js/boot.js"></script>
+    <script src="./Apps/Dist/Js/projection/matrix.js"></script>
+    <script src="./Apps/Dist/Js/projection/util.js"></script>
+    <script src="./Apps/Dist/Js/projection/UTM.js"></script>
+    <script src="./Apps/Dist/Js/three/three.min.js"></script>
+    <script src="./Apps/Dist/Js/methed.js"></script>
+	<!-- <script src="./Apps/Dist/Js/leaflet/leafletjs.js"></script> -->
+    <script src="./Apps/Dist/Js/projection/ThreeLayers.js"></script>
+
+
+    <!-- <script src="./Apps/Dist/Js/disease_centre.js"></script>
+  <script src="./Apps/Dist/Js/disease_leaflet.js"></script>
+  <script src="./Apps/Dist/Js/disease_cesium.js"></script>
+  <script src="./Apps/Dist/Js/disease_group.js"></script>
+  <script src="./Apps/Dist/Js/disease_info.js"></script>
+  <script src="./Apps/Dist/Js/disease_init.js"></script>
+  <script src="./Apps/Dist/Js/disease_list.js"></script>
+  <script src="./Apps/Dist/Js/disease_player.js"></script>
+  <script src="./Apps/Dist/Js/disease_screen.js"></script>
+  <script src="./Apps/Dist/Js/disease_slide.js"></script>
+  <script src="./Apps/Dist/Js/disease_swiper.js"></script>
+  <script src="./Apps/Dist/Js/disease_user.js"></script>
+  <script src="./Apps/Dist/Js/projection/get_show_polygon.js"></script> -->
+    <!-- <script src="./Apps/Dist/Js/web_init.js" type="module"></script> -->
+    <!--<script src="./Apps/Dist/all.min.js"></script>-->
+    <script type="module">
+
+        // import {
+	  //     web_init
+	  // } from './Apps/Dist/Main/web_init';
+	  
+	  // web_init.html_init();
+	  
+  </script>
+    <style>
+        @import url(./Build/Cesium/Widgets/widgets.css);
+        @import url(./Apps/Dist//lib/mapbox-gl.css);
+        @import url(./Apps/Dist/Css/main.min.css);
+        @import url(./Apps/Dist/Js/spop/spop.min.css);
+        @import url(./Apps/Dist/Js/bootstrap-table-master/bootstrap-table.min.css);
+        @import url(./Apps/Dist/Css/list_page.css);
+        /* @import url(./Apps/Dist/Js/projection/potree/potree.css); */
+
+        /*隐藏logo*/
+        .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+            display: none !important;
+        }
+
+        .mapboxgl-ctrl-logo {
+            display: none !important;
+        }
+    
+            /* @import url(./Apps/Dist/Css/disease_center.css);
+      @import url(./Apps/Dist/Css/disease_cesium_map.css);
+      @import url(./Apps/Dist/Css/disease_cesium_popup.css);
+      @import url(./Apps/Dist/Css/disease_header.css);
+      @import url(./Apps/Dist/Css/disease_info.css);
+      @import url(./Apps/Dist/Css/disease_list.css);
+      @import url(./Apps/Dist/Css/disease_model.css);
+      @import url(./Apps/Dist/Css/disease_player.css);
+      @import url(./Apps/Dist/Css/disease_screen.css);
+      @import url(./Apps/Dist/Css/disease_slide.css);
+      @import url(./Apps/Dist/Css/disease_swiper.css);
+      @import url(./Apps/Dist/Css/list_page.css);
+      @import url(./Apps/Dist/Css/iconfont.css); */
+    </style>
+</head>
+
+<body>
+    <div id="mask_model"></div>
+    <div class="feedback_model">
+        <h4><span></span>反馈</h4>
+        <div>
+            <div class="select_value">
+                <input name="1" value="数据报错" readonly />
+                <i></i>
+            </div>
+
+            <ul class="select_option">
+                <li data-name="1">数据报错</li>
+                <li data-name="2">页面使用问题</li>
+                <li data-name="3">其它问题</li>
+            </ul>
+            <p><span>病害ID:</span><b class="pdds_id"></b></p>
+            <p><span>纵向裂缝:</span><b class="pdds_types"></b></p>
+            <p><span>损坏程度:</span><b class="view_level"></b></p>
+            <p><span>病害位置:</span><b class="info_view_type_2"></b></p>
+            <p><span>检测时间:</span><b class="info_view_type_3"></b></p>
+            <textarea class="desc" placeholder="补充 (非必填)"></textarea>
+            <button class="btn feedback_submit">提交</button>
+        </div>
+    </div>
+    <div id="data_center" class="ASSET_INSPECTION">
+
+        <div class="coordinate_info">
+
+        </div>
+
+        <div class="data_center_tab">
+            <ul>
+                <li data-name="road_analyse"><span></span>路段分析</li>
+                <li data-name="disease_analyse"><span></span>病害分析</li>
+                <li class="active" data-name="data_panel"><span></span>病害列表</li>
+                <li data-name="check_record"><span></span>巡检记录</li>
+                <li data-name="data_other"><span></span>其他数据</li>
+            </ul>
+        </div>
+        <div class="data_center_child road_analyse">
+            <div class="road_analyse_head">
+                <h3>统计路线</h3>
+                <div class="_param select_param select_road_analyse link_code_param">
+                    <p data-name="road_analyse">
+                        <span class="select_value" title="统计路线">统计路线</span>
+                        <b class="allow_select"></b>
+                    </p>
+                    <span class="mouse_span"></span>
+                    <ul class="disease_type" data-name="road_analyse">
+
+                    </ul>
+                </div>
+                <h3 class="select_statistical_unit_head" style="margin-left: 35px;">统计单位</h3>
+                <div class="_param select_param select_statistical_unit">
+                    <p data-name="statistical_unit">
+                        <span class="select_value" name="1" title="整公里桩">整公里桩</span>
+                        <b class="allow_select"></b>
+                    </p>
+                    <span class="mouse_span"></span>
+                    <ul class="disease_type" data-name="statistical_unit">
+						<li>
+							<label class="checkbox_label">
+								<input type="radio" name="statistical_unit" value="1" data-text="整公里桩" checked="checked">
+								<b class="checkbox_b"></b>
+								<span>整公里桩</span>
+							</label>
+						</li>
+						<li>
+							<label class="checkbox_label">
+								<input type="radio" name="statistical_unit" value="2" data-text="台账路段">
+								<b class="checkbox_b"></b>
+								<span>台账路段</span>
+							</label>
+						</li>
+                    </ul>
+                </div>
+                <a class="download_list" title="下载列表"><span>下载列表</span></a>
+            </div>
+            <div class="road_analyse_body"></div>
+        </div>
+        <div class="data_center_child disease_analyse">
+            <div class="disease_analyse_head">
+                <h3>统计路线</h3>
+                <div class="_param select_param select_disease_analyse link_code_param">
+                    <p data-name="disease_analyse">
+                        <span class="select_value" title="统计路线">统计路线</span>
+                        <b class="allow_select"></b>
+                    </p>
+                    <span class="mouse_span"></span>
+                    <ul class="disease_type" data-name="disease_analyse">
+
+                    </ul>
+                </div>
+                <div class="sort_list"></div>
+            </div>
+            <div class="disease_analyse_body"></div>
+        </div>
+        <div class="data_center_child check_record"><span>页面开发中···</span></div>
+        <div class="data_center_child data_other">
+
+            <div class="data_other_head">
+                <h3 class="data_other_head_h3" style="height: 36px;line-height: 36px;">路面宽度变化统计表</h3>
+                <h3>统计路线</h3>
+                <div class="_param select_param select_data_other link_code_param">
+
+                    <p data-name="data_other">
+                        <span class="select_value" title="统计路线">统计路线</span>
+                        <b class="allow_select"></b>
+                    </p>
+                    <span class="mouse_span"></span>
+                    <ul class="disease_type" data-name="data_other">
+
+                    </ul>
+
+                </div>
+                <div class="sort_list"></div>
+            </div>
+            <div class="data_other_body"></div>
+
+        </div>
+        <div class="data_center_child data_panel">
+            <div class="data_center_head">
+                <!-- <div class="search_param">
+					<button class="btn btn-primary" title="筛选">筛选</button>
+				</div> -->
+            </div>
+            <div class="data_center_body"></div>
+        </div>
+    </div>
+    <div id="highway_disease" class="ASSET_INSPECTION">
+        <!--header-->
+        <div class="data_header">
+            <div class="button_list">
+                <!--<h3></h3>-->
+                <h3>
+                    <!--<img class="user_logo" src="./Apps/Dist/Img/chengshi@2x/beijing.png" />-->
+                    <img src="./Apps/Dist/Img/logo_new.png" />
+                </h3>
+                <div class="business_name">
+                    <a class="business_open" title="">
+                        公路资产巡检和管理
+                        <span class="iconfont iconxiasanjiao"></span>
+                    </a>
+                    <ul class="business_list">
+                        <li class="active" data-name="ASSET_INSPECTION">公路资产巡检和管理</li>
+                        <li class="" data-name="PAVEMENT_DISTRESS">公路损坏检测和管理</li>
+                        <li data-name="">其他业务</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search_param tab-menu">
+                <span id="thirdbg"></span>
+                <ul id="hourlist">
+                    <li class="active" type="1">地图模式</li>
+                    <li type="2">数据中心</li>
+                </ul>
+                <!--<span class="iconfont iconsousuo"></span>
+				<input class="input search_input" placeholder="请输入城市名称或道路名称" title="搜索" />
+				<a href="#" class="link disease_ruler" title="测量"></a>-->
+            </div>
+            <div class="user_citys">
+                <span class="citys_name">***</span>
+                <span class="citys_select allow_select"></span>
+                <ul class="citys_list">
+
+                </ul>
+            </div>
+            <div class="button_other">
+                <a href="#" class="" title="用户">
+                    <span class="user_name"></span>
+                    <span class="users_select allow_select"></span>
+                </a>
+                <ul class="user_install">
+                    <li class="user_config" title="设置用户权限">设置</li>
+                    <li class="user_handle" title="退出当前用户">退出</li>
+                </ul>
+            </div>
+        </div>
+        <!--病害列表-->
+        <div class="screen_model">
+
+        </div>
+        <div class="disease_list">
+            <div class="open_disease_list">
+                <a href="#" class="left_arrow">
+
+                    <span></span>
+
+                </a>
+            </div>
+            <!--病害列表头部-->
+            <div class="disease_list_head">
+                <div class="disease_list_num">共<span>0</span>项</div>
+                <div class="disease_list_sort">
+                    <span class="disease_list_sort_icon"></span>
+                    <ul>
+                        <li class="active" type="1"><a href="#">检测时间</a></li>
+                        <li type="2"><a href="#">损坏程度</a></li>
+                        <li type="3"><a href="#">上行</a></li>
+                        <li type="4"><a href="#">下行</a></li>
+                    </ul>
+                </div>
+                <div class="disease_list_screen">
+                    <a class="screen_link" title="筛选"></a>
+                </div>
+            </div>
+            <!--病害列表内容-->
+            <div class="disease_list_body">
+
+            </div>
+            <div class="disease_list_foot">
+                <a class="user_feedback" title="数据加载中"></a>
+            </div>
+            <!--病害列表分页-->
+            <div id="page_lists" class="">
+            <!-- <a class="user_feedback" title="分页">分页</a> -->
+            </div>
+        </div>
+        <!--病害信息-->
+        <div class="disease_info">
+            <div class="info_header">
+                <a class="iconfont iconclose info_header_close" href="#" title="关闭病害信息"></a>
+                <div class="menu_manage">
+                    <a class="iconfont iconshenglvehao" href="#" title="菜单"></a>
+                    <div class="menu_list">
+                        <span class="triangle"></span>
+                        <ul class="menu_list_child">
+                            <li class="menu_collect"><span></span>收藏病害</li>
+                            <li class="menu_mark"><span></span>标记位置</li>
+                            <li class="menu_feedback"><span></span>反馈</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="info_view">
+                <div class="info_view_type">
+                    <p class="info_view_type_1">
+                        <b class="pdds_types">纵向裂缝</b>
+                        <span class="view_level">重度</span>
+                    </p>
+                    <p>
+                        <span class="icon_image icon_position"></span>
+                        <span class="info_view_type_2">S228 K56+500上行</span>
+                    </p>
+                    <p>
+                        <span class="icon_image icon_time"></span>
+                        <span class="info_view_type_3">2019/04/23</span>
+                    </p>
+                </div>
+                <div class="info_view_param">
+                    <span class="info_view_param_0"></span>
+                    <span class="info_view_param_1"></span>
+                    <span class="info_view_param_2"></span>
+                </div>
+            </div>
+            <div class="info_view_statistics">
+                <h4>百米桩段病害统计 :</h4>
+                <div class="statistics_list">
+
+                </div>
+            </div>
+            <div class="info_image">
+                <div class="info_image_btn">
+                    <a class="image_control full_back_index"><span class="iconfont iconfanhui"></span>首页</a>
+                    <ul class="info_tab_list">
+                        <li class="visua_up_map active" data-type="visua_up_map">正射图</li>
+                        <li class="collect_map button_control" data-type="collect_map" style="border-radius: 0px 2px 2px 0px;">采集图</li>
+                        <li class="point_cloud_map" data-type="point_cloud_map" style="display: none;">点云图</li>
+                        <li class="cesium_map_player" data-type="cesium_map_player">三维图</li>
+                    </ul>
+                    <a class="image_control history_control" title="功能开发中">历史</a>
+                    <a class="image_control full_screen_control"><span class="iconfont iconquanping1"></span></a>
+                </div>
+                <div class="player_video new_visua_up_map">
+                    <div class="video_image" id="visua_up_map"></div>
+                    <div class="video_image" id="collect_map">
+                        <div id="canvas_three">
+
+                        </div>
+                    </div>
+                    <div class="video_image" id="cesium_map_player"></div>
+                    <div class="video_image" id="threed_map"></div>
+
+                    <div class="player_control">
+                        <div class="player_speed">
+                            <input class="player_speed_range" type="range" value="1" />
+                        </div>
+                        <div class="player_button">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--<img src="" />-->
+                <!--<div class="image_hover"></div>-->
+            </div>
+        </div>
+        <!--病害视频-->
+        <!--<div class="disease_player">
+
+			<div class="disease_player_header">
+				<b class="disease_player_title">
+					<span class="iconfont iconcamera"></span>
+					<span>巡查影像</span>
+				</b>
+				<a class="iconfont iconclose disease_player_close" title="关闭当前视频界面"></a>
+			</div>
+			<div class="disease_player_body">
+				<div class="player_image">
+				</div>
+				<div class="player_control">
+					<div class="player_info">
+						<p class="det_time">
+							检测时间：<span></span>
+						</p>
+					</div>
+					<div class="player_recog">
+						<div class="label">
+						    <input type="radio" id="recog_result" checked="checked" />
+						    <label for="recog_result">病害识别结果</label>
+						</div>
+					</div>
+					<div class="player_button_image player_button">
+						<button class="btn btn-default pre_image" title="上一张">
+							<span class="icon_pre_image"></span>
+						</button>
+						<button class="btn btn-default next_image" title="下一张">
+							<span class="icon_next_image"></span>
+						</button>
+					</div>
+					<div class="player_button_video player_button">
+						<button class="btn btn-default pre_image" title="上一张">
+							<span class="iconfont iconzuoshuangjiantou"></span>
+						</button>
+						<button class="btn btn-default play_image">
+							<span class="iconfont iconbofang" title="播放"></span>
+						</button>
+						<button class="btn btn-default next_image" title="下一张">
+							<span class="iconfont iconyoushuangjiantou"></span>
+						</button>
+					</div>
+					<div class="player_toggle_button">
+						
+						<div class="speed_list_group">
+							<button class="btn btn-default player_speed" title="倍速">倍速</button>
+							<ul class="speed_list">
+								<li class="" type="500">60公里/时</li>
+								<li class="active" type="1000">30公里/时</li>
+							</ul>
+						</div>
+						
+						<button class="btn btn-default player_restore" title="复原">复原</button>
+						<button class="btn btn-default player_toggle" title="切换至视频模式" data-type="1">
+							<b>视频</b>
+						</button>
+					</div>
+				</div>
+			</div>
+			
+		</div>-->
+        <!--病害对比轮播图-->
+        <div class="disease_swiper">
+            <div class="slide_item">
+
+            </div>
+            <div class="model_backdrop"></div>
+        </div>
+        <!--地图界面-->
+        <div id="cesium_map_parent">
+            <ul class="PQIlegend">
+                <li class='PQIlegend_text' style="font-weight: 900;">PQI</li>
+                <li class='PQIlegend_text' >优良</li>
+                  <li  class='PQIlegend_icon' style="background: rgb(52,176,0);"></li> 
+                <li class='PQIlegend_text'>中次</li>
+                  <li class='PQIlegend_icon'  style="background: rgb(255,142,16);"></li>
+                <li class='PQIlegend_text'>差</li> 
+                <li class='PQIlegend_icon'  style="background: rgb(233,3,0);"></li>
+            </ul>
+            <div class="cesium_map_left"></div>
+            <div class="cesium_popup_mark add_mark">
+                <ul>
+                    <!--<li><a class="select_point">选择轨迹点</a></li>-->
+                    <li><a class="mark_point">标记该位置</a></li>
+                </ul>
+            </div>
+            <div class="cesium_popup_mark remove_mark">
+                <ul>
+                    <li><a class="remove_point">删除标记</a></li>
+                </ul>
+            </div>
+            <!--<div class="cesium_popup">
+                <div class="popup_content">
+                    <h4 class="popup_content_head">
+                        <b>纵向裂缝</b>
+                        <span class="child_body_grade_value">重度</span>
+                    </h4>
+                    <p class="child_body_place">
+                        <span class="icon_image icon_position"></span>
+                        <span class="child_body_place_type">S228 K56+500上行</span>
+                    </p>
+                    <p class="child_body_grade">
+                        <span class="icon_image icon_time"></span>
+                        <span class="child_body_grade_time">2019/04/23</span>
+                    </p>
+                    <div class="image_buttons image_texts">
+
+                    </div>
+                    <div class="image_buttons">
+                        <button class="btn image_buttons_up" name="visua_up_map">正射图</button>
+                        <button class="btn image_buttons_survey" name="collect_map">采集图</button>
+                        <button class="btn image_buttons_point" name="point_cloud_map">点云图</button>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="cesium_control">
+                <!--<div class="cesium_move">
+  				<span class="cesium_move_up" data-type="moveUp"></span>
+  				<span class="cesium_move_down" data-type="moveDown">-</span>
+  				<span class="cesium_move_left" data-type="moveLeft">-</span>
+  				<span class="cesium_move_right" data-type="moveRight">-</span>
+  				<span class="cesium_move_text"></span>-->
+                <!--<span class="cesium_move_text">3D</span>-->
+                <!--</div>-->
+                <div class="full_screen" title="初始"><a class="icon_home" href="#"></a></div>
+                <div class="zoom_in" title="放大"><a class="iconfont iconjia" href="#"></a></div>
+                <div class="zoom_level" title="缩放等级"><a href="#">9</a></div>
+                <div class="zoom_out" title="缩小"><a class="iconfont iconjian" href="#"></a></div>
+                <div class="cesium_layers" title="图层"><a class="icon_image icon_layers" href="#"></a></div>
+
+                <ul class="layer_list">
+                    <li class="dituLayer">
+                        <label class="checkbox_label">
+                            <input type="checkbox" value="1" checked>
+                            <b class="checkbox_b"></b>
+                            <span>底图</span>
+                        </label>
+                        <span class="radio_label active" name="2">
+                            <b></b>标精地图
+                        </span>
+                        <span class="radio_label" name="3">
+                            <b></b>卫星地图
+                        </span>
+                    </li>
+                    <li class="lineLayer">
+                        <label class="checkbox_label">
+                            <input type="checkbox" value="6" checked>
+                            <b class="checkbox_b"></b>
+                            <span>检测结果</span>
+                        </label>
+                        <span class="radio_label active" name="7" style="margin-top: 14px;">
+                            <b></b>PQI等级
+                        </span>
+                        <!-- <span class="radio_label" name="3">
+                            <b></b>PQI等级
+                        </span> -->
+                    </li>
+                    <li>
+                        <label class="checkbox_label">
+                            <input type="checkbox" value="4" checked>
+                            <b class="checkbox_b"></b>
+                            <span>标记位置</span>
+                        </label>
+                    </li>
+                </ul>
+
+                <!--<div class="cesium_search" title="查询">
+  				<a class="iconfont iconsousuo" href="#"></a>
+  				<input type="text" class="cesium_search_value" />
+  			</div>-->
+                <!--<div class="cesium_layers" title="图层列表"><a class="iconfont icontuceng" href="#"></a></div>-->
+                <!--<div class="cesium_measure" title="测距"><a class="iconfont iconchizi" href="#"></a></div>-->
+            </div>
+            <div id="cesium_map"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="./Apps/Dist/Main/main.js"></script>

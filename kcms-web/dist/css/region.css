@@ -1,0 +1,17 @@
+
+/*地图面板的FORM表单样式*/
+#leafletMap .createForms{
+    position: absolute;
+    left: 0px;
+    top: 85px;
+    z-index: 1001;
+    width: 300px;
+    max-height: 600px;
+    background: #ffffff;
+    overflow-y: auto;
+    opacity: 0.9;
+    padding: 5px;
+}
+#leafletMap .createForms>div{
+	height: 60px;
+}

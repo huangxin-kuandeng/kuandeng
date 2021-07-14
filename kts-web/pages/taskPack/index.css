@@ -1,0 +1,165 @@
+.wrapper{
+	background-color: #FFFFFF !important;
+	padding: 10px;
+}
+
+.bodyInfo h3{
+	/*margin-left: 10px;*/
+}
+
+.bodyInfo .searchForm select{
+	max-width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+.bodyInfo .searchForm input{
+	max-width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+#taskPackTable .manage button{
+	padding: 5px;
+}
+.bodyInfo .searchForm .deleteBtn{
+	float: right;
+}
+
+/* 批量处理插件样式 */
+.operByLot{
+	position: absolute;
+        box-shadow: 1px 1px 8px #000;
+        top: 0vh;
+        background: #ffffffde;
+        height: 30vh;
+        width: 70vw;
+        left: calc(30vw - 10px);display:none;
+       
+}
+.operByLot .subkey{
+    font-size: 12px;
+    width: 9%;
+    padding-left: 4px;
+    margin-top: 4px; 
+    margin-right: 1%;
+	line-height: 16px;
+    height: 16px;
+    
+}
+
+.operByLot::-webkit-scrollbar {
+    width: 2px;
+    /* display: none; */
+}
+
+label.subkey {
+    text-align: right;
+	margin: 0px;
+}
+.operByLot .tabTools{
+background: #2884cf;
+float: right;
+margin-right: 8px;
+color: #ffffffde;
+line-height: 24px;
+width: 50px;
+text-align: center;
+border-radius: 4px;
+height: 24px;
+}
+.operByLot  .rank_line{
+	width:100%;
+	padding: 8px 4px;
+	margin: 0px;
+	height: 30px;
+
+    color: #2884cf;
+	border-bottom:1px dashed #2884cf;
+}
+
+.trackResult ,.cusResult{
+    position: absolute;
+    left: 250px;    
+    height: 65vh;
+    width: 30vw;
+    background: #fff;
+    z-index: 4444;
+    padding: 5px;
+    top: 30vh;
+    display: none ;
+}
+.packDetailDiv{
+    position: absolute;
+    left: 35vw;    
+    height: 45vh;
+    width: 30vw;
+    background: #fff;
+    z-index: 4444;
+    padding: 10px;
+    top: 10vh;
+    display: none ;
+    box-shadow: 2px 2px 5px;
+}
+.packDetailDiv  .rank_line{
+	width:85%;
+	padding: 8px 4px;
+	margin: 0px;
+	height: 12%;
+	display: inline-block;
+
+    color: #2884cf;
+}
+.packDetailDiv  .clsbtn{
+	max-width: 80px;
+	width:15%;
+	display: inline-block;
+    height: 10%;
+}
+.packDetailDiv textarea.packdetail{
+  line-height: 28px;
+    height: 85%;
+    width: 100%;
+	overflow: scroll;
+    resize: none;
+}
+.trackResult .resHeader,.cusResult .resHeader{
+    height: 4vh;
+    width: inherit;
+    padding: 5px;
+    border-bottom: solid 1px #ccc;
+}
+.trackResult .resBody,.cusResult .resBody{
+    height: 60vh;
+    width: inherit;
+    overflow-y: scroll;
+    padding-left: 40px;
+}
+.trackResult li span,.cusResult li a{
+    padding: 5px;
+    line-height: 30px;
+    /* border-bottom: solid 1px #ccc; */
+}
+.trackResult li span:hover{
+  background: #6c9ed680;
+}
+.trackResult ol li,.cusResult ol li{
+list-style-type: decimal;
+}
+.trackResult .tabTools{
+    float: right;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.trackResult a.allClear{
+    color: rgb(199, 2, 2);
+}
+.trackResult a.allSelect{
+}
+.trackResult a.tabClose{
+    color: #575757;
+}
+.trackResult span.subLstHead,.cusResult span.subLstHead{
+    margin-left: 30px;
+    line-height: 25px;
+}

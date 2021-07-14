@@ -1,0 +1,75 @@
+path.stroke.tag-datatype-WalkLink {
+    stroke-linecap: butt;
+    stroke-dasharray: 18, 6;
+    stroke: #999;
+}
+
+path.casing.tag-datatype-WalkLink {
+    stroke-linecap: butt;
+    stroke-dasharray: 19, 4, 20, 5;
+    stroke: #fff;
+}
+
+path.stroke.tag-wf_type-1,
+path.stroke.tag-wf_type-3,
+path.stroke.tag-wf_type-4,
+path.stroke.tag-wf_type-5,
+path.stroke.tag-wf_type-8,
+path.stroke.tag-wf_type-9,
+path.stroke.tag-wf_type-10,
+path.stroke.tag-wf_type-11,
+path.stroke.tag-wf_type-14,
+path.stroke.tag-wf_type-15,
+path.stroke.tag-wf_type-16,
+path.stroke.tag-wf_type-20,
+path.stroke.tag-wf_type-21,
+path.stroke.tag-wf_type-22,
+path.stroke.tag-wf_type-23 {
+    stroke: #cc9dd6;
+}
+
+path.stroke.tag-wf_type-19 {
+    stroke: #437bcd;
+}
+
+path.stroke.tag-wf_type-12,
+path.stroke.tag-wf_type-13,
+path.stroke.tag-wf_type-18 {
+    stroke: #ff8f00;
+}
+g.node.walknode .stroke{
+	r:6;
+	stroke-width:2;
+}
+
+g.node.walknode .shadow{
+	r:8;
+}
+/*步导交叉点*/
+g.node.walknode.shared .stroke{
+	fill: rgb(255, 0, 255);
+}
+/*步导点有关联关系*/
+g.node.walknode.walkRelation .stroke{
+    fill:#351212;
+}
+g.node.walknode .shadow.hover{
+    r:10;
+    
+}
+
+/*步导面*/
+.layer-walk .layer-walkarea .shadow{
+    fill:#ffd6d6;
+    
+}
+
+.layer-walk .layer-walkarea .shadow.selected{
+    stroke-width:6;
+    
+}
+.layer-walk .layer-walkarea .stroke{
+    stroke:#ffc7c7;
+    
+}
+

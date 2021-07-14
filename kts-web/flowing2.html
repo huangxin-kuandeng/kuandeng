@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>任务流</title>
+	<script src="config.js"></script>
+	<script src="KeyWord.js" type="text/javascript" charset="utf-8"></script>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <style>
+        body{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 0px;
+            margin: 0px;
+            background: rgba(232, 229, 229, 0.2);
+            font-family: Courier New;
+        }
+        #canvas{
+            width: 100%;
+            height: 58%;
+            display: -webkit-box;
+            position: relative;
+        }
+        #log-container{
+        	font-size: 15px;
+            height: 37%;
+            overflow-y: scroll;
+            background: #333;
+            color: #aaa;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #canvas iframe{
+            width: 100vw;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div style="height:100%;">
+	<!--<button onclick="closeWS()" style="position: absolute; top: 0;z-index: 1000;">关闭ws</button>-->
+    <div id="canvas" >
+    	<iframe src="" id="iframe"></iframe> 
+    </div>
+    <div id="log-container"></div>
+</div>
+<!-- qunee 2.6.1.2-->
+<script src="dist/js/qunee-min2.6.1.2.js"></script>
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<script>
+	
+	$.ajax( {
+	    type : "get",
+	    url : window._init_url,
+	    async : false,
+	    data : {},
+	    success : function(data) {
+			window.Kus = data.url.kus;
+			window.Kd_auth_server = data.url.kd_auth_server;
+			window.Web_editor = data.url.web_editor;
+			window.Ws = data.url.ws;
+			window.Kts = data.url.kts;
+	    },
+	   	error: function(XMLHttpRequest, textStatus, errorThrown) {
+	   		console.log(XMLHttpRequest.status+"---"+XMLHttpRequest.readyState+"---"+textStatus)
+	   	},
+	});
+	
+    //获取URL中的任务ID
+    if(!window.getI18NString){getI18NString = function(s){return s;}}
+    var processInstanceId = location.search.split('&')[1].split('processInstanceId=')[1]?location.search.split('&')[1].split('processInstanceId=')[1]:'1';
+    
+    var _time = 5000;
+//  var ws = 0;
+	var locationSearch = location.search;
+	var divHtml;									//log日志的最新内容
+	var divArrSon;									//log日志的最新内容分割后的最后一条数据
+	var divArr = $("#log-container").html();		//log日志的内容
+	var junge = null;								//判断是否增添dom元素
+	
+//	修改iframe的src中  添加taskId
+	document.getElementById("iframe").src="diagram-viewer/index.html"+locationSearch;
+	var websocket;
+    function ws(){
+//  	指定websocket路径
+        websocket = new WebSocket(window.Ws+processInstanceId+'.log');
+//      websocket = new WebSocket('ws://192.168.6.245:8080/websocket');
+//      websocket = new WebSocket('ws://192.168.6.233:13940/ws/fflogs/kts_34_33300/'+processInstanceId+'.log');
+//      websocket连接打开时执行
+        websocket.open = function(){
+            $("#log-container").append('日志连接成功<br>');
+        };
+//      websocket发生错误时
+        websocket.onerror = function(){
+        	junge = false;
+            ws();
+        };
+//      websocket连接关闭时
+        websocket.onclose = function(){
+        	junge = false;
+            ws();
+        };
+//      websocket有返回消息时
+        websocket.onmessage = function(event) {
+//          接收服务端的实时日志并添加到HTML页面中   
+			if(junge == false){
+				if( event.data == (divArrSon+"<br>") ){
+					junge = true;
+				}
+			}else if(junge == null){
+//				初始打开日志时,将所有信息进行添加
+    			$("#log-container").append(event.data);
+    			divHtml = $("#log-container").html();
+            	$("#log-container").scrollTop( $('#log-container')[0].scrollHeight );		//滚动条滚动到最低部
+//          	判断输出的日志是否为提交终库(为true时进行输出总耗时)
+            	if( event.data.indexOf("提交终库完成100%") >= 0 ){
+					setTimeout('durationTime()',2000);
+            	}
+			}else{
+//          	日志关闭后重新打开获取到相同的信息之后才开始添加
+    			$("#log-container").append(event.data);
+    			divHtml = $("#log-container").html();
+            	$("#log-container").scrollTop( $('#log-container')[0].scrollHeight );		//滚动条滚动到最低部
+//          	判断输出的日志是否为提交终库(为true时进行输出总耗时)
+            	if( event.data.indexOf("提交终库完成100%") >= 0 ){
+					setTimeout('durationTime()',2000);
+            	}
+			}
+        };
+    }
+    
+    setTimeout(ws(),400);
+/**/
+//	查看内容有没有变化
+	function time(){
+		if( !divHtml || (divHtml == "") ){
+			
+		}else{
+			var divHtmlSplit = divHtml.split("<br>");
+			divArrSon = divHtmlSplit[divHtmlSplit.length - 2];
+		}
+		if(divArr == divHtml){
+//			没有获取最新的日志时
+			setTimeout('timeout()',_time);
+		}else{
+//			获取了最新的日志时
+			divArr = divHtml;
+    		setTimeout('time()',_time);
+		}
+	}
+	
+//	内容没有发生改变时,执行重新关闭
+	function timeout(){
+//		console.log(websocket.readyState)
+		if(divArr == divHtml){
+//			没有获取最新的日志时
+    		websocket.close();
+    		setTimeout('time()',_time);
+		}else{
+//			获取了最新的日志时
+			divArr = divHtml;
+    		setTimeout('time()',_time);
+		}
+	}
+	
+    setTimeout('time()',_time);
+	setTimeout('durationTime()',1000);
+    
+	function durationTime(){
+		if(processInstanceId){
+			$.ajax( {
+			    type : "get",
+			    url : window.Kts+"history/historic-process-instances?processInstanceId="+processInstanceId,
+			    async : false,
+			    data : {},
+			    success : function(data) {
+//			    	判断是否输出过任务总耗时(防止多次输出总耗时)
+			    	if( ($("#log-container").text().indexOf("该任务总耗时") >= 0) ){
+			    		return
+			    	}
+//			    	可以查询到任务的总耗时则在日志进行输出
+			    	if(data.size > 0){
+			    		var durationInMillis = data.data[0].durationInMillis;
+			    		var minuteTime = (durationInMillis/60000).toFixed(2);
+				    	if(durationInMillis){
+	    					$("#log-container").append("<span style='color:greenyellow;'>该任务总耗时为"+durationInMillis+"毫秒 (约为"+minuteTime+"分钟)</span><br>");			//在日志中输出耗时
+	            			$("#log-container").scrollTop( $('#log-container')[0].scrollHeight );		//滚动条滚动到最低部
+				    	}
+			    	}
+			    },
+			   	error: function(XMLHttpRequest, textStatus, errorThrown) {
+			   		console.log(XMLHttpRequest.status+"---"+XMLHttpRequest.readyState+"---"+textStatus)
+			   	},
+			});
+		}
+	}
+
+
+//	测试关闭websocket
+/*
+    function closeWS(){
+    	websocket.close();
+    	console.log("关闭");
+    };
+ */
+</script>
+</body>
+</html>

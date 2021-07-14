@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package sign_shape; //package声明符
+
+enum SignShape  {
+     N2=0;
+     TRIANGLE_TIP_UP = 1;
+     RECTANGLE = 2;
+     ROUND = 3;
+     OCTAGON = 4;
+     DIAMOND = 5;
+     CROSBUCK = 6;
+     TRIANGLE_TIP_INV = 7;
+     ELLIPSE = 8;
+     UNKNOWN = 9;
+     HEXAGON = 10; //High speed mileage card
+     OTHER = 99;
+}

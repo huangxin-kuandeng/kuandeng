@@ -1,0 +1,96 @@
+syntax = "proto2";
+import "common.proto";
+
+message Segment {
+	optional int32 frame_id = 1;//帧号，从1开始
+	optional int32 block_id = 2;//轮廓序号，从0开始？
+	optional int32 segment_type = 3;//识别大分类：车道线、公交车道线、文字符号箭头、路牌
+	optional int32 shape_type = 4;//轮廓形状（主要用于路牌）
+	optional int32 subtype = 5;//细分类：左转箭头、右转箭头等，限速路牌、高速路牌等，主要从分类识别中来
+	repeated PointInt contour = 6 ;//轮廓坐标
+	repeated PointInt contour_optimized = 7 ;//优化后的轮廓坐标
+	optional int32 bbox_height = 8;
+	optional int32 bbox_width = 9;
+	optional float score = 10;
+	optional int32 status = 11; //状态,0-排除,1-保留,默认不过滤的时候是保留
+	repeated PointInt full_contour = 12 ;//裁剪前的轮廓坐标
+	repeated PointInt line_points = 13 ;//轮廓中线
+	optional PointFloat start = 14;//中心线起始像素点
+	optional PointFloat end = 15;//中心线结束像素点
+	optional RotatedRect rotated_rect = 16;//轮廓的外包旋转矩形
+	optional Rect bbox = 17;//轮廓外包围框
+	optional double area = 18;//轮廓面积
+	optional double perimeter = 19;//轮廓周长
+	optional double angle = 20;//像素角度0~180
+	optional FitLine line = 21; //起终点一起拟合的直线
+	optional FitLine start_line = 22; //起点附近的拟合直线
+	optional FitLine end_line = 23; //终点附近的拟合直线
+	optional PointFloat ostart = 24;//优化后的起点
+	optional PointFloat oend = 25;//优化后的终点
+	optional PointFloat start_min_xy = 26;//开始点的最小像素坐标，可以测量车道线宽度
+    optional PointFloat start_max_xy = 27;//开始点的最大像素坐标，可以测量车道线宽度
+    optional PointFloat end_min_xy = 28;//终点最小像素坐标，可以测量车道线宽度
+    optional PointFloat end_max_xy = 29;//终点最大像素坐标，可以测量车道线宽度
+    optional Rect image_bbox = 30;//图像坐标范围
+    optional bool start_edge = 31;//起点是否在边缘处
+    optional bool end_edge = 32;//终点是否在边缘处
+    optional int32 start_polygon_edge_nums = 33;
+    optional int32 end_polygon_edge_nums = 34;
+    optional int32 polygon_edge_nums = 35;
+    optional double confidence = 36;//识别可信度
+    optional double class_confidence = 37;//分类识别可信度
+    repeated PointInt mid_line_points = 38 ;//轮廓中线
+
+    optional PointFloat bottom = 50; //杆在中心线上的起始点
+    optional PointFloat top = 51; //杆在垂直地面方向上的最高点或者路牌上对应点
+    optional PointFloat left_bottom_point = 52; //杆起始点左端点或者路牌上对应点或八边形的最下边左点
+    optional PointFloat right_bottom_point = 53; //杆起始点右端点或者路牌上对应点或八边形点最下边右点
+    optional PointFloat left_top_point = 54; //杆上节点左端点或者路牌上对应点或八边形的最上方左点
+    optional PointFloat right_top_point = 55; //杆上节点右端点或者路牌上对应点或八边形的最上方右点
+    optional Vector4 feature = 56;
+
+
+    optional PointInt center = 60;//轮廓的中心点像素坐标
+    optional double width = 61;//轮廓宽度
+    optional double height = 62;//轮廓长度
+
+    optional PointFloat leftmost_bottom_point=63;//八边形的最左方下点
+    optional PointFloat rightmost_bottom_point=64;//八边形的最右方下点
+    optional PointFloat leftmost_top_point=65;//八边形的最左方上点
+    optional PointFloat rightmost_top_point=66;//八边形的最右方上点
+
+    optional string SignSrcImg=67;//路牌的原图
+
+}
+
+message FrameSegments {
+	optional string id = 1;//track_point_id
+	repeated Segment single_segment = 2;//单个轮廓对象
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

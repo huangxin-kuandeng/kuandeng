@@ -1,0 +1,12 @@
+syntax = "proto2";
+import "common.proto";
+message LampPole{
+
+    optional PointFloat bottom = 1; //杆在中心线上的起始点
+    optional PointFloat top = 2; //杆在垂直地面方向上的最高点
+    optional PointFloat left_bottom_point = 3; //杆起始点左端点
+    optional PointFloat right_bottom_point = 4; //杆起始点右端点
+    optional PointFloat left_top_point = 5; //杆上节点左端点
+    optional PointFloat right_top_point = 6; //杆上节点右端点
+    optional double confidence = 8;//识别可信度
+}

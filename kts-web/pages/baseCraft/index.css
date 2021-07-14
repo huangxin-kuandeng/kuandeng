@@ -1,0 +1,36 @@
+.wrapper{
+	background-color: #FFFFFF !important;
+	padding: 10px;
+}
+.testmodal{
+	display: none;
+}
+.bodyInfo h3{
+	/*margin-left: 10px;*/
+}
+.bodyInfo .craftType{
+	max-width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+.bodyTable .operation button{
+	padding: 2px 5px;
+    border-radius: 0px;
+}
+#craftListsTable{
+	width: 100%;
+	height: 100%;
+}
+#craftListsTable_wrapper{
+	width: 100%;
+}
+#craftListsTable td.bgs{
+	position: relative;
+	width: 200px;
+	padding: 2px;
+}
+#craftListsTable td.bgs span.bgs_child{
+	position: absolute;
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+}

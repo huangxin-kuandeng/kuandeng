@@ -1,0 +1,33 @@
+syntax = "proto2";
+import "common.proto";
+package pole_type; //package声明符
+
+enum PoleTypeId {
+    PLACEHOLDER = 0;
+}
+
+enum ClassId {
+    PLACEHOLDER_TYPE = 0;
+    //
+    LIGHT_POLE = 30001; // classID("1", 1, 30001, u"路灯杆", "2", "4", ""),
+    SIGNAL_LIGHT_POLE = 30002; // classID("2", 2, 30002, u"信号灯杆", "2", "5", ""),
+    BARREL_GANTRY = 30003; // classID("3", 3, 30003, u"筒架龙门架", "2", "8", ""),
+    SIGN_POST = 30004; // classID("4", 4, 30004, u"标牌杆", "2", "9", ""),
+    CAMERA_LEVER = 30005; // classID("5", 5, 30005, u"摄像头杆", "2", "", ""),
+    WIRE_POLE = 30006; // classID("6", 6, 30006, u"电线杆", "2", "1", ""),
+    ELECTRIC_TOWER = 30007; // classID("7", 7, 30007, u"电线塔", "2", "2", ""),
+    FIXED_REFLECTOR = 30008; // classID("8", 8, 30008, u"固定反光物", "6", "", ""),
+    TELEPHONE_BOOTH = 30009; // classID("9", 9, 30009, u"电话亭", "2", "7", ""),
+    SIGNAL_LAMP_STAND = 30010; // classID("10", 10, 30010, u"信号灯立架", "2", "", ""),
+    ADVERTISING_POLE = 30011; // classID("11", 11, 30011, u"广告杆", "2", "3", ""),
+    MIX_TYPE_POLE = 30012; // classID("12", 12, 30012, u"混合类型", "2", "", ""),
+    OTHERS = 30013; // classID("13", 13, 30013, u"其他", "2", "11", ""),
+    SIGNAL_LEVER = 30014; // classID("14", 14, 30014, u"信号杆", "2", "", ""),
+}
+
+message BBOX {
+    optional PointFloat left_bot = 1; //
+    optional PointFloat right_bot = 2; //
+    optional PointFloat left_top = 3; //
+    optional PointFloat right_top = 4; //
+}

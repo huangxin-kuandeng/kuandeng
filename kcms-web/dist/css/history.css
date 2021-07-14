@@ -1,0 +1,64 @@
+table tbody tr td {
+    max-width: 100px;
+    overflow: hidden;
+}
+table thead tr th {
+	white-space: nowrap;
+}
+/*采集线路管理CSS样式管理*/
+#leafletMap .linkStatus{
+    position: absolute;
+    z-index: 1122;
+    background: #FFFFFF;
+    padding: 5px;
+	right: 10px;
+    bottom: 10px;
+    border: 1px solid #000000;
+}
+#leafletMap .linkStatus p span:nth-child(1){
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+#leafletMap .deviceList{
+	/*display: none;*/
+	position: absolute;
+    left: 60px;
+    top: 0px;
+    z-index: 1111;
+	background: #FFFFFF;
+    max-height: 550px;
+    padding: 10px;
+    padding-bottom: 0px;
+    width: 250px;
+    border: 1px solid #000000;
+	cursor: auto;
+}
+#leafletMap .deviceList>div {
+    height: 60px;
+}
+.leaflet-left{
+    left: initial;
+    right: 0;
+}
+/*修改leaflet本身样式*/
+.leaflet-left .leaflet-control {
+    margin-right: 18px;
+}
+.leaflet-control-layers.leaflet-control{
+	margin-top: 90px;
+}
+.my-point-icon{
+	background: #000000;
+	border-radius: 5px;
+}
+.ellipsisTitle{
+	width: 100%;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.mod_city_list{
+	width: 100% !important;
+}

@@ -1,0 +1,199 @@
+
+#loading{
+	width: 100% !important;
+	left: 0px;
+}
+body {
+	max-height: 100%;
+	overflow-y: auto; 
+  	height: 100vh !important;
+}
+body .wrapper {
+  	background-color: #FFFFFF !important;
+  	padding: 10px;
+}
+body .wrapper .header{
+	height: 25px;
+}
+body .wrapper > div {
+  	float: left;
+  	clear: both;
+}
+body .wrapper .testmodal #id-container #on-off div.col-md-12 .projectType {
+	height: 30px;
+	position: absolute;
+	width: 90px;
+}
+body .wrapper .testmodal #id-container #on-off div.col-md-12 .projectTypeValue {
+	padding-left: 90px;
+}
+body .wrapper .testmodal #id-container .taskDiv button.drawRange {
+	height: 34px;
+	border: 1px solid #d2d6de;
+	margin-left: 5px;
+	float: left;
+}
+body .wrapper .testmodal #id-container .taskDiv button.submit {
+	height: 34px;
+	border: 1px solid #d2d6de;
+	margin-left: 5px;
+	float: left;
+}
+/*搜索栏样式*/
+.bodyInfo{
+	width: 100%;
+	margin-top: 10px;
+}
+.bodyInfo .searchType{
+	float: left;
+	max-width: 160px;
+	margin: 0px 5px 0px 10px;
+}
+.bodyInfo .searchValue{
+	float: left;
+	max-width: 120px;
+}
+.bodyInfo .createProject{
+	width: 280px;
+	float: left;
+}
+.bodyInfo .createProject .project_type{
+	width: 120px;
+	float: left;
+	margin-right: 10px;
+}
+.bodyInfo .createProject a{
+	max-width: 125px;
+	float: left;
+}
+
+/*创建项目模版样式*/
+.testmodal .modal{
+	z-index: 5555 !important;
+}
+.testmodal .modal .modal-dialog .modal-content{
+	top: 100px;
+}
+
+
+/*TABLE列表*/
+.bodyTable{
+	padding: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    width: 100%;
+}
+.bodyTable .dataTables_scroll{
+	margin-bottom: 10px;
+}
+.bodyTable tbody td.project_operation{
+	overflow: inherit;
+}
+.bodyTable tbody td.project_operation a.delete{
+	color: red;
+}
+
+/*地图界面*/
+.cityList{
+	position: absolute;
+	z-index: 4444;
+	width: 120px;
+    top: 12px;
+    left: 55px;
+    padding: 3px;
+    background: #FFFFFF;
+}
+.noImageIcon{
+	background: #000000;
+	border-radius: 8px;
+}
+.ImageIcon{
+	background: blue;
+	border-radius: 8px;
+}
+.highPoint{
+	background: red;
+	border-radius: 8px;
+}
+
+
+
+#on-off div.col-md-12 .btn-group label{
+	width: 50%;
+}
+#on-off div.col-md-12 .btn-group label.active{
+	color: #FFFFFF;
+    font-weight: bold;
+}
+
+/*任务框列表*/
+#on-off div.col-md-12 p{
+	/*height: 20px;*/
+	line-height: 20px;
+	margin-bottom: 10px;
+	width: 100%;
+	float: left;
+}
+#on-off div.col-md-12 p>span{
+	float: left;
+	width: calc(100% - 42px);
+}
+#on-off div.col-md-12 p>span._colors{
+	height: 20px;
+	width: 40px;
+	margin-right: 2px;
+	border: 1px solid #AAAAAA;
+}
+#on-off div.col-md-12 p>span._colors.purple_color{
+	background-color: #A020F0;
+}
+#on-off div.col-md-12 p>span._colors.yellow_color{
+	background-color: #FFFF00;
+}
+#on-off div.col-md-12 p>span._colors.green_color{
+	background-color: #00FF00;
+}
+#on-off div.col-md-12 p>span.point_color{
+	background-color: #0000FF;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin: 0px 10px;
+	margin-right: 12px;
+}
+
+#id-container .taskList{
+	padding: 0px 10px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 80px;
+    left: 260px;
+    z-index: 1111;
+    height: 500px;
+    width: 230px;
+}
+
+/*微型弹窗样式*/
+.littleModal .modal-dialog{
+	width: 400px;
+}
+.littleModal .modal-dialog .modal-content .modal-body>div{
+    height: 70px;
+}
+.littleModal .modal-dialog .modal-content .modal-footer{
+    clear: both;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.modal .modal-dialog .modal-content .btnConfirm{
+    float: left;
+	padding: 6px 45px;
+}
+.modal .modal-dialog .modal-content .btnCancel{
+    float: right;
+	padding: 6px 45px;
+}
+.littleModal .modal-dialog .modal-content .modal-body.bodyCenter {
+    text-align: center;
+    font-size: 16px;
+}

@@ -1,0 +1,33 @@
+syntax = "proto2";
+import "block_type.proto";
+import "lane.proto";
+import "lamp_pole.proto";
+import "lamp_head.proto";
+import "retina_pole.proto";
+import "road_sign.proto";
+import "ground_symbol.proto";
+import "ground.proto";
+import "common.proto";
+import "distress.proto";
+
+message Blocks{
+
+    optional int32 frame_id = 1;//帧号，从1开始
+    optional int32 block_id = 2;//轮廓序号，从0开始
+    optional block_type.BlockType block_type = 3;//block类型(lane,pole,sign,groundsymbol,ground,retinapole)
+
+    repeated PointInt contour = 5 ;//轮廓点集
+    optional float confidence = 6;//得分
+    optional int32 status = 7; //状态,0-排除,1-保留,默认不过滤的时候是保留
+
+
+    optional Lane lane = 10;//车道线
+    optional RoadSign road_sign = 11;//路牌
+    optional LampPole lamp_pole = 12;//灯杆 全图分割 要素提取后的灯杆结果，已废弃
+    optional LampHead lamp_head = 13;//灯杆
+    optional GroundSymbol ground_symbol = 14;//地面定位目标
+    optional Ground ground = 15;//地面区域
+    optional RetinaPole retina_pole = 16;// retina json中的灯杆
+
+    optional PavementDistress pavement_distress = 100;  // pavement distress
+}

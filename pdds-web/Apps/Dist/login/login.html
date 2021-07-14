@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>用户登录</title>
+<link rel="shortcut icon" href="../Img/favicon1.ico" >
+<!-- Custom Theme files -->
+<link href="./login.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../Js/spop/spop.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="X-Frame-Option" content="SAMEORIGIN">
+<script src="../Js/jquery-3.4.1.min.js"></script>
+<script src="../Js/methed.js"></script>
+<script src="../Js/spop/spop.min.js"></script>
+<script src="./boot.js"></script>
+
+</head>
+<body>
+<div class="login">
+	<h2>用户登录 </h2>
+	<!--<div class="login-top-background">
+		
+	</div>-->
+	<div class="login-top">
+		<div class="col-md-12 userName">
+			<label><span>请输入正确的</span>用户名/邮箱</label>
+			<input type="text" value="" >
+			<span class="errorView"></span>
+		</div>
+		<div class="col-md-12 passWord">
+			<label><span>请输入正确的</span>密码</label>
+			<input type="password" value="" >
+			<span class="errorView"></span>
+		</div>
+		<div class="forget">
+			<div class="label">
+			    <input type="radio" id="female" checked="checked" />
+			    <label for="female">记住我</label>
+			</div>
+			<!--<label>
+				<input type="radio" />
+				<span>记住我</span>
+			</label>-->
+			<!--<a href="#" title="忘记密码">忘记密码</a>-->
+		</div>
+	    <button class="submit_button" title="登录">登录</button>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+<script>
+	$(document).ready(function (){
+		window.password_radio = true;
+		var userInfo = $.getLocalStorage('userInfo') || '{}',
+			newUserInfo = JSON.parse(userInfo),
+			_username = newUserInfo.userName || '',
+			_password = newUserInfo.passWord || '';
+		
+		$('.userName input').val(_username);
+		$('.passWord input').val(_password);
+		
+		/*取消选中--记住选项*/
+		$('.forget .label input').click(function(){
+			window.password_radio = !window.password_radio;
+			this.checked = window.password_radio;
+		})
+		$('.login-top .col-md-12 input').keydown(function(e){
+			if(e.keyCode == 13){
+				submit_login();
+			}
+		})
+		/*点击登录--进入主页面*/
+		$('button.submit_button').click(function(){
+			submit_login();
+		})
+		
+		function submit_login(){
+			let userName = $('.userName input').val(),
+				passWord = $('.passWord input').val(),
+				formData = new FormData();
+			
+			formData.append('username', userName);
+			formData.append('password', passWord);
+			$('.userName').removeClass('error');
+			$('.passWord').removeClass('error');
+			
+			if(!userName){
+				$.errorView('用户名不能为空！');
+				return;
+			}else if(!passWord){
+				$.errorView('用户密码不能为空！');
+				return;
+			}
+			let _url = config_url.pdds+'user/login';
+		    $.ajax( {
+		        type : 'POST',
+		        url : _url,
+	        	async : true,
+				processData: false,
+				contentType: false,
+		        data : formData,
+		        success : function(data) {
+					if(data.code == '20001'){
+						userNameError();
+						return;
+					}else if(data.code == '20002'){
+						passWordError();
+						return;
+					}else if(data.code != '0'){
+						$.errorView(data.message);
+						return;
+					}
+					
+					var token = data.result.token;
+					if(!token){
+						$.errorView('登录失败：token不存在！');
+						return;
+					}
+					if(window.password_radio){
+						$.setLocalStorage('userInfo',{
+							'userName': userName,
+							'cnName': data.result.name,
+							'passWord': passWord
+						})
+					}else{
+						$.removeLocalStorage('userInfo');
+					}
+					$.errorView('登陆成功',true);
+					$.setCookie({
+						name: 'token',
+						value: token
+					})
+					
+					login_html();
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			   		console.log(XMLHttpRequest.status+'---'+XMLHttpRequest.readyState+'---'+textStatus);
+		            $.errorView('系统异常');
+		        }
+			});
+		}
+		
+		/*登陆成功跳转页面*/
+		function login_html(){
+			var timeout = setTimeout(function(){
+				let _url = '../../../index.html';
+				window.open(_url, '_self');
+			},200)
+		}
+		
+		/*用户名错误*/
+		function userNameError(){
+			$('.userName').addClass('error');
+		}
+		
+		/*用户密码错误*/
+		function passWordError(){
+			$('.passWord').addClass('error');
+		}
+    });
+	
+</script>

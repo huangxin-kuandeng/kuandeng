@@ -1,0 +1,880 @@
+
+
+/*********************数据中心界面*********************/
+#data_center{
+	left: 0px;
+	top: 49px;
+	z-index: 200;
+	display: none;
+	padding: 20px;
+	padding-top: 24px;
+	min-height: 787px;
+	min-width: 1100px;
+	position: absolute;
+	background: #EFEFF0;
+	padding-left: 172px;
+	width: calc(100% - 192px);
+	height: calc(100% - 93px);
+	
+	min-width: 1088px;
+}
+/*@media (max-height: 1000px){
+	#data_center{
+		top: 0px;
+	}
+}*/
+#data_center div.data_center_child{
+	left: 172px;
+	float: left;
+	display: none;
+	/*overflow: auto;*/
+    color: #666666;
+    font-size: 18px;
+	line-height: 100%;
+    /*overflow-x: hidden;*/
+	position: absolute;
+    text-align: center;
+	background: #EFEFF0;
+	height: calc(100% - 40px);
+    width: calc(100% - 192px);
+}
+#data_center div.data_center_child.data_panel{
+	display: block;
+	line-height: inherit;
+}
+#data_center div.data_center_child>span{
+    left: 0px;
+    right: 0px;
+    bottom: 50%;
+	position: absolute;
+}
+#data_center div.data_center_head{
+	float: left;
+	width: 100%;
+	margin-bottom: 16px;
+}
+#data_center div.data_center_head h3,
+#data_center div.data_other_head h3.data_other_head_h3{
+	float: left;
+	margin: 0px;
+    height: 38px;
+	padding: 0px;
+	color: #333333;
+	font-size: 18px;
+    line-height: 38px;
+    margin-right: 28px;
+	font-weight: normal;
+}
+#data_center div.data_center_head .data_center_statistics{
+	width: 100%;
+	height: 130px;
+	display: flex;
+	margin-bottom: 24px;
+}
+#data_center div.data_center_head .data_center_statistics p{
+	flex: auto;
+	color: #333333;
+	font-size: 14px;
+	padding-top: 36px;
+	margin-right: 16px;
+	text-align: center;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+	box-shadow: 0 0 10px 0 #EBEEF4;
+}
+#data_center div.data_center_head .data_center_statistics p:last-child{
+	margin-right: 0px;
+}
+#data_center div.data_center_head .data_center_statistics p span,
+#data_center div.data_center_head .data_center_statistics p b{
+	display: block;
+}
+#data_center div.data_center_head .data_center_statistics p b{
+	font-size: 24px;
+	margin-top: 20px;
+}
+#data_center div.data_center_body{
+    width: 100%;
+    float: left;
+    position: relative;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    /*max-height: calc(100% - 228px);*/
+}
+
+#data_center div.data_center_head>div{
+	float: left;
+}
+#data_center div.data_center_head>div div.select_param{
+	float: left;
+	cursor: pointer;
+	position: relative;
+	margin-right: 24px;
+	/* padding-bottom: 10px; */
+}
+.ASSET_INSPECTION div.data_center_head>div div.select_param.select_SUBTYPE{
+	display: none !important;
+}
+#data_center div.data_center_head>div div.input_param{
+	float: left;
+	margin-right: 24px;
+}
+#data_center div.data_center_child>div div.select_param span.mouse_span{
+	top: 38px;
+	left: 0px;
+	height: 3px;
+	z-index: 110;
+	max-width: none;
+	position: absolute;
+	width: -webkit-fill-available;
+}
+#data_center div.data_center_child>div div.select_param ul{
+	top: 41px;
+	left: 0px;
+	right: 0px;
+	z-index: 111;
+	padding: 16px;
+	display: none;
+	margin: 0 auto;
+	min-width: 70px;
+	overflow-x: auto;
+	max-height: 400px;
+	position: absolute;
+	border-radius: 8px;
+	width: max-content;
+    height: max-content;
+	background: #FFFFFF;
+	box-shadow: 0 0 4px 0 #CFD7E5;
+}
+#data_center div.data_center_child>div div.select_param ul::-webkit-scrollbar{
+	display:none
+}
+#data_center.PAVEMENT_DISTRESS div.data_center_child>div div.select_param.select_TYPE ul{
+    width: 280px;
+}
+#data_center.PAVEMENT_DISTRESS div.data_center_child>div div.select_param.select_TYPE ul>div{
+    float:left;
+}
+#data_center.PAVEMENT_DISTRESS div.data_center_child>div div.select_param.select_TYPE ul li{
+    width: 33%;
+    float: left;
+}
+#data_center.PAVEMENT_DISTRESS div.data_center_child>div div.select_param.select_TYPE ul li:first-child{
+    width: 100%;
+}
+#data_center div.data_center_child>div div.select_param ul li{
+	height: 14px;
+	line-height: 14px;
+	margin-bottom: 16px;
+}
+#data_center div.data_center_child>div div.select_param ul li:last-child{
+	margin-bottom: 0px;
+}
+#data_center div.data_center_child>div div.select_param ul li label{
+	float: left;
+	cursor: pointer;
+}
+#data_center div.data_center_child>div div.select_param ul li label span{
+	opacity: 1;
+	float: left;
+	color: #333333;
+	font-size: 12px;
+	margin-right: 0px;
+	line-height: 14px;
+}
+#data_center div.data_center_child>div div.select_param ul li label input[type=radio] {
+    float: left;
+}
+#data_center div.data_center_head>div div.select_param ul li label input[type=checkbox] {
+    display: none;
+}
+#data_center div.data_center_head>div div.select_param ul li label .checkbox_b{
+    opacity: 1;
+    float: left;
+    width: 14px;
+	height: 14px;
+    cursor: pointer;
+    transform: none;
+    margin-top: 0px;
+	margin-right: 8px;
+    display: inline-block;
+    background-size: 14px 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../Img/checkbox_2.png);
+}
+#data_center div.data_center_head>div div.select_param ul li label .checkbox_b:hover{
+	background-image: url(../Img/checkbox_2.png);
+}
+#data_center div.data_center_head>div div.select_param ul li label input[type=checkbox]:checked + .checkbox_b {
+    background-image: url(../Img/checkbox_ed_2.png);
+}
+
+
+#data_center div.data_center_child>div div.select_param p{
+	float: left;
+	cursor: pointer;
+	background: #FFFFFF;
+	border-radius: 100px;
+	border: 1px solid #DDE3E7;
+	padding: 11px 12px 11px 16px;
+}
+#data_center div.data_center_child>div div.select_param span{
+	float: left;
+	opacity: 0.7;
+	height: 14px;
+	color: #333333;
+	font-size: 14px;
+	max-width: 79px;
+	overflow: hidden;
+	line-height: 14px;
+	margin-right: 4px;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+#data_center div.link_code_param ul li span{
+	max-width: max-content !important;
+}
+#data_center div.data_center_child>div div.select_param p b{
+	float: left;
+	width: 12px;
+	height: 12px;
+    opacity: 0.7;
+	color: #9B9B9B;
+	margin-top: 1px;
+	line-height: 50%;
+	text-align: center;
+}
+#data_center div.data_center_child>div div.select_param b.active{
+    transform: rotate(180deg);
+}
+#data_center div.data_center_head>div div.input_param input{
+	float: left;
+	width: 28px;
+	height: 36px;
+	color: #000000;
+	font-size: 14px;
+	padding: 0px 16px;
+	text-align: center;
+	background: #FFFFFF;
+	border-radius: 100px;
+	border: 1px solid #DDE3E7;
+}
+#data_center input[type="number"]::-webkit-outer-spin-button,
+#data_center input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+#data_center div.data_center_head>div div.input_param input::-webkit-input-placeholder,
+#data_center div.data_center_head>div div.input_param input:-moz-placeholder,
+#data_center div.data_center_head>div div.input_param input::moz-placeholder,
+#data_center div.data_center_head>div div.input_param input:-ms-input-placeholder{
+	color: rgba(51, 51, 51, 0.7);
+}
+#data_center div.data_center_head>div div.input_param span{
+	width: 6px;
+	float: left;
+	height: 36px;
+	color: #9B9B9B;
+	margin: 0px 4px;
+	line-height: 36px;
+	text-align: center;
+}
+#data_center div.data_center_head div.search_param button{
+	width: auto;
+	height: 36px;
+	color: #2944F2;
+	font-size: 14px;
+	line-height: 36px;
+	padding: 0px 16px;
+	border-radius: 100px;
+	background-color: rgba(81,103,247,0.2);
+}
+#data_center div.data_center_head div.search_param button:hover{
+	background-color: rgba(81,103,247,0.5);
+}
+
+
+
+/*table列表样式*/
+#data_center .data_center_child table{
+	border-collapse: collapse;
+	font-size: 12px;
+}
+#data_center .data_center_child table tbody{
+	/*max-height: calc(100% - 237px);*/
+	/*overflow: auto;*/
+}
+#data_center .data_center_child table tbody tr{
+	height: 40px;
+	border-top: 1px solid #E5E5E5;
+}
+#data_center .data_center_child .bootstrap-table .fixed-table-container .table thead th .th-inner{
+	min-width: 65px;
+    white-space: normal;
+    /* height: 40px; */
+    padding: 0px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100%;
+}
+#data_center .data_center_child table tbody tr td{
+	color: #333333;
+	font-size: 14px;
+	min-width: 65px;
+	max-width: 100px;
+	overflow: hidden;
+    white-space: nowrap;
+	word-break: break-all;
+    text-overflow: ellipsis;
+}
+/* 当页面大于1900px的时候执行它下面的CSS */
+@media screen and (min-width: 1500px){
+	#data_center .data_center_child table tbody tr td{
+		max-width: 160px;
+	}
+}
+
+#data_center .bootstrap-table .fixed-table-container table thead tr {
+	height: 40px;
+	font-size: 14px;
+	color: rgba(51, 51, 51, 0.5);
+}
+#data_center .bootstrap-table .fixed-table-container table thead th {
+	height: 40px;
+    border-bottom: none;
+	font-weight: normal;
+}
+#data_center .bootstrap-table .fixed-table-container table tr td a{
+	width: 14px;
+    height: 14px;
+	display: block;
+	margin: 0 auto;
+    background-size: 14px 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../Img/open_map.png);
+}
+#data_center .bootstrap-table .fixed-table-container table tr td a.measurements{
+    background-image: url(../Img/measurements.png);
+}
+#data_center .bootstrap-table .fixed-table-container table tr td a.remarks{
+    background-image: url(../Img/remarks.png);
+}
+#data_center .bootstrap-table .fixed-table-container table tr td a.read_only{
+	opacity: 0.5;
+}
+
+
+
+/*分页样式*/
+.bootstrap-table .fixed-table-pagination{
+    left: 0px;
+	float: left;
+	height: 24px;
+    right: 238px;
+    margin: 0 auto;
+    margin-top: 16px;
+	position: absolute;
+    width: max-content;
+}
+.bootstrap-table .fixed-table-pagination div.pagination{
+	margin: 0px;
+}
+.bootstrap-table .fixed-table-footer{
+	display: none;
+}
+.bootstrap-table .fixed-table-pagination .float-left.pagination-detail{
+	display: none;
+}
+.bootstrap-table .fixed-table-pagination>.pagination,
+.bootstrap-table .fixed-table-pagination>.pagination ul{
+	float: left;
+	margin: 0px;
+	height: 24px;
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li{
+	float: left;
+	margin-right: 24px;
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li.disabled{
+	pointer-events: none;
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li a{
+	float: left;
+	height: 24px;
+	color: #333333;
+	min-width: 7px;
+	font-size: 16px;
+    padding: 0px 9px;
+	line-height: 24px;
+	text-align: center;
+	border-radius: 100px;
+	text-decoration: none;
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li.page-pre a,
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li.page-next a{
+	font-size: 20px;
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li.active a{
+	color: #000000;
+	background-color: rgba(155, 155, 155, 0.3);
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li:hover a{
+	background-color: rgba(155, 155, 155, 0.2);
+}
+.bootstrap-table .fixed-table-pagination>.pagination ul.pagination li.active:hover a{
+	background-color: rgba(155, 155, 155, 0.3);
+}
+
+#data_center .data_center_child .page_jump{
+	float: left;
+}
+#data_center .data_center_child .page_jump b,
+#data_center .data_center_child .page_jump span,
+#data_center .data_center_child .page_jump input,
+#data_center .data_center_child .page_jump button{
+	float: left;
+	height: 24px;
+	font-size: 12px;
+	line-height: 24px;
+	color: rgba(51, 51, 51, 0.5);
+}
+#data_center .data_center_child .page_jump input{
+	width: 38px;
+	height: 22px;
+	font-size: 10px;
+	margin: 0px 10px;
+	text-align: center;
+	background-color: #EFEFF0;
+	border: 1px solid rgba(155, 155, 155, 0.15);
+}
+#data_center .data_center_child .page_jump input:focus{
+	color: #333333;
+	background-color: #FFFFFF;
+	caret-color: rgba(51, 51, 51, 0.5);
+	border: 1px solid rgba(155, 155, 155, 0.15);
+}
+#data_center .data_center_child .page_jump button{
+	width: 40px;
+	height: 24px;
+	margin-left: 10px;
+	border-radius: 0px;
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(155, 155, 155, 0.15);
+}
+#data_center .data_center_child .page_jump button:hover{
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(155, 155, 155, 0.5);
+}
+
+#data_center .data_center_tab{
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	z-index: 999;
+	position: absolute;
+	background-color: rgb(58, 65, 85);
+}
+#data_center .data_center_tab ul{
+	margin-top: 14px;
+}
+#data_center .data_center_tab ul li{
+	width: 122px;
+	height: 14px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 17px 0px;
+	margin-bottom: 8px;
+	padding-left: 30px;
+	color: rgba(255, 255, 255, 1);
+	
+	opacity: 0.3;
+}
+#data_center .data_center_tab ul li:hover{
+	opacity: 1;
+}
+#data_center .data_center_tab ul li.active{
+	opacity: 1;
+	background-image: linear-gradient(-90deg, rgba(97,118,248,0.00) 0%, #5167F7 100%);
+}
+#data_center .data_center_tab ul li span{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#data_center .data_center_tab ul li:nth-of-type(1) span{
+    background-image: url(../Img/路段分析@2x.png);
+}
+#data_center .data_center_tab ul li:nth-of-type(2) span{
+    background-image: url(../Img/病害分析@2x.png);
+}
+#data_center .data_center_tab ul li:nth-of-type(3) span{
+    background-image: url(../Img/病害列表@2x.png);
+}
+#data_center .data_center_tab ul li:nth-of-type(4) span{
+    background-image: url(../Img/巡检记录@2x.png);
+}
+#data_center .data_center_tab ul li:nth-of-type(5) span{
+    background-image: url(../Img/其他数据@2x.png);
+}
+
+/* 数据中心--路段分析 */
+#data_center .data_center_child.road_analyse,
+#data_center .data_center_child.disease_analyse{
+	/* margin-top: 4px; */
+}
+#data_center .road_analyse .road_analyse_head,
+#data_center .disease_analyse .disease_analyse_head{
+    float: left;
+    width: 100%;
+    height: 36px;
+}
+#data_center .road_analyse .road_analyse_head h3,
+#data_center .disease_analyse .disease_analyse_head h3,
+#data_center .data_other .data_other_head h3{
+	float: left;
+	margin: 0px;
+    height: 36px;
+	color: #9B9B9B;
+	font-size: 14px;
+	line-height: 36px;
+	margin-right: 12px;
+	font-weight: normal;
+}
+#data_center .road_analyse .road_analyse_head .select_param,
+#data_center .disease_analyse .disease_analyse_head .select_param,
+#data_center .data_other .data_other_head .select_param{
+	float: left;
+    height: 36px;
+    line-height: 36px;
+	position: relative;
+}
+.ASSET_INSPECTION .road_analyse .road_analyse_head .select_param.select_statistical_unit,
+.ASSET_INSPECTION .road_analyse .road_analyse_head .select_statistical_unit_head{
+	display: none !important;
+}
+#data_center .road_analyse .road_analyse_head .select_param p span,
+#data_center .disease_analyse .disease_analyse_head .select_param p span,
+#data_center .data_other .data_other_head .select_param p span{
+	opacity: 1;
+	line-height: 14px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+#data_center .road_analyse .road_analyse_head .select_param.link_code_param p span,
+#data_center .disease_analyse .disease_analyse_head .select_param.link_code_param p span,
+#data_center .data_other .data_other_head .select_param.link_code_param p span{
+	max-width: 300px;
+}
+#data_center .road_analyse .road_analyse_head .select_param p b,
+#data_center .disease_analyse .disease_analyse_head .select_param p b,
+#data_center .data_other .data_other_head .select_param p b{
+
+}
+#data_center .road_analyse .road_analyse_body,
+#data_center .data_other .data_other_body{
+    width: 100%;
+    float: left;
+    margin-top: 16px;
+	position: relative;
+	border-radius: 8px;
+	background: #FFFFFF;
+	border: 1px solid #E5E5E5;
+}
+#data_center .road_analyse .road_analyse_head a.download_list{
+    width: 56px;
+    height: 14px;
+	float: right;
+    color: #666666;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 11px 16px;
+    padding-left: 44px;
+	border-radius: 100px;
+	text-decoration: none;
+    background-color: initial;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 16px 11px;
+    background-image: url(../Img/download_default.png);
+}
+#data_center .road_analyse .road_analyse_head a.download_list span{
+	float: left;
+	height: 16px;
+	line-height: 16px;
+}
+#data_center .road_analyse .road_analyse_head a.download_list:hover{
+    color: #2944F2;
+    background-position: 16px 10px;
+	/* background-color: rgba(81, 103, 247, 0.2); */
+    background-image: url(../Img/download_active.png);
+}
+
+/* 病害分析 */
+#data_center .disease_analyse .disease_analyse_head .sort_list{
+	float: right;
+}
+#data_center .disease_analyse .disease_analyse_head .sort_list b,
+#data_center .disease_analyse .disease_analyse_head .sort_list span{
+	height: 36px;
+	color: #333333;
+	cursor: pointer;
+	font-size: 14px;
+	margin: 0px 12px;
+	line-height: 36px;
+	font-weight: normal;
+}
+#data_center .disease_analyse .disease_analyse_head .sort_list span{
+	cursor: auto;
+	color: #9B9B9B;
+}
+#data_center .disease_analyse .disease_analyse_head .sort_list b.active{
+	color: #2944F2;
+	font-weight: bold;
+}
+#data_center .disease_analyse .disease_analyse_head .sort_list b:hover{
+	color: #2944F2;
+}
+#data_center .disease_analyse .disease_analyse_head .sort_list b.active:hover{
+	color: #2944F2;
+	font-weight: bold;
+}
+#data_center .disease_analyse .disease_analyse_head{
+	border: none;
+	background: none;
+}
+#data_center .disease_analyse .disease_analyse_body{
+	width: 100%;
+	float: left;
+	margin-top: 3px;
+	overflow-y: auto;
+	height: calc(100% - 36px);
+}
+#data_center .disease_analyse .disease_analyse_body::-webkit-scrollbar {
+	display: none; /* Chrome Safari */
+}
+#data_center .disease_analyse .disease_analyse_body .data_child{
+	float: left;
+	padding: 20px;
+	/* height: 234px; */
+	margin-top: 13px;
+	min-height: 184px;
+	max-height: 234px;
+	position: relative;
+	margin-right: 13px;
+	border-radius: 8px;
+	background: #FFFFFF;
+	width: calc(33.333% - 50px);
+	box-shadow: 0 0 10px 0 #EBEEF4;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child .data_child_px{
+	left: 0px;
+	right: 0px;
+	float: left;
+	/* height: 234px; */
+	margin: 0 auto;
+	min-width: 333px;
+	max-width: 100%;
+	min-height: 184px;
+	max-height: 234px;
+	padding: 0px 10px;
+	/* position: absolute; */
+}
+#data_center .disease_analyse .disease_analyse_body .data_child:nth-child(3n+3){
+	margin-right: 0px;
+}
+/* 当页面大于1900px的时候执行它下面的CSS */
+@media screen and (min-width: 1750px){
+	#data_center .disease_analyse .disease_analyse_body .data_child{
+		width: calc(25% - 50px);
+	}
+	#data_center .disease_analyse .disease_analyse_body .data_child:nth-child(3n+3){
+		margin-right: 13px;
+	}
+	#data_center .disease_analyse .disease_analyse_body .data_child:nth-child(4n+4){
+		margin-right: 0px;
+	}
+}
+
+#data_center .disease_analyse .disease_analyse_body .data_child .disease_analyse_image{
+	width: 100%;
+	height: 100px;
+	margin-bottom: 8px;
+	position: relative;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child .disease_analyse_image img{
+	top: 0px;
+	left: 0px;
+	float: left;
+	width: 100px;
+	height: 100px;
+	border-radius: 4px;
+	margin-right: 24px;
+	position: absolute;
+	background-color: #D8D8D8;
+	
+	background-color: #F5F5F5;
+	box-shadow: 0 0 8px 0 rgba(186,195,253,0.30);
+}
+#data_center .disease_analyse .disease_analyse_body .data_child .disease_analyse_image div{
+	top: 0px;
+	left: 0px;
+	float: left;
+	width: 100px;
+	height: 100px;
+	border-radius: 4px;
+	margin-right: 24px;
+	position: absolute;
+	
+	background-color: #D8D8D8;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child .disease_analyse_image span{
+	top: 16px;
+	left: 124px;
+	float: left;
+	height: 14px;
+	color: #9B9B9B;
+	font-size: 14px;
+	line-height: 14px;
+	position: absolute;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child .disease_analyse_image b{
+	top: 41px;
+	left: 124px;
+	float: left;
+	height: 18px;
+	color: #333333;
+	font-size: 18px;
+	line-height: 18px;
+	position: absolute;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul{
+	width: 100%;
+	float: left;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li{
+	float: left;
+	width: 100%;
+	padding: 12px 0px;
+	border-bottom: 1px solid #F3F3F3;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li:last-child{
+	border-bottom: none;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li:last-child{
+	border-bottom: none;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li>span{
+	float: left;
+	color: #9B9B9B;
+	font-size: 14px;
+	overflow: hidden;
+	text-align: right;
+	margin-left: 10px;
+	white-space: nowrap;
+	width: calc(50% - 10px);
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li>span:first-child{
+	margin-left: 0px;
+	margin-right: 10px;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li>span span{
+	float: left;
+	width: 100px;
+	text-align: left;
+	margin-right: 10px;
+	display: inline-block;
+}
+#data_center .disease_analyse .disease_analyse_body .data_child ul li>span b{
+	/* float: left; */
+	color: #333333;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+#data_center div.data_center_child.road_analyse>div div.select_param ul,
+#data_center div.data_center_child.disease_analyse>div div.select_param ul,
+#data_center div.data_center_child.data_other>div div.select_param ul{
+	min-width: auto;
+}
+#data_center .data_center_child.road_analyse label input,
+#data_center .data_center_child.disease_analyse label input,
+#data_center .data_center_child.data_other label input{
+	display: none;
+}
+#data_center .data_center_child.road_analyse label b,
+#data_center .data_center_child.disease_analyse label b,
+#data_center .data_center_child.data_other label b{
+	float: left;
+	margin: 0px;
+	width: 12px;
+	height: 12px;
+	margin-right: 8px;
+	border-radius: 100px;
+	background-color: #FFFFFF;
+	border: 1px solid #999999;
+}
+#data_center .data_center_child.road_analyse label input:checked + b,
+#data_center .data_center_child.disease_analyse label input:checked + b,
+#data_center .data_center_child.data_other label input:checked + b{
+	width: 6px;
+	height: 6px;
+	border: 4px solid #333333;
+}
+
+/* 坐标信息窗口 */
+#data_center .coordinate_info{
+	top: 300px;
+	right: 300px;
+	z-index: 3333;
+	display: none;
+	position: absolute;
+	border-radius: 8px;
+	padding: 16px 24px;
+	padding-bottom: 6px;
+	background: #FFFFFF;
+	border: 1px solid #F2F4F9;
+	box-shadow: 0 0 8px 0 rgba(186,195,253,0.40);
+}
+#data_center .coordinate_info p{
+	font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 10px;
+}
+#data_center .coordinate_info p span{
+	display: block;
+	color: #9B9B9B;
+}
+#data_center .coordinate_info p b{
+	display: block;
+	color: #151515;
+	font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

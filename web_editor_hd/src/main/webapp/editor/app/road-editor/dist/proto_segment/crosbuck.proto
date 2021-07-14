@@ -1,0 +1,5 @@
+syntax = "proto2";
+import "common.proto";
+message CROSBUCK {
+    optional PointInt center = 1;//轮廓的中心点像素坐标
+}

@@ -1,0 +1,37 @@
+{
+  "name": "MapEditor-Road",
+  "version": "1.0.0",
+  "description": "MapEditor",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node development_server.js develop"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "art-template": "^3.0.3",
+    "babel-core": "^6.26.3",
+    "babel-minify": "^0.4.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-script": "^1.1.0",
+    "babel-preset-es2016": "^6.24.1",
+    "del": "^2.0.2",
+    "ecstatic": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.4.1"
+  },
+  "dependencies": {
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "protobufjs": "^6.8.8"
+  }
+}

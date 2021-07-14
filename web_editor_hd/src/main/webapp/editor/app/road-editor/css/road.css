@@ -1,0 +1,481 @@
+#KDSEditor-RoadTip {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: 100px;
+    background: red;
+    color: #fff;
+    padding: 0 10px;
+    line-height: 200%;
+}
+
+.no-pointer-events,
+.no-pointer-events * {
+    -webkit-pointer-events: none !important;
+    pointer-events: none !important;
+}
+
+.no-top-border {
+    border-top: 0 !important;
+}
+
+.combobox a {
+    font-size: 13px;
+}
+
+.KDSEditor-inspector-inner {
+    /*padding: 20px 13px;*/
+}
+
+.tag_editor_pane .form-input-field > input {
+    border-top: 0;
+}
+
+.tag_editor_pane .field-group {
+    margin-bottom: 15px;
+}
+
+.verify-button-group button {
+    margin: 0 5px;
+    width: 125px;
+    height: 34px;
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: 25px 10px;
+    background-size: 13px;
+    padding-left: 10px;
+    text-align: center;
+}
+.verify-button-group .start {
+    background-color: #68DB75;
+    background-image: url(../dist/img/roadmap/startwork.png);
+}
+
+.form-field.readonly .form-label-button-wrap {
+    display: none;
+}
+
+.KDSEditor-form-field button.button-input-action {
+    position: relative;
+    width: 10%;
+    margin-left: -10%;
+    right: 5px;
+    top: 5px;
+    /*    border: 1px solid #CCC;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-radius: 0 0 4px 0;*/
+    height: 20px;
+    vertical-align: top;
+}
+
+.form-field.readonly button.button-input-action {
+    display: none;
+}
+
+.form-field.readonly .combobox-caret {
+    display: none;
+}
+
+.toastr-box.warning .tooltip.top .tooltip-arrow {
+    border-top-color: #000;
+}
+
+.toastr-box.warning .tooltip-inner {
+    background: #000;
+    color: orange;
+    font-weight: 700;
+}
+
+h3.fold_title {
+    position: relative;
+    padding-right: 25px;
+    cursor: pointer;
+}
+
+h3.fold_title:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-width: 10px 5px;
+    border-top-color: #333;
+    transition-property: all;
+    transition-duration: .3s;
+}
+
+.fold .fold_body {
+    display: none;
+}
+
+.fold h3.fold_title:after {
+    top: 13px;
+    transform-origin: 50% 20%;
+    transform: rotate(-90deg);
+}
+
+.traffic-area .rule-group {}
+
+.traffic-area .rule-group .rule-group-body {
+    padding: 0 15px;
+    background-color: #f6f6f6;
+    clear: both;
+}
+
+.traffic-area .rule-group-title.no-title {
+    display: none;
+}
+
+.traffic-area .rule-grplist {
+    max-height: 1350px;
+    overflow-y: scroll;
+}
+
+.traffic-area h3.rule-group-title {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    color: #333;
+    line-height: 2.5em;
+    padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.traffic-area .fold h3.rule-group-title {
+    border-bottom: none;
+}
+
+.rule-group label.check,
+.rule-group label.radio {
+    margin-right: 20px;
+    padding: 7px 0;
+    min-width: 85px;
+}
+
+.rule-group label.check input.inp-check {
+    float: none;
+    vertical-align: top;
+}
+
+.rule-group .fold_body {
+    padding: 0 5px
+}
+
+.rule-group button.row-add {
+    height: 22px;
+    padding: 0 10px 0 3px;
+    background-color: #eee;
+    min-width: 100px;
+    text-align: left;
+    margin: 5px 0 10px;
+    font-size: 12px;
+}
+
+.rule-group button.row-add:hover {
+    background-color: #ddd;
+}
+
+.rule-group .row_item {
+    line-height: 270%;
+    position: relative;
+}
+
+.rule-group .row_item .toastr-box {
+    display: inline-block;
+}
+
+.rule-group .tooltip.right .tooltip-arrow {
+    border-right-color: #000;
+}
+
+.rule-group .tooltip-inner {
+    background: #000;
+    color: orange;
+    font-weight: 700;
+}
+
+.rule-group .row_item .row_divider {
+    margin: 0 10px;
+}
+
+.rule-group .row_item button {
+    height: auto;
+    margin-left: 10px
+}
+
+.date_range_item select.month_sel option,
+.date_range_item select.day_sel option {
+    direction: rtl;
+}
+
+.road_control_pane .field-label {
+    margin-right: 7px;
+}
+
+.road_control_pane .field-label:after {
+    content: ': ';
+}
+
+.road_control_pane .field_row {
+    margin: 15px auto;
+    width: 90%;
+}
+
+.road_control_pane .footer {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.road_control_pane .button {
+    padding: 1px 10px;
+    margin-right: 20px
+}
+
+.road-control-icon circle {
+    fill: orange;
+}
+
+.road-control-icon text {
+    font-size: 13px;
+}
+
+.road-control-icon:hover circle {
+    stroke-width: 3px;
+    stroke: #F6634F;
+}
+
+.road-rule-icon {
+    transform: scale(0.98);
+}
+
+.road-rule-icon:hover {
+    transform: scale(1);
+}
+
+.road-rule-icon,
+.road-control-icon {
+    opacity: 0.9;
+}
+
+.road-rule-icon:hover,
+.road-control-icon:hover {
+    opacity: 1;
+}
+
+.hidden {
+    display: none!important;
+}
+.hidden-visibility {
+    visibility: hidden !important;
+}
+
+.KDSEditor-icon.close {
+    background-position: -37px -160px;
+    background-image: url(../dist/img/tageditor-icon.png);
+}
+
+.KDSEditor-header,
+.KDSEditor-fr.preset-close {
+    background-color: #bbbbbb;
+    border: 0;
+}
+
+.KDSEditor-icon.plus {
+    background-position: -80px -116px;
+    background-image: url(../dist/img/tageditor-icon.png);
+}
+
+.KDSEditor-icon.delete {
+    background-position: -123px -68px;
+    background-image: url(../dist/img/tageditor-icon.png);
+}
+
+.KDSEditor-inspector-body {
+    background-color: #f6f6f6;
+}
+
+.KDSEditor-id-container button.minor .icon.delete {
+    opacity: 1;
+}
+
+.button-input-action.minor.remove {
+    width: 5%;
+    margin-left: -5%;
+}
+
+.KDSEditor-inspector-border {
+    border: 0
+}
+
+.common-dialog .model_title {
+    height: 30px;
+    line-height: 30px;
+    background: #f6f6f6;
+    color: #333;
+    font-size: 14px;
+}
+
+.common-dialog .title {
+    line-height: 200%;
+    padding: 0 10px;
+    cursor: move;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 110%;
+    font-weight: 700;
+    border-bottom: 1px solid #BBB;
+}
+.common-dialog .title-close{
+    font-size: 19px;
+    line-height: 28px;
+    cursor: pointer;
+    padding: 0 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ff6c6c;
+}
+.common-dialog .title-close::before{
+    content: "×";
+}
+.common-dialog .title-close:hover{
+    color: #fff;
+    background: #666;
+}
+.common-dialog .body {
+    background: #fff;
+    color: #666;
+    font-size: 12px;
+    /* padding: 15px 0 0; */
+    padding: 5px 10px;
+}
+
+.common-dialog .button {
+    display: inline-block;
+    background: #63b4fd;
+    font-size: 12px;
+    color: #fff;
+    line-height: 2em;
+    padding: 0 10px;
+    height: 2em;
+    width: auto;
+}
+
+.common-dialog .button:hover {
+    box-shadow: 1px 1px 1px 0 #ccc;
+}
+
+.common-dialog .button:active {
+    box-shadow: inset 0 0 10px 1px #ccc;
+}
+
+.common-dialog .button.blue {
+    background: #63b4fd;
+}
+
+.common-dialog .button.red {
+    background: #ff6c6c;
+}
+
+.common-dialog .button.gray {
+    background: #d8d8d8;
+}
+
+.common-dialog button {
+    text-align: center;
+    line-height: 2em;
+    background: transparent;
+    font-size: 14px;
+    height: 2em;
+}
+
+.common-dialog button .KDSEditor-icon {
+    vertical-align: middle;
+}
+
+rect.rule_time_bg {
+    fill: rgba(255, 255, 255, 0.8);
+}
+
+text.rule_time_txt {
+    stroke: #333;
+    stroke-width: 1px;
+    font-size: 12px;
+    font-family: verdana;
+}
+
+.disabled button {
+    display: none;
+}
+
+.disabled select,
+.disabled input {
+    background-color: #eee;
+    border: 1px solid #999;
+}
+
+.panorama {
+    float: right;
+    width: 50%;
+    height: 100%;
+    /*display: block;*/
+}
+.panoram-hide {
+    display: none;
+}
+.panorama-container iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.panorama-change {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+.panorama-change div{
+    border: 2px solid #8E8D8D;
+    /*background-color: #fff;*/
+    /*padding: 0px 2px;*/
+    /*height: 25px;*/
+    /*line-height: 25px;*/
+    /*text-align: center;*/
+    /*font-family: Microsoft Yahei;*/
+}
+/*.panorama-change div:hover{*/
+    /*background-color: #F3F3F3;*/
+/*}*/
+.qqmap{
+    width: 48px;
+    height: 46px;
+    background-image: url(../dist/img/qqmap.png);
+}
+.baidumap{
+    width: 48px;
+    height: 46px;
+    margin-top: 5px;
+    background-image: url(../dist/img/baidumap.png);
+}
+
+.KDSEditor-fr.preset-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    width: 24px;
+}
+.KDSEditor-header h3{
+    padding: 12px 2px;
+    padding-right: 24px;
+    width: 100%;
+}

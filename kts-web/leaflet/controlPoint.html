@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>控制点管理</title>
+		<script src="../config.js"></script>
+		<script src="../KeyWord.js" type="text/javascript" charset="utf-8"></script>
+	  	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	  	<link rel="stylesheet" href="../diagram-viewer/style.css" type="text/css" media="screen" />
+	  	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  	<!-- Font Awesome -->
+	  	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+	  	<!-- Ionicons -->
+	  	<link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+	  	<!-- Theme style -->
+	  	<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+	
+	  	<!-- DataTables -->
+	  	<link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	  	<link rel="stylesheet" href="../logger_count/bower_components/spop/spop.min.css">
+	
+	  	<link rel="stylesheet" href="../dist/css/dialog.css">
+	  	<link rel="stylesheet" href="../dist/js/citys/jock-citypicker-2.0.css">
+	</head>
+	<style>
+		#on-off>div.col-md-12{
+		    /*height: 50px;*/
+		    font-size: 12px;
+		    line-height: 20px;
+		    padding: 5px;
+		}
+		.cityValue{
+			padding: 5px;
+			width: 180px;
+			margin-left: 5px;
+		}
+		.noImageIcon{
+			background: #000000;
+			border-radius: 8px;
+		}
+		.ImageIcon{
+			background: blue;
+			border-radius: 8px;
+		}
+		.specialImageIcon{
+			background: green;
+			border-radius: 8px;
+		}
+		.pointImage{
+			display: none;
+			position: absolute;
+			z-index: 1111;
+			width: 500px;
+			border: 1px solid #999;
+			top: 10px;
+			left: 300px;
+			background: #FFFFFF;
+		}
+		.pointImage h5{
+		    padding: 5px;
+		    font-size: 14px;
+		}
+		.pointImage h5 span.glyphicon{
+			float: right;
+			cursor: pointer;
+		}
+		.pointImage img{
+			width: 100%;
+		}
+		.pointImage div{
+			padding: 5px;
+			text-align: center;
+		}
+		.pointImage div a{
+			margin: 0px 30px;
+		}
+		.rightBtn{
+		    position: absolute;
+		    z-index: 1111;
+		    padding: 5px;
+		    font-size: 20px;
+		    top: 400px;
+		    left: 0px;
+		    cursor: pointer;
+		    background: #fff;
+		    border: 1px solid #000;
+		    border-left: none;
+		}
+		.rightBtn:hover{
+			background: #DDDDDD;
+		}
+		.leftTasks{
+		    position: absolute;
+		    z-index: 1111;
+		    width: 310px;
+		    background: #FFFFFF;
+		    max-height: 500px;
+		    top: 210px;
+		    left: 0px;
+		    display: none;
+		    border: 1px solid #000
+		}
+		.leftTasks h4{
+			float: left;
+    		width: 100%;
+		    border-bottom: 1px solid #000;
+		}
+		.leftTasks h4 b{
+		    float: left;
+		    height: 30px;
+		    line-height: 30px;
+		    font-weight: normal;
+		    padding-left: 10px;
+		}
+		.leftTasks h4 span.glyphicon{
+		    float: right;
+		    padding: 5px;
+		    cursor: pointer;
+		}
+		.leftTasks h4 span.pointCount{
+		    font-weight: normal;
+		}
+		.deletePoint{
+			color: red;
+			margin-left: 5px;
+		}
+		.deletePoint:hover{
+			color: red;
+		}
+		.leaflet-popup-content p.pStyle{
+			display: inline-block;
+		}
+		.leaflet-popup-content p.deletePoint a{
+			color: red;
+		}
+	</style>
+	<body>
+	    <section class="content container-fluid">
+	    	<div class="rightBtn" title="打开控制点分组列表">
+	    		<span class="glyphicon glyphicon-menu-right"></span>
+	    	</div>
+	    	<div class="leftTasks">
+	    		<h4>
+	    			<b>控制点分组（ 数量：<span class="pointCount"></span> ）</b>
+	    			<span class="glyphicon glyphicon-menu-left" title="收起"></span>
+	    		</h4>
+	    		<div class="groupNames">
+	    			
+	    		</div>
+	    	</div>
+	    	
+	    	<div class='testmodal'></div>
+	    	<div class='devicemodal'></div>
+	    	<div class='modalPicker'></div>
+	    	<div class='pointImage'>
+	    		<h5>
+	    			<span class="head">title</span>
+	    			<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+	    		</h5>
+	    		<img src="" title="点击图片单独打开" alt="图片加载失败" />
+	    		<div>
+	    			<a href="#" class="preImage" data-type="01">原始图片</a>
+	    			<a href="#" class="nextImage" data-type="02">缩略图片</a>
+	    		</div>
+	    	</div>
+			<div id="on-off" class="sourceModal" style="position: absolute;z-index: 1111;left: 50px;background: #fff;padding: 5px;top:10px;width: 200px;">
+				<input type="text" class="cityValue" value="" placeholder="行政区划定位" readonly="">
+				<input type="file" class="fileData" style="padding:5px;width:200px;" value="" readonly>
+				<div class='col-md-12'>
+					<button type="button" class="btn btn-block btn-success submitImport">确认导入</button>
+				</div>
+				<!--<div class='col-md-12'>
+					<label>控制点分组：</label>
+					<input type="text" class="form-control groupNames" placeholder="控制点分组列表" value="">
+				</div>-->
+			</div>
+			<div id="leaflet-map" style="width:100% !important;top:0px;height:100% !important;left:0px;">
+				
+			</div>
+	    </section>
+  		<!-- 等待创建任务相应 -->
+		<div id="loading" onclick="util.errorView('请耐心等待...')">
+			<img src="../dist/img/loading.gif" title="等待中">
+		</div>
+	</body>
+</html>
+
+<!-- jQuery 3 -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../diagram-viewer/js/jquery/jquery.progressbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="../diagram-viewer/js/jquery/jquery.asyncqueue.js" type="text/javascript" charset="utf-8"></script>
+<!--配置文件-->
+<script src="../dist/js/boot.js"></script>
+<!--功能配置-->
+<script src="../dist/js/switch/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../dist/js/switch/method.js" type="text/javascript" charset="utf-8"></script>
+<script src="../logger_count/bower_components/spop/spop.min.js" type="text/javascript" charset="utf-8"></script>
+<!--leaflet框架-->
+<script src="../dist/js/switch/method.js"></script>
+<script src="leafletjs.js" type="text/javascript" charset="utf-8"></script>
+<!--绘制多边形-->
+<script src="controlPoint.js" type="text/javascript" charset="utf-8"></script>
+<!--城市选择-->
+<script src="../dist/js/citys/citypicker-citylist.js"></script>
+<script src="../dist/js/citys/jock-citypicker-2.0.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

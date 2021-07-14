@@ -1,0 +1,22 @@
+syntax = "proto2";
+import "common.proto";
+import "start_type.proto";
+import "end_type.proto";
+import "lane_type.proto";
+
+message Lane{
+    optional lane_type.LaneType lane_type = 1;//车道线类型
+
+    repeated PointFloat mid_line_points = 3;//轮廓中线全
+    repeated PointInt left_line_points = 4;//轮廓左线/上线
+    repeated PointInt right_line_points = 5;//轮廓右线/下线
+
+    optional start_type.StartType start_type = 7;//起点类型
+    optional end_type.EndType end_type = 8;//终点类型
+    optional int32 nearby_block = 9;//附近要素类型
+    optional double confidence = 10;//识别置信度
+
+    repeated PointInt line_points = 11 ;//轮廓中线稀疏old
+
+
+}

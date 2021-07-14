@@ -1,0 +1,786 @@
+
+.leaflet-control-container{
+	display: none;
+}
+
+/*********************病害信息*********************/
+
+#highway_disease .disease_info{
+    top: 49px;
+    left: 0px;
+    width: 620px;
+    z-index: 120;
+    display: none;
+    color: #FFFFFF;
+    position: absolute;
+    padding: 10px 10px;
+    /*overflow-y: auto;*/
+    height: calc(100% - 69px);
+    box-shadow: 1px 0 0 0 #000920;
+    border-right: 1px solid #000000;
+    background-color: rgba(23,31,54,1);
+}
+#highway_disease .disease_info::-webkit-scrollbar {
+    width: 0;
+}
+.disease_info>div{
+	float: left;
+}
+.disease_info .info_header{
+	width: 100%;
+	height: 24px;
+	margin-bottom: 3px;
+	position: relative;
+}
+.disease_info .info_header a{
+	width: 24px;
+	float: right;
+	height: 24px;
+	opacity: 0.4;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 20px;
+	margin-left: 10px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+	/*font-weight: bold;*/
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 24px;		/*火狐*/
+}
+.disease_info .info_header a.active{
+	opacity: 1;
+	color: #5167F7;
+}
+.disease_info .info_header a:hover {
+	opacity: 1;
+}
+.disease_info .info_header .menu_manage{
+	width: 24px;
+	float: right;
+}
+.disease_info .info_header .menu_list{
+	top: 24px;
+	width: 134px;
+	z-index: 1001;
+	height: 115px;
+	display: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	position: absolute;
+	left: calc(100% - 58px);
+}
+.disease_info .info_header .menu_list .triangle{
+    top: 0px;
+    left: 10px;
+	width: 0px; 
+	height: 0px;
+	float: left;
+	margin-left: 0px;
+	border-width: 3px;
+	position: absolute;
+	border-style: solid;
+	transform: rotate(90deg);
+	border-color: transparent #0F1935 transparent transparent;
+}
+.disease_info .info_header .menu_list ul.menu_list_child{
+	top: 6px;
+	left: 0px;
+	width: 100%;
+	border-radius: 4px;
+	position: absolute;
+	padding: 7px 0px 6px 0px;
+	background-color: #0F1935;
+	/*border: 1px solid #2C3453;*/
+	/*background-color: rgba(15, 25, 53, 0.8);*/
+}
+.disease_info .info_header .menu_list ul.menu_list_child li{
+	height: 32px;
+	cursor: pointer;
+	line-height: 32px;
+	padding-left: 20px;
+}
+.disease_info .info_header .menu_list ul.menu_list_child li:hover{
+	background-color: #5167F7;
+}
+.disease_info .info_header .menu_list ul.menu_list_child li span{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-top: 8px;
+	margin-right: 12px;
+	
+    background-position: 0px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/collect@2x.png);
+}
+.disease_info .info_header .menu_list ul.menu_list_child li.active span{
+    background-image: url(../Img/collected@2x.png);
+}
+.disease_info .info_header .menu_list ul.menu_list_child li.active span{
+    background-image: url(../Img/collected@2x.png);
+}
+.disease_info .info_header .menu_list ul.menu_list_child li.menu_mark span{
+    background-image: url(../Img/mark@2x.png);
+}
+.disease_info .info_header .menu_list ul.menu_list_child li.menu_feedback span{
+    background-image: url(../Img/feedback.png);
+}
+.disease_info .info_header .menu_list ul.menu_list_child li.menu_mark.active span{
+    background-image: url(../Img/marked@2x.png);
+}
+.disease_info .info_header .menu_list ul.menu_list_child li.menu_mark:hover span{
+    background-image: url(../Img/mark@2x.png);
+}
+
+.disease_info .info_header .menu_list ul.menu_list_child li.menu_collect:hover span{
+    background-image: url(../Img/collect@2x.png);
+}
+/*.disease_info .info_header .menu_list ul.menu_list_child li.menu_mark:hover span{
+    background-image: url(../Img/mark@2x.png);
+}*/
+
+
+/*详情页视频界面*/
+.disease_info .info_image{
+	width: 100%;
+	font-size: 11px;
+	position: relative;
+	height: calc(100% - 107px);
+}
+.disease_info .info_image .info_image_btn{
+	width: 100%;
+	height: 24px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.disease_info .info_image .info_image_btn ul{
+	float: left;
+}
+.disease_info .info_image .info_image_btn ul li{
+	float: left;
+	width: 64px;
+	height: 24px;
+	cursor: pointer;
+	font-size: 12px;
+	line-height: 24px;
+	margin-right: 1px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(120, 127, 174, 0.3);
+}
+.disease_info .info_image .info_image_btn ul li:hover{
+	color: #FFFFFF;
+	/*background-color: rgba(120, 127, 174, 0.3);*/
+}
+.disease_info .info_image .info_image_btn ul li.active{
+	color: #FFFFFF;
+	background-color: #5167F7;
+}
+.disease_info .info_image .info_image_btn ul li.visua_up_map{
+	border-radius: 2px 0px 0px 2px;
+}
+.disease_info .info_image .info_image_btn ul li.point_cloud_map{
+	border-radius: 0px 2px 2px 0px;
+}
+.disease_info .info_image .info_image_btn a{
+	right: 2px;
+	width: 40px;
+	bottom: 0px;
+    opacity: 0.7;
+	height: 12px;
+	padding: 0px;
+	color: #FFFFFF;
+	font-size: 12px;
+	line-height: 12px;
+	position: absolute;
+}
+.disease_info .info_image .info_image_btn a.full_back_index{
+	left: 16px;
+	width: auto;
+	display: none;
+}
+.disease_info .info_image .info_image_btn a.full_back_index span{
+	font-size: 16px;
+	margin-right: 8px;
+}
+.disease_info .info_image .info_image_btn a span{
+	float: left;
+	width: 12px;
+	height: 12px;
+	font-size: 12px;
+	margin-right: 4px;
+}
+.disease_info .info_image .info_image_btn a.history_control{
+	right: 66px;
+	text-align: right;
+    background-position: 0px;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/history_icon.png);
+}
+.disease_info .info_image .info_image_btn a:hover{
+	opacity: 1;
+}
+.disease_info .info_image .info_image_btn a.full_screen_control:after {
+    content: '全屏';
+}
+
+/*详情页视频界面--全屏样式*/
+.disease_info .info_image.full_screen{
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: 9999;
+	position: fixed;
+    background: #3A4155;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.20);
+}
+.disease_info .info_image.full_screen .info_image_btn{
+	height: 36px;
+	border-bottom: 1px solid rgba(23,31,54,0.9);
+}
+.disease_info .info_image.full_screen .info_image_btn ul{
+	top: 5px;
+	left: 0px;
+	right: 0px;
+	float: left;
+	width: 195px;
+	margin: 0 auto;
+	position: absolute;
+}
+.disease_info .info_image.full_screen .info_image_btn a{
+	top: 12px;
+	right: 16px;
+}
+.disease_info .info_image.full_screen .info_image_btn a.history_control{
+	right: 80px;
+}
+.disease_info .info_image.full_screen .info_image_btn a.full_back_index{
+	display: block;
+}
+.disease_info .info_image.full_screen .info_image_btn a.full_screen_control:after {
+    content: '半屏';
+}
+
+/*详情页信息展示*/
+.disease_info .info_view,
+.disease_info .info_view_statistics{
+	width: 100%;
+	height: 44px;
+	font-size: 14px;
+	margin-bottom: 36px;
+}
+.disease_info .info_view_statistics{
+	display: none;
+}
+.ASSET_INSPECTION .disease_info .info_view_statistics{
+	display: none !important;
+}
+.disease_info .info_view p{
+	float: left;
+	width: auto;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding-right: 10px;
+}
+.disease_info .info_view p b,
+.disease_info .info_view p span{
+	float: left;
+	line-height: 14px;
+	font-weight: normal;
+}
+.disease_info .info_view .info_view_type{
+	width: 100%;
+	float: left;
+	height: 20px;
+	padding: 3px 0px;
+	margin-bottom: 7px;
+}
+.disease_info .info_view .info_view_type p{
+	height: 14px;
+	margin-left: 10px;
+	border-right: 2px solid rgba(255,255,255,0.2);
+}
+.disease_info .info_view .info_view_type p:first-child{
+	margin-left: 0px;
+}
+.disease_info .info_view .info_view_type p span.view_level{
+	height: 16px;
+	font-size: 12px;
+	padding: 0px 6px;
+	line-height: 16px;
+	background: #EC3A4E;
+	border-radius: 100px;
+	margin: 0px 0px 2px 8px;
+}
+.ASSET_INSPECTION .disease_info .info_view .info_view_type p span.view_level{
+	display: none;
+}
+.disease_info .info_view .info_view_type p span.icon_image,
+.cesium_popup .popup_content p span.icon_image{
+	width: 12px;
+	height: 14px;
+	font-size: 12px;
+	margin-right: 4px;
+	line-height: 14px;
+	font-weight: bold;
+	
+    background-size: 12px 12px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/icon_position.png);
+}
+.disease_info .info_view .info_view_type p span.icon_image.icon_time,
+.cesium_popup .popup_content p span.icon_image.icon_time{
+    background-image: url(../Img/icon_time.png);
+}
+.disease_info .info_view .info_view_param{
+	width: 100%;
+	float: left;
+    height: 44px;
+    overflow-x: auto;
+	line-height: 17px;
+}
+.disease_info .info_view .info_view_param::-webkit-scrollbar{
+    width: 0;
+}
+.disease_info .info_view .info_view_param span{
+	float: left;
+	opacity: 0.7;
+	font-size: 12px;
+	margin-right: 10px;
+}
+.disease_info .info_view_statistics h4{
+	left: 10px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	height: 44px;
+    width: 130px;
+	font-size: 14px;
+	line-height: 20px;
+	position: absolute;
+	font-weight: normal;
+}
+.disease_info .info_view_statistics .statistics_list{
+	left: 130px;
+	float: left;
+	position: absolute;
+	width: calc(100% - 140px);
+}
+.disease_info .info_view_statistics .statistics_list p{
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	height: 20px;
+	line-height: 20px;
+	padding-right: 10px;
+	margin: 3px 0px 1px 10px;
+	border-right: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/*详情二期样式*/
+.disease_info .player_video{
+	top: 34px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	height: calc(100% - 34px);
+}
+.disease_info .player_video.new_visua_up_map{
+	width: 100% !important;
+}
+.disease_info .player_video:hover .player_control{
+	opacity: 1;
+	transition: 0.2s;
+}
+.disease_info .player_video .video_image{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+	background-color: #FFFFFF;
+}
+.disease_info .player_video #visua_up_map{
+    display: block;
+}
+
+/*详情页--播放控件*/
+.disease_info .player_video .player_control{
+	left: 0px;
+	opacity: 0;
+	bottom: 0px;
+	float: left;
+	width: 100%;
+	height: 52px;
+	z-index: 400;
+	position: absolute;
+}
+.disease_info .player_video .player_control .player_speed{
+	height: 4px;
+	width: 100%;
+	float: left;
+}
+.disease_info .player_video .player_control .player_speed input.player_speed_range {
+	width: 100%;
+	height: 4px;
+    float: left;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    background-size: 0.1% 100%;
+    background: -webkit-linear-gradient(#00FFC8, #00FFC8) no-repeat, rgba(255,255,255,0.2);
+}
+.disease_info .player_video .player_control .player_speed input.player_speed_range::-webkit-slider-runnable-track {
+	height: 4px;
+    border-radius: 0px;
+}
+.disease_info .player_video .player_control .player_speed input.player_speed_range::-webkit-slider-thumb {
+    width: 1px;
+    height: 4px;
+    -webkit-appearance: none;
+}
+
+.disease_info .player_video .player_control .player_button{
+    float: left;
+    height: 32px;
+	padding: 8px 14px;
+	width: -webkit-fill-available;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.disease_info .player_video .player_control .speed_list,
+.disease_info .player_video .player_control .result_list{
+	float: right;
+	padding-top: 10px;
+	margin-top: -10px;
+}
+.disease_info .player_video.new_threed_map .player_control .image_opacity{
+	display: block !important;
+}
+.disease_info .player_video .player_control .player_button>button,
+.disease_info .player_video .player_control .speed_list button,
+.disease_info .player_video .player_control .result_list button{
+	width: auto;
+	height: 24px;
+	float: right;
+	color: #FFFFFF;
+	margin-top: 4px;
+	font-size: 12px;
+	padding: 0px 8px;
+	margin-right: 4px;
+	line-height: 24px;
+	text-align: center;
+	border-radius: 100px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.disease_info .player_video .player_control .player_button>button.search_image{
+	width: 40px;
+	padding: 0px;
+	text-align: center;
+}
+.disease_info .player_video .player_control .player_button button.player_to_info{
+    float: left;
+    height: 18px;
+    display: none;
+    margin-top: 7px;
+    line-height: 18px;
+	border-radius: 0px;
+	background-color: initial;
+}
+.disease_info .player_video .player_control .player_button button.player_to_info span{
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin-right: 2px;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/go_back.png);
+    
+}
+.disease_info .player_video .player_control .player_button button.download_image{
+	width: 18px;
+	height: 18px;
+	padding: 0px;
+	border-radius: 0px;
+	margin: 7px 0px 0px 6px;
+	background-color: initial;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/download.png);
+}
+.disease_info .player_video .player_control .player_button button.download_image:hover{
+    background-image: url(../Img/download_active.png);
+}
+
+.disease_info .player_video .player_control .player_toggle_2{
+	left: 0px;
+	right: 0px;
+	bottom: 8px;
+	height: 32px;
+	margin: 0 auto;
+	width: max-content;
+	position: absolute;
+}
+.disease_info .player_video .player_control .player_toggle_2 button{
+	float: left;
+	width: 32px;
+	height: 32px;
+	color: #FFFFFF;
+	margin: 0px 5px;
+	background-color: inherit;
+}
+.disease_info .player_video .player_control .player_toggle_2 button.pre_image,
+.disease_info .player_video .player_control .player_toggle_2 button.next_image{
+    background-position: 0px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/pre.png);
+}
+.disease_info .player_video .player_control .player_toggle_2 button.next_image{
+    background-position: 0px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/next.png);
+}
+.disease_info .player_video .player_control .player_toggle_2 button.pre_image:hover{
+    background-image: url(../Img/pre_active.png);
+}
+.disease_info .player_video .player_control .player_toggle_2 button.next_image:hover{
+    background-image: url(../Img/next_active.png);
+}
+.disease_info .player_video .player_control .player_toggle_2 button:hover{
+	color: #5167F7;
+}
+
+/*采集图样式*/
+.player_video #collect_map #canvas_three{
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.player_video #collect_map #canvas_three canvas{
+	width: 100% !important;
+	height: 100% !important;
+}
+/*视频界面-倍速播放*/
+.player_control .player_button .speed_list_group,
+.player_control .player_button .result_list_group{
+    right: 22px;
+    bottom: 42px;
+    display: none;
+    position: absolute;
+	border-radius: 4px;
+	background: #262E43;
+	box-shadow: 0 0 10px 0 rgba(0,9,32,0.50);
+}
+.player_control .player_button .result_list_group{
+    right: 78px;
+}
+.player_control .player_button .speed_list_group li,
+.player_control .player_button .result_list_group li{
+	color: #FFFFFF;
+    margin: 0px 1px;
+	font-size: 14px;
+    cursor: pointer;
+	text-align: left;
+	padding: 9px 24px;
+	-webkit-line-height: 1; 	/*chrome safair*/
+	-moz-line-height: 32px;		/*火狐*/
+}
+.player_control .player_button .result_list_group li{
+    margin: 0px;
+	padding: 9px 12px;
+}
+.player_control .player_button .speed_list_group li:first-child,
+.player_control .player_button .result_list_group li:first-child{
+	border-radius: 4px 4px 0px 0px;
+}
+.player_control .player_button .speed_list_group li:last-child,
+.player_control .player_button .result_list_group li:last-child{
+	border-radius: 0px 0px 4px 4px;
+}
+.player_control .player_button .speed_list_group li:hover,
+.player_control .player_button .result_list_group li:hover{
+	color: #00FCC5;
+}
+.player_control .player_button .speed_list_group li.active,
+.player_control .player_button .result_list_group li.active{
+	background: #5167F7;
+}
+
+/*病害反馈*/
+.feedback_model{
+	left: 0px;
+	right: 0px;
+	height: auto;
+	width: 216px;
+	display: none;
+	/*height: 264px;*/
+	z-index: 7777;
+	color: #FFFFFF;
+	margin: 0 auto;
+	font-size: 12px;
+	position: fixed;
+	border-radius: 4px;
+	padding: 12px 20px;
+    padding-bottom: 42px;
+	top: calc(50% - 144px);
+	background-color: #3A4155;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+.feedback_model h4{
+	width: 100%;
+	height: 12px;
+	font-weight: normal;
+	margin-bottom: 12px;
+}
+.feedback_model h4 span{
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-right: 8px;
+    background-position: 0px;
+	background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/feedback_active.png);
+}
+.feedback_model div{
+	width: 100%;
+}
+.feedback_model div .select_value{
+	height: 24px;
+	position: relative;
+	margin-bottom: 12px;
+}
+.feedback_model div .select_value input{
+	height: 22px;
+	cursor: auto;
+	color: #FFFFFF;
+	padding-left: 10px;
+	border-radius: 2px;
+	background-color: #3A4155;
+	width: -webkit-fill-available;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.feedback_model div .select_value.active input{
+	border: 1px solid #5167F7;
+	box-shadow: 0 0 4px 0 rgba(81,103,247,0.5);
+}
+.feedback_model div .select_value i{
+	top: 6px;
+	right: 8px;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+    background-position: 0px;
+	background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-image: url(../Img/select@2x.png);
+}
+.feedback_model div .select_value.active i{
+	transform: rotateX(180deg);
+    background-image: url(../Img/select-active@2x.png);
+}
+.feedback_model div ul.select_option{
+	margin: 0;
+	top: 64px;
+	left: 20px;
+	padding: 0;
+	height: 75px;
+	width: 216px;
+	display: none;
+	color: #FFFFFF;
+	font-size: 12px;
+	padding: 4px 0px;
+	position: absolute;
+	border-radius: 2px;
+	background-color: #4E5466;
+}
+.feedback_model div ul.select_option li{
+	width: auto;
+	height: 25px;
+	margin: 0px 1px;
+	cursor: pointer;
+	line-height: 25px;
+	padding-left: 9px;
+}
+.feedback_model div ul.select_option li:hover{
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.feedback_model div p{
+	float: left;
+	width: 100%;
+	height: 20px;
+	color: #FFFFFF;
+	font-size: 12px;
+	line-height: 20px;
+}
+.feedback_model div p span{
+	float: left;
+	width: 60px;
+	margin-left: 10px;
+	text-align: justify;
+	color: rgba(255, 255, 255, 0.5);
+}
+.feedback_model div p b{
+	float: left;
+	overflow: hidden;
+	text-align: justify;
+	font-weight: normal;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	width: calc(100% - 70px);
+	
+}
+.feedback_model div textarea{
+	height: 48px;
+	border: none;
+	resize: none;
+	margin-top: 8px;
+	font-size: 12px;
+	padding: 8px 10px;
+	border-radius: 2px;
+	width: -webkit-fill-available;
+	color: rgba(255, 255, 255, 1);
+	background: rgba(255, 255, 255, 0.1);
+}
+.feedback_model div textarea.height{
+	height: 148px;
+}
+.feedback_model div textarea::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+.feedback_model div button{
+    left: 0px;
+    right: 0px;
+	width: 48px;
+    bottom: 12px;
+	height: 20px;
+	margin: 0 auto;
+	color: #FFFFFF;
+	font-size: 12px;
+	position: absolute;
+	border-radius: 2px;
+	background: #5167F7;
+}
+
+/* 正射图的文字label样式 */
+.geometriesLabel{
+	display: none;
+	color: #EC3A4E;
+	font-size: 14px;
+	font-weight: normal;
+}
+.geometriesLabel.fontBold{
+	font-weight: bold;
+}
+.geometriesLabel:hover{
+	color: #00F4BF;
+}

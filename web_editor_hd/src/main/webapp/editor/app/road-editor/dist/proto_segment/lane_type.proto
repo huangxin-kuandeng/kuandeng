@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package lane_type; //package声明符
+enum LaneType{
+      N0 = 0;
+      CommonDivider = 101; //!< 普通车道线
+      LeftDivider = 102;  //!< 左边缘线
+      RightDivider = 103; //!< 右边缘线
+      InOutDivider = 104; //!< 出入口线
+      SpecialDivider = 105;//!< 专用车道线
+      VirtualDivider = 106;//!< 虚拟车道线
+      BorderStone = 107;//!< 路沿石
+      OtherArea = 108;//!< 地面车道以外其他区域
+      DecelerationLine = 109;//!< 纵向减速标线
+      YellowDivider = 110; // !< 双黄线/黄线
+      Fence = 111; // !< 栅栏
+      ClippedDivider = 120; // !< 虚线和实线识别到一起的情况下，被分割出来的虚线
+      TextArrow = 200;//!< 文字箭头
+      ChevronMarking = 1000;//!< 鱼刺线
+      ChevronMarkingEnds = 1001;//!< 鱼刺线端点线
+      //横线
+      ExpansionJoint = 300;//!< 道路伸缩缝（路面连接带）
+      StopLane = 1002;//!< 停止线
+      DecelerationZone = 1003; //!< 减速带
+      CrossWalkZone = 1004; //!< 人行横道
+      StopNet = 1005; //!< 停止网格带
+      ChevronMarkingPoint = 1006; //!< 鱼刺线端点
+}

@@ -1,0 +1,19 @@
+syntax = "proto2";
+import "common.proto";
+import "class_id.proto";
+message Attribute {
+    optional class_id.ClassId sub_type = 1;//子牌类型
+    optional float sub_confidence = 2;//置信度
+    optional PointFloat left_top = 3;
+    optional PointFloat right_bot = 4;
+    optional string first_type = 6;
+    optional string second_type = 7;
+    optional string content = 8;
+}
+message RECTANGLE {
+        optional PointFloat left_bot = 1; //
+        optional PointFloat right_bot = 2; //
+        optional PointFloat left_top = 3; //
+        optional PointFloat right_top = 4; //
+        repeated Attribute  sub_sign = 5;
+}

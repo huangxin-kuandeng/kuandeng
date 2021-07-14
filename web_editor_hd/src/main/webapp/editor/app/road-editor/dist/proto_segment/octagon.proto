@@ -1,0 +1,13 @@
+syntax = "proto2";
+import "common.proto";
+message OCTAGON {
+    optional PointFloat left_top = 1; //
+    optional PointFloat right_top = 2; //
+    optional PointFloat left_bot = 3; //
+    optional PointFloat right_bot = 4; //
+
+    optional PointFloat top_left=5;//
+    optional PointFloat top_right=6;//
+    optional PointFloat bot_left=7;//
+    optional PointFloat bot_right=8;//
+}

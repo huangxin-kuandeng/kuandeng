@@ -1,0 +1,35 @@
+syntax = "proto2";
+package kd.mapping.proto;
+
+message LidarRoadGrid {
+  // lon
+  optional double lon = 1;
+
+  // lat
+  optional double lat = 2;
+
+  // height, - When equal to -101.0, indicates an outlier
+  optional double height = 3;
+}
+
+message LidarRoadGrids {
+  // trackId
+  optional string trackId = 1;
+
+  // flag_road
+  optional bool flag_road = 2;
+
+  // ori_lon
+  optional double ori_lon = 3;
+
+  // ori_lat
+  optional double ori_lat = 4;
+
+  // end_lon
+  optional double end_lon = 5;
+
+  // end_lat
+  optional double end_lat = 6;
+
+  repeated LidarRoadGrid grid_points = 7;
+}

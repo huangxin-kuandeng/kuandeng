@@ -1,0 +1,860 @@
+button.road-filter-control span.icon {
+    background-image: url(../dist/img/roadmap/search.png);
+}
+
+.line-info-panel {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    border: 1px solid #bbb;
+    background: #ccc;
+    background: linear-gradient(to bottom, #f6f6f6 0%, #fff 100%);
+    z-index: 9999;
+    font-size: 13px;
+    -webkit-filter: blur(0);
+    box-shadow: 2px 2px 10px 2px #ccc;
+}
+
+.line-info-panel .ui-dialog-content {
+    padding: 0 !important;
+}
+
+.line-info-panel .panel-title {
+    line-height: 200%;
+    padding: 0 10px;
+    cursor: move;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.line-info-panel .tl-close {
+    font-size: 19px;
+    line-height: 28px;
+    cursor: pointer;
+    padding: 0 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ff6c6c;
+}
+
+.line-info-panel .tl-close:hover {
+    color: #fff;
+    background: #666;
+}
+.line-info-panel .error-info {
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    color: #ff797c;
+    visibility: hidden;
+}
+.line-info-panel .error-info.show {
+    visibility: visible;
+}
+.line-info-panel .error-info .error-logo {
+    width: 14px  !important;
+    height: 14px;
+    background-color: #ff797c;
+    display: inline-block;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 14px;
+    color: #ffffff;
+    margin-top: 0px  !important;
+    margin-right: 5px;
+}
+.line-info-panel .panel-body {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /*padding: 10px 15px 10px 15px;*/
+    width: 600px;
+}
+
+.line-info-panel .side-bar-panel{
+    width: 110px;
+    height: 450px;
+    /* padding: 15px; */
+    border-right:  1px solid #ccc;
+    float: left;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.line-info-panel .side-bar-panel .side-bar-title{
+    font-size: 14px;
+    padding-bottom: 5px;
+    padding: 4px 2px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    /* width: inherit; */
+    font-weight: 600;
+}
+
+.line-info-panel .side-bar-panel ul li{
+    font-size: 12px;
+    /* padding-bottom: 5px; */
+    /* padding: 4px 2px; */
+    padding-left: 4px;
+    /* width: 110px; */
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.line-info-panel .side-bar-panel ul li.saat-li{
+    /* padding-bottom: 5px; */
+    /* padding: 4px 2px; */
+    height: 25px;
+}
+
+
+.line-info-panel .side-bar-panel label{
+    font-size: 10px;
+    width: 80px;
+    display: block;
+    /* height: 100%; */
+    /* overflow-x: auto; */
+    /* max-width: 80px; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.line-info-panel .side-bar-panel .saat-lable{
+    /* border-bottom: 1px solid rgb(204, 204, 204); */
+}
+
+
+.line-info-panel ul li.active{
+    background-color: rgb(89, 123, 231) !important;
+}
+
+.line-info-panel .side-bar-panel ul li.disabled{
+    background-color: rgba(128, 128, 128,.5) !important;
+    opacity: 1;
+    /*color: grey;*/
+    pointer-events: auto !important;
+    cursor: not-allowed;
+}
+.line-info-panel input.disabled{
+    background-color: rgba(179, 167, 167, 0.25);
+    color: rgb(245, 238, 238);
+    cursor: not-allowed;
+}
+
+.line-info-panel .main-context{
+    /* background-color: rgb(226, 234, 233); */
+    /*float: left;*/
+    width: 490px;
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.line-info-panel .main-context .lt-turn-left{
+    width: 100%;
+    display: inline-block;
+    height: 35px;
+    border-bottom: 1px rgb(204, 204, 204) solid;
+    padding: 5px 10px;
+}
+.line-info-panel .main-context .lt-turn-left div{
+    display: inline-block;
+
+}
+.line-info-panel .main-context .lt-turn-left label{
+    display: inline-block;
+}
+.line-info-panel .main-context .lt-turn-left span{
+    padding-right: 3px;
+}
+
+.line-info-panel .main-context .lt-turn-left span .select{
+    width: 101px;
+}
+/*maat的行车引导线编辑*/
+.line-info-panel .main-context .maat-line-info{
+    width: 100%;
+    display: inline-block;
+}
+
+.line-info-panel .line-info-title {
+    width: 100%;
+    display: block;
+    float: left;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 10px;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.line-info-panel .line-info-title h3.sub-title{
+    width: 25%;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 24px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.line-info-panel .line-info-title .thumbnail{
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+    width: auto;
+}
+.line-info-panel .line-info-title div.thumbnail {
+    width: 47%;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 36px;
+    vertical-align: top;
+    margin-top: -5px;
+}
+.line-info-panel .line-info-title.error .thumbnail {
+    border: 1px solid red;
+}
+.line-info-panel .line-info-title.error::after {
+    content: attr(data-error);
+    position: absolute;
+    font-size: 12px;
+    background: black;
+    border-radius: 3px;
+    color: white;
+    line-height: 18px;
+    top: 30px;
+    left: 27%;
+    padding: 0 5px;
+    z-index: 100;
+}
+.line-info-panel .line-info-title .clear {
+    vertical-align: middle;
+    margin: 0 20px;
+    float: right;
+}
+.line-info-panel .line-info-title .iconfont {
+    vertical-align: middle;
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 24px;
+}
+
+.line-info-panel .line-info-title .thumbnail span{
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin: 0 2px 2px 0;
+    float: left;
+    background-size: 100%;
+}
+
+.line-info-panel .line-info-path-title .thumbnail span{
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    display: block;
+    float: left;
+    margin-top: 2px;
+    background-size: 100%;
+}
+
+.line-info-panel h3.line-info-title {
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    color: #333;
+    line-height: 1em;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.line-info-panel .main-context .line-info-path{
+    width: 100%;
+    display: block;
+    float: left;
+    /*clear: both;*/
+}
+
+.line-info-panel .main-context .guidancesp-sub{
+    clear: both;
+    content: "";
+}
+
+.line-info-panel .road-type{
+    float: none;
+    text-align: left;
+}
+.line-info-panel .background-tree-img{
+    height: 210px;
+    width: 100%;
+    /* margin-left: 20px; */
+    display: flex;
+    padding: 10px 5px 0px 5px;
+}
+.line-info-panel .background-tree-img .background-tree{
+    height: 100%;
+    width: 50%;
+    overflow: auto;
+}
+.line-info-panel .background-tree-img .background-detail{
+    height: 100%;
+    width: 50%;
+    overflow: auto;
+}
+.line-info-panel .background-tree-img .background-img{
+    height: 100%;
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;;
+    position: relative;
+    /*overflow: auto;*/
+}
+.line-info-panel .background-tree-img .background-img.preview::after {
+    content: '预览';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #ddd;
+}
+.line-info-panel .road-type span{
+    margin-left: 14px;
+}
+.line-info-panel .road-type input[type="radio"]{
+    float: none;
+}
+.line-info-panel .main-context .line-info-btn-div{
+    margin-left: 200px;
+}
+.line-info-panel .main-context .line-info-btn-div input[type="button"]{
+    font-size: 10px;
+    /* margin-top: 12px; */
+    margin: 4px 10px;
+}
+
+.line-info-panel .main-context  .line-info-path-detail{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.line-info-panel .main-context  .line-info-path-detail .sub-line-info-path{
+    /* border-top: 1px solid #ccc; */
+    height: auto;
+}
+
+.line-info-panel .main-context  .line-info-path-detail .sub-line-info-path .line-info-path-title{
+    /* border-top: 1px solid #ccc; */
+    height: 26px;
+    border-top:1px solid #ccc;
+    font-size:14px;
+    padding-left:4px;
+    /* display: inline; */
+}
+
+.line-info-panel .line-info-path-detail .line-info-path-title.active{
+    background-color: rgb(216, 201, 104);
+}
+
+.line-info-panel .main-context  .line-info-path-detail .sub-line-info-path .line-info-path-title .sub{
+    /* border-top: 1px solid #ccc; */
+    height: 26px;
+    /* border-top:1px solid #ccc; */
+    font-size:14px;
+    padding-left:4px;
+    /* display: inline; */
+}
+.line-info-panel .main-context  .line-info-path-detail .sub-line-info-path .line-info-path-title .sub{
+    width: 100%;
+    float:left;
+}
+
+.line-info-panel .main-context  .line-info-path-detail .sub-path{
+    width: auto;
+    float: left;
+    font-size: 10px;
+    height: 26px;
+}
+
+.line-info-panel .main-context  .line-info-path-detail .thumbnail{
+    width: auto;
+    /* border-right: 1px solid rgb(204, 204, 204); */
+    font-size: 14px;
+    /* display: inline-block; */
+    height: 26px;
+    padding-left: 10px;
+}
+
+.line-info-panel .main-context .line-info-path-title input[type="button"]{
+    font-size: 14px;
+    /* margin-left: 10px; */
+    margin:10px;
+    width: 10%;
+    float: right;
+    border: none;
+    background: none;
+    width: 7%;
+    border-left: 1px solid #ccc;
+    height: 26px;
+}
+
+.line-info-panel .main-context .line-info-select{
+    width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.line-info-panel .main-context .line-info-select .select-div{
+    font-size: 10px;
+    width: 50%;
+    padding: 10px;
+    display: inline-block;
+    /* border-bottom: 1px solid rgb(204, 204, 204); */
+}
+
+.line-info-panel .main-context .line-info-select select{
+    max-width: 150px;
+}
+
+.line-info-panel .main-context .to-road-name{
+    width: 45%;
+    height: 19px;
+}
+
+/*3d箭头样式*/
+.line-info-panel .threeDemenArrowTitle-detail .left-side-image {
+    float: none;
+    text-align: left;
+    margin-left: 6px;
+    width: 50%;
+    position: relative;
+}
+.line-info-panel .threeDemenArrowTitle-detail .left-side-image span{
+    float: left;
+    width: 30%;
+    margin: 3px;
+    margin-top: 10px;
+}
+
+.line-info-panel .threeDemenArrowTitle-detail .left-side-image .clear-btn{
+
+    /* vertical-align: bottom; */
+
+    /* float: none; */
+
+    position: absolute;
+
+    /* top: 60%; */
+
+    bottom: 10%;
+
+    left: 1%;
+}
+.line-info-panel .threeDemenArrowTitle-detail .left-side-image .clear-btn input[type="button"]{
+
+    /*width: 60px;*/
+
+    /*height: 25px;*/
+
+    /*margin-top: 40px;*/
+
+    /*margin-left: 10px;*/
+}
+
+.line-info-panel .threeDemenArrowTitle-detail .right-side-image {
+    float: none;
+    text-align: left;
+    margin-left: 6px;
+    width: 50%;
+}
+.line-info-panel .threeDemenArrowTitle-detail {
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+
+/*guaidanceSp样式*/
+.line-info-panel .main-context .guidancesp-detail .gsp-detail-cont{
+    width: 100%;
+    float: left;
+    height: 180px;
+    border-bottom: 1px solid #CCCCCC;
+    /* overflow-x: auto; */
+}
+
+.line-info-panel .main-context .guidancesp-detail .gsp-detail-left{
+    width: 40%;
+    height: 100%;
+    /* border: 1px solid #CCCCCC; */
+    display: inline-block;
+    border-right: 1px solid #ccc;
+    /* line-height: 2; */
+    vertical-align: top;
+}
+
+.line-info-panel .main-context .guidancesp-detail .gsp-select-title{
+    text-align: left;
+    margin-left: 20px;
+    padding: 4px;
+    font-weight: 600;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.line-info-panel .main-context  .guidancesp-detail ul li{
+    font-size: 10px;
+    text-align: left;
+}
+
+.line-info-panel .main-context .guidancesp-detail .gsp-select-list{
+    border: 1px solid #ccc;
+    width: 80%;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 4px;
+    height: 120px;
+    overflow: auto;
+    background-color: rgba(173, 171, 155, 0.27);
+}
+
+
+
+.line-info-panel .main-context .guidancesp-detail .gsp-detail-center{
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid rgb(204, 204, 204);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.line-info-panel .main-context .guidancesp-detail .gsp-detail-center input[type="button"]{
+    height: 8px%;
+    width: 80%;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+.line-info-panel .main-context .guidancesp-detail .gsp-detail-right{
+    width: 40%;
+    height: 100%;
+    /* border: 1px solid rgb(206, 29, 29); */
+    display: inline-block;
+}
+
+/*确定应用取消按钮*/
+.line-info-panel .main-context .line-info-btn-group{
+    width: 490px;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 50px;
+}
+
+.line-info-panel .main-context .line-info-btn-group input[type="button"]{
+    width: 80px;
+    height: 25px;
+    margin: 15px;
+}
+
+/*行车引导线编辑功能模版---------start*/
+div.line-info-edit{
+    font-size: 10px;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /* height: 130px; */
+    float: left;
+}
+
+div.line-info-edit h3.edit-title{
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    /* line-height: 200%; */
+    /* border-bottom: 0px #ccc; */
+}
+
+div.line-info-edit .choose-line-info{
+    height: 84px;
+    /* border-bottom: 1px solid #ccc; */
+    border-top: 1px solid #ccc;
+}
+
+div.line-info-edit .result-line-info{
+    height: 28px;
+    /* border-bottom: 1px solid rgb(204, 204, 204); */
+    /* border-top: 1px solid rgb(204, 204, 204); */
+}
+
+div.line-info-edit .button-line-info{
+    height: 25px;
+    /* display: inline; */
+    /* padding-left: 20px; */
+    /* text-align: right; */
+    padding-left: 50px;
+    padding-top: 2px;
+    padding-bottom: 30px;
+}
+
+div.line-info-edit .button-line-info .check-box-div{
+    display: inline;
+    /* margin-bottom: 4px; */
+    /* padding-top: 17px; */
+}
+
+div.line-info-edit .button-line-info input[type="checkbox"]{
+    margin-left: 70px;
+    font-size: 14px;
+    /* width: 16px; */
+    /* height: 16px; */
+    /* margin-top: 12px; */
+}
+
+div.line-info-edit .button-line-info label{
+    /* width: 16px; */
+    /* height: 16px; */
+    margin-top: 12px;
+    font-size: 10px;
+    /* padding: 14px 4px; */
+}
+
+.line-info-panel .main-context input[type="button"]{
+    font-size: 10px;
+    /* margin: 10px; */
+    /* border: 1px solid rgb(204, 204, 204); */
+    /* background: none; */
+    /* margin-left: 14px; */
+    /*     width: 12%; */
+    background: rgba(77, 109, 138, 0.66);
+    margin: 0 10px;
+}
+
+
+div.line-info-edit span{
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 24px;
+    display: inline-block;
+    padding: 0px 2px;
+}
+
+/*行车引导线路径编号*/
+.line-info-panel .lane-info-number{
+    font-size: 10px;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /* height: 130px; */
+    float: left;
+    width: 100%;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-manul{
+    padding: 4px 4px;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-manul input[type="input"]{
+
+    width: 40%;
+
+    margin: 0px 20px;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-manul input[type="button"]{
+
+    /* width: 15%; */
+}
+
+.line-info-panel .lane-info-number .lane-info-number-text{
+
+    padding: 4px 4px;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-input{
+
+}
+
+.line-info-panel .lane-info-number .lane-info-number-input input[type="input"]{
+
+    width: 7%;
+
+    margin: 0px 6px;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-btn{
+
+    /* padding: 4px 4px; */
+
+    padding-bottom: 6px;
+
+    padding-top: 8px;
+
+    padding-left: 4px;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-btn input[type="button"]{
+    /* float:left; */
+    /* height: 20px; */
+    /* width: 15%; */
+}
+
+.line-info-panel .lane-info-number .lane-info-number-btn input[type="checkbox"]{
+    /* float:right; */
+    margin-left: 230px;
+}
+
+.line-info-panel .lane-info-number .lane-info-number-btn label{
+    float:right;
+    padding-right: 80px;
+}
+.main-context .image-LBCD{
+    background-image: url(../dist/img/arrow/LBCD.png);
+}
+.main-context .image-RBCD{
+    background-image: url(../dist/img/arrow/RBCD.png);
+}
+.main-context .image-LBC{
+    background-image: url(../dist/img/arrow/LBC.png);
+}
+.main-context .image-LAC{
+    background-image: url(../dist/img/arrow/LAC.png);
+}
+.main-context .image-LBD{
+    background-image: url(../dist/img/arrow/LBD.png);
+}
+.main-context .image-LAB{
+    background-image: url(../dist/img/arrow/LAB.png);
+}
+.main-context .image-RCD{
+    background-image: url(../dist/img/arrow/RCD.png);
+}
+.main-context .image-RCE{
+    background-image: url(../dist/img/arrow/RCE.png);
+}
+.main-context .image-RBD{
+    background-image: url(../dist/img/arrow/RBD.png);
+}
+.main-context .image-RDE{
+    background-image: url(../dist/img/arrow/RDE.png);
+}
+.main-context .image-ABC{
+    background-image: url(../dist/img/arrow/ABC.png);
+}
+.main-context .image-BCD{
+    background-image: url(../dist/img/arrow/BCD.png);
+}
+.main-context .image-LA{
+    background-image: url(../dist/img/arrow/LA.png);
+}
+.main-context .image-LB{
+    background-image: url(../dist/img/arrow/LB.png);
+}
+.main-context .image-LC{
+    background-image: url(../dist/img/arrow/LC.png);
+}
+.main-context .image-RC{
+    background-image: url(../dist/img/arrow/RC.png);
+}
+.main-context .image-RD{
+    background-image: url(../dist/img/arrow/RD.png);
+}
+.main-context .image-RE{
+    background-image: url(../dist/img/arrow/RE.png);
+}
+.main-context .image-AB{
+    background-image: url(../dist/img/arrow/AB.png);
+}
+.main-context .image-AC{
+    background-image: url(../dist/img/arrow/AC.png);
+}
+.main-context .image-AD{
+    background-image: url(../dist/img/arrow/AD.png);
+}
+.main-context .image-BC{
+    background-image: url(../dist/img/arrow/BC.png);
+}
+.main-context .image-BD{
+    background-image: url(../dist/img/arrow/BD.png);
+}
+.main-context .image-BE{
+    background-image: url(../dist/img/arrow/BE.png);
+}
+.main-context .image-CD{
+    background-image: url(../dist/img/arrow/CD.png);
+}
+.main-context .image-CE{
+    background-image: url(../dist/img/arrow/CE.png);
+}
+.main-context .image-DE{
+    background-image: url(../dist/img/arrow/DE.png);
+}
+.main-context .image-A{
+    background-image: url(../dist/img/arrow/A.png);
+}
+.main-context .image-B{
+    background-image: url(../dist/img/arrow/B.png);
+}
+.main-context .image-C{
+    background-image: url(../dist/img/arrow/C.png);
+}
+.main-context .image-D{
+    background-image: url(../dist/img/arrow/D.png);
+}
+.main-context .image-E{
+    background-image: url(../dist/img/arrow/E.png);
+}
+.main-context .image-Z{
+    background-image: url(../dist/img/arrow/Z.png);
+}
+.main-context .image-L{
+    background-image: url(../dist/img/arrow/L.png);
+}
+.main-context .image-R{
+    background-image: url(../dist/img/arrow/R.png);
+}
+.main-context .image-LINE{
+    background-image: url(../dist/img/arrow/LINE.png);
+}
+.main-context .image-F{
+    background-image: url(../dist/img/arrow/F.png);
+}
+.main-context .image-G{
+    background-image: url(../dist/img/arrow/G.png);
+}
+
+div.line-info-edit .choose-line-info span:visited{
+    background-color: #a9a9a9;
+}
+
+
+div.line-info-edit .choose-line-info span:hover{
+    background-color: darkseagreen;
+}
+/*行车引导线编辑功能模版---------end*/
+
+/*行车引导线特效*/
+marker#turnguidance-oneway-marker path {
+    fill:none;
+    opacity: 1;
+    stroke-width:"1.5";
+    z-index: 9999;
+    stroke: #ff0000;
+}
+path.oneway.turnguidance-oneway{
+    stroke-width:8px;
+}

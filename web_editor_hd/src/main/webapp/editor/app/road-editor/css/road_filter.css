@@ -1,0 +1,226 @@
+button.road-filter-control span.icon {
+    background-image: url(../dist/img/roadmap/search.png);
+}
+
+.road-filter-panel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #bbb;
+    background: #ccc;
+    background: linear-gradient(to bottom, #f6f6f6 0%, #fff 100%);
+    z-index: 9999;
+    font-size: 13px;
+    -webkit-filter: blur(0);
+    box-shadow: 2px 2px 10px 2px #ccc;
+}
+
+.road-filter-panel .panel-title {
+    line-height: 200%;
+    padding: 0 10px;
+    cursor: move;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 110%;
+    font-weight: 700;
+}
+
+.road-filter-panel .tl-close {
+    font-size: 19px;
+    line-height: 28px;
+    cursor: pointer;
+    padding: 0 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ff6c6c;
+}
+
+.road-filter-panel .tl-close:hover {
+    color: #fff;
+    background: #666;
+}
+
+.road-filter-panel .panel-body {
+    border-top: 1px solid #ccc;
+    padding: 10px 15px 10px 15px;
+    width: 590px;
+}
+
+.road-filter-panel input.expression {
+    width: 442px;
+}
+
+.road-filter-panel .button {
+    margin-left: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.road-filter-panel .col_box h3 {
+    font-size: 13px;
+}
+
+.road-filter-panel .col_box {
+    float: left;
+    width: 160px;
+    margin: 15px 0 0 0
+}
+
+.road-filter-panel .field_list_box {
+    width: 170px;
+}
+
+.road-filter-panel .operator_list_box {
+    margin-left: 23px;
+    width: 170px;
+}
+
+.road-filter-panel .field_vals_box {
+    width: 190px;
+}
+
+.road-filter-panel .col_box:last-child {
+    margin-right: 0;
+    float: right;
+}
+
+.road-filter-panel .col_body {
+    border: 1px solid #ccc;
+    height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.road-filter-panel .msg_box {
+    line-height: 200%;
+    height: 2em;
+    background: #eee;
+    margin: 10px 0 0 0;
+    padding: 0 15px;
+}
+
+.road-filter-panel .operator_list {
+    border: none;
+}
+
+.road-filter-panel .operator_list li {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    line-height: 27px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 0 15px 10px 0;
+    cursor: pointer;
+    background: #eee;
+    font-family: serif;
+    font-weight: 700;
+}
+
+.road-filter-panel .operator_list li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.road-filter-panel .field_list li.selected {
+    background: #bbb;
+}
+
+.road-filter-panel .field_list span.name,
+.road-filter-panel .field_vals_list span.value {
+    color: #222;
+}
+
+.road-filter-panel .field_list li,
+.road-filter-panel .field_vals_list li {
+    padding: 1px 3px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #999;
+    cursor: pointer;
+}
+
+.road-filter-panel .field_list li:hover,
+.road-filter-panel .field_vals_list li:hover {
+    background: #ccc;
+}
+
+.road-filter-panel .field_val_fname {
+    float: right;
+    width: 80px;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.road-filter-panel .top-opts {
+    float: right;
+}
+
+.road-filter-panel .top-opts input[type="checkbox"] {
+    margin-right: 0;
+}
+
+.road-filter-panel .cnf-switch {
+    margin-bottom: 10px
+}
+
+.road-filter-panel .cnf-switch li {
+    display: inline-block;
+    padding-right: 15px;
+    /* 不知道为什么，div.cnf-switch中的要素没有高度时，win10 chrome(65.0.3325.181)页面的字体模糊 */
+    height: 20px;
+}
+
+.road-filter-panel .cnf-switch li:last-child {
+    padding-right: 0;
+}
+
+/*
+.btn-group{
+    display:inline-block;
+    position:relative;
+    margin-bottom:-3px;
+    padding-left:10px;
+}
+.btn-group .btn{
+    
+    float:left;
+}
+.btn{
+    display:inline-block;
+    background-color: #F7F7F7;
+    padding:5px 10px;
+    color: #0E0E0E;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:400;
+    line-height:1.5;
+    text-align:center;
+    vertical-align: middle;
+    white-space:nowrap;
+    border: 1px solid #CCCCCC;
+    border-bottom: none;
+    margin-left:-1px;
+}
+.btn-group .btn:not(:first-child):not(:last-child){
+    border-radius:0px;
+}
+.btn-group .btn:last-child{
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+.btn-group .btn:first-child{
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:0;
+}
+
+a.btn:active,.btn.active{
+    background-color:#63b4fd;
+    color:white;
+*/}
