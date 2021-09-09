@@ -1,0 +1,375 @@
+html,body {
+    color: #333;
+    margin: 0;
+    height: 100%;
+    font-family: "Myriad Set Pro","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a, label, button, input, select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+img {
+    border: 0;
+}
+html, body, div, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, button, fieldset, form, input, legend, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+[v-cloak]{
+    display: none;
+}
+.integralMall{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    background-image: url(../img/bg3.png);
+}
+.integralMall::-webkit-scrollbar {
+    width: 0;
+}
+.integralMall .integralMallHeader{
+    height: 1.875rem;
+    width: 100%;
+    line-height: 1.875rem;
+    text-align: center;
+}
+.integralMall .integralMallHeader h3{
+    padding: 0rem;
+    margin: 0rem;
+    height: 1.875rem;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.875rem;
+    text-align: center;
+}
+.integralMall .integralMallBody{
+    height: calc(100% - 6.25rem);
+    width: 100%;
+}
+.integralMall .integralMallBody .integralMallBodyImage{
+    width: 100%;
+    height: auto;
+}
+.integralMall .integralMallBody .integralMallSurplus{
+    width: 90%;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin: 0 auto;
+    /* background-color: #ffffff; */
+    border: none;
+    border-radius: 0.625rem;
+    /* background-image: linear-gradient(
+-180deg,#157ccb 0,#278cda 100%); */
+}
+.integralMall .integralMallBody .integralMallSurplus div{
+    float: left;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.integralMall .integralMallBody .integralMallSurplus span{
+    float: left;
+    /* width: 100%; */
+    text-align: center;
+    /* font-size: 1.375rem; */
+    font-size: 1rem;
+}
+.integralMall .integralMallBody .integralMallSurplus span.transNum{
+    font-size: 1.38rem;
+}
+.integralMall .integralMallBody .integralMallBodyList{
+    width: 90%;
+    margin: 0 auto;
+    float: left;
+    margin-left: 5%;
+}
+.integralMall .integralMallBody .integralMallBodyList span.labelTitle{
+    width: 100%;
+    float: left;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+.integralMall .integralMallBody .integralMallBodyLists{
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+    /* margin-left: 5%; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.integralMall .integralMallBody .integralMallBodyLists div{
+    float: left;
+    width: 30%;
+    flex-grow: 1;
+    margin: 0rem;
+    max-width: 30%;
+    margin-bottom: 0.625rem;
+    margin-right: 3%;
+}
+.integralMall .integralMallBody .integralMallBodyLists label{
+    /* width: 90%;
+    height: 30px;
+    line-height: 30px;
+    float: left; */
+    width: 100%;
+}
+.integralMall .integralMallBody .integralMallBodyLists label .notEnough{
+    color: #ff0000;
+}
+.integralMall .integralMallBody .integralMallBodyLists .couponCardHeader{
+    position: relative;
+}
+.integralMall .integralMallBody .integralMallBodyLists .couponMsg{
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+}
+.integralMall .integralMallBody .integralMallBodyResc{
+    width: 90%;
+    margin: 0 auto;
+    float: left;
+    margin-left: 5%;
+    margin-top: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+}
+.integralMall .integralMallBody .integralMallBodyResc span{
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+}
+.integralMall .integralMallBody .integralMallBodyResc span.needIntegral{
+    font-size: 2rem;
+    color: #8d5029;
+    margin-right: 0.4rem;
+}
+.integralMall .integralMallFooter{
+    height: 4.375rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+    margin: 0 auto;
+    z-index: 99;
+}
+.integralMall .integralMallFooter button{
+    width: 90%;
+    max-width: 31.25rem;
+    margin: 0 auto;
+    position: absolute;
+    left: 0rem;
+    right: 0rem;
+    height: 3.125rem;
+    top: 0rem;
+    font-size: 1.375rem;
+    background: #8d5029;
+    border: none;
+    border-radius: 0.3rem;
+    color: #fff;
+    line-height: 3.125rem;
+    font-weight: normal;
+}
+.integralMall .integralMallFooter button:disabled{
+    background: #cccccc;
+}
+
+/* 弹窗 */
+.integralMallDialog{
+    position: fixed;
+    top: 0rem;
+    width: 100%;
+    height: 100%;
+    left: 0rem;
+    right: 0rem;
+    margin: 0 auto;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.integralMallDialog .integralMallDialogBody{
+    position: absolute;
+    top: 6.25rem;
+    width: 90%;
+    max-width: 31.25rem;
+    height: auto;
+    left: 0rem;
+    right: 0rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 0.125rem;
+}
+.integralMallDialog .integralMallDialogBody h3{
+    height: 1.875rem;
+    float: left;
+    width: 100%;
+    line-height: 1.875rem;
+}
+.integralMallDialog .integralMallDialogBody h3 a{
+    float: right;
+    font-weight: normal;
+    font-size: 1.875rem;
+}
+
+
+.integralMallDialog .integralMallDialogBody .phoneNumberInfo{
+    float: left;
+    width: 100%;
+    margin-top: 0.625rem;
+}
+.integralMallDialog .integralMallDialogBody .phoneNumberInfo span{
+    float: left;
+    width: 100%;
+    margin-bottom: 0.625rem;
+    font-size: 0.75rem;
+}
+.integralMallDialog .integralMallDialogBody .phoneNumberInfo span.phoneNumber{
+    font-size: 1.25rem;
+}
+.integralMallDialog .integralMallDialogBody .submitSendCode{
+    float: left;
+    width: 100%;
+    border-bottom: 0.06rem solid #333;
+    height: 2.5rem;
+}
+.integralMallDialog .integralMallDialogBody .submitSendCode input{
+    float: left;
+    border: none;
+    height: 2.375rem;
+    line-height: 2.5rem;
+    font-size: 1.125rem;
+    width: 60%;
+    outline: none;
+}
+.integralMallDialog .integralMallDialogBody .submitSendCode button{
+    float: left;
+    border: none;
+    height: 2.375rem;
+    line-height: 2.5rem;
+    font-size: 0.875rem;
+    width: 40%;
+    background-color: inherit;
+    color: #3186ff;
+    /* color: #dbdfe4; */
+}
+.integralMallDialog .integralMallDialogBody .submitSendCode button[disabled='disabled'] {
+    color: #bec2c8;
+}
+.integralMallDialog .integralMallDialogBody .submitSend{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 1.25rem;
+}
+.integralMallDialog .integralMallDialogBody .submitSend button{
+    float: left;
+    width: 100%;
+    height: 3.125rem;
+    margin-top: 1.25rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #8d5029;
+    font-size: 1.375rem;
+    color: #fff;
+}
+.integralMallDialog .integralMallDialogBody .submitSend button:disabled{
+    background-color: #cccccc;
+}
+/* loading动画 */
+.integralMallLoading{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0rem;
+    background-color: #000;
+    opacity: 0.6;
+}
+.integralMallLoading div{
+    position: absolute;
+    bottom: 50%;
+    margin: 0 auto;
+    left: 0rem;
+    right: 0rem;
+}
+
+
+
+/* Timer--loading动画*/
+.timer{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    box-shadow: inset 0rem 0rem 0rem 0.125rem #fff;
+    border-radius: 50%;
+    position: relative;
+    margin: 2.375rem auto;/* Not necessary- its only for layouting*/    
+ }
+.timer:after, .timer:before{
+    position: absolute;
+    content:"";
+    background-color: #fff;
+}
+.timer:after{
+    width: 0.625rem;
+    height: 0.125rem;
+    top: 0.687rem;
+    left: 0.687rem;
+    -webkit-transform-origin: 0.062rem 0.062rem;
+       -moz-transform-origin: 0.062rem 0.062rem;
+            transform-origin: 0.062rem 0.062rem;
+    -webkit-animation: minhand 2s linear infinite;
+       -moz-animation: minhand 2s linear infinite;
+            animation: minhand 2s linear infinite;
+}
+
+.timer:before{
+    width: 0.5rem;
+    height: 0.125rem;
+    top: 0.687rem;
+    left: 0.687rem;
+    -webkit-transform-origin: 0.062rem 0.062rem;
+       -moz-transform-origin: 0.062rem 0.062rem;
+            transform-origin: 0.062rem 0.062rem;
+    -webkit-animation: hrhand 8s linear infinite;
+       -moz-animation: hrhand 8s linear infinite;
+            animation: hrhand 8s linear infinite;
+}
+@-webkit-keyframes minhand{
+    0%{-webkit-transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes minhand{
+    0%{-moz-transform:rotate(0deg)}
+    100%{-moz-transform:rotate(360deg)}
+}
+@keyframes minhand{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+@-webkit-keyframes hrhand{
+    0%{-webkit-transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes hrhand{
+    0%{-moz-transform:rotate(0deg)}
+    100%{-moz-transform:rotate(360deg)}
+}
+@keyframes hrhand{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}

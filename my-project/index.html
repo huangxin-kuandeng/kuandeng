@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>积分兑换</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+<link href="./css/jquery-labelauty.css" rel="stylesheet" type="text/css"/>
+<link href="./icon/iconfont.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div id="integralMall" class="integralMall" v-cloak>
+    <div class="integralMallDialog" v-show="dialogShow" style="display: none;">
+      <div class="integralMallDialogBody">
+        <div class="modal_content">		
+          <h3>验证手机号 <a @click="closeDialog">×</a></h3>
+          <div class="phoneNumberInfo">
+            <span>发送短信验证码到手机</span>
+            <span class="phoneNumber" v-html="phoneNumberTitle"></span>		
+          </div> 
+          <div class="submitSendCode">
+            <input id="code1" type="text" autocomplete="off" maxlength="6" placeholder="请输入验证码" v-model="verificationCode" />				
+            <button @click="sendMessage" v-html="message" :disabled="messageDisabled == true"></button>
+          </div> 	
+          <div class="submitSend">
+            <button @click="submitSend" :disabled="!verificationCode">继续兑换</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="integralMallHeader">
+      <!-- <h3 v-html="titleName"></h3> -->
+    </div>
+    <div class="integralMallBody">
+      <img class="integralMallBodyImage" src="./img/bg4.png" />
+      <!-- 用户积分 -->
+      <div class="integralMallSurplus">
+        <div>
+          <span>您的积分余额：</span>
+          <span class="transNum" v-html="transNum"></span>
+          <!-- <span class="iconfont icon-a-31jifen" v-html="transNum"></span> -->
+        </div>
+        <!-- <div>
+          <span class="">可用积分</span>
+        </div> -->
+      </div>
+      <!-- 优惠券列表 -->
+      <div class="integralMallBodyList">
+        <span class="labelTitle">选择优惠券兑换：</span>
+        <div class="integralMallBodyLists" v-if="type">
+          <div v-for="(item,index) in couPonData" :key="index">
+            <input :id="item.money" type="radio" name="radio" class="labelauty" :value="item.money" v-model="picked" :disabled="item.isUse == false" style="display: none;">
+            <label :for="item.money">
+              <span class="labelauty-unchecked-image"></span>
+              <span class="labelauty-unchecked" v-html="item.name"></span>
+              <span class="labelauty-checked-image"></span>
+              <span class="labelauty-checked" v-html="item.name"></span>
+            </label>
+          </div>
+  
+  
+          <!-- <label v-for="(item,index) in couPonData" :key="index">
+            <input type="radio" :value="item.money" v-model="picked" :disabled="item.isUse == false" />
+            <span v-html="item.name"></span>
+            <span class="notEnough" v-show="item.isUse == false">积分不足</span>
+          </label> -->
+        </div>
+      </div>
+      <div class="integralMallBodyResc" v-show="pickedData != null">
+         <span class="labelTitle">所需积分：</span>
+         <span class="needIntegral" v-html="pickedData ? pickedData.money : 0"></span>
+         <span>积分</span>
+      </div>
+    </div>
+
+
+    <div class="integralMallFooter" v-if="type">
+       <button v-html="exchangeTitle" @click="exchange" :disabled="pickedData == null"></button>
+    </div>
+
+    <div class="integralMallLoading" v-show="loadingShow">
+      <div class="timer"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/vue.min.js"></script>
+<script src="./js/main.js"></script>
