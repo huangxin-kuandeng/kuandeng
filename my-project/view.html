@@ -64,7 +64,7 @@
   <div id="integralMallView" class="integralMallView" :class="viewClass" v-cloak>
 	<div class="iconfont" :class="iconClass"></div>
 	<div class="viewInfo" v-html="iconTitle"></div>
-	<div class="viewWarning" v-show="viewType != '1'" v-html="viewTitle"></div>
+	<div class="viewWarning" v-show="viewTitle" v-html="viewTitle"></div>
 	<div class="viewButton">
 		<button class="rebackIndex" @click="rebackIndex">返回首页</button>
 	</div>
@@ -72,5 +72,5 @@
 </body>
 </html>
 
-<script src="./js/vue.min.js"></script>
+<script src="./services/vue.min.js"></script>
 <script src="./js/view.js"></script>

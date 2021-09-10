@@ -53,8 +53,8 @@
         <span class="labelTitle">选择优惠券兑换：</span>
         <div class="integralMallBodyLists" v-if="type">
           <div v-for="(item,index) in couPonData" :key="index">
-            <input :id="item.money" type="radio" name="radio" class="labelauty" :value="item.money" v-model="picked" :disabled="item.isUse == false" style="display: none;">
-            <label :for="item.money">
+            <input :id="item.id" type="radio" name="radio" class="labelauty" :value="item.id" v-model="picked" :disabled="item.isUse" style="display: none;">
+            <label :for="item.id">
               <span class="labelauty-unchecked-image"></span>
               <span class="labelauty-unchecked" v-html="item.name"></span>
               <span class="labelauty-checked-image"></span>
@@ -85,11 +85,14 @@
     <div class="integralMallLoading" v-show="loadingShow">
       <div class="timer"></div>
     </div>
+    <div class="integralMallLoading backGroundColor" v-show="backGroundLoadingShow">
+      <div class="timer"></div>
+    </div>
   </div>
 </body>
 </html>
 
-<script src="./js/jquery.min.js"></script>
-<script src="./js/config.js"></script>
-<script src="./js/vue.min.js"></script>
+<script src="./config.js"></script>
+<script src="./services/axios.min.js"></script>
+<script src="./services/vue.min.js"></script>
 <script src="./js/main.js"></script>

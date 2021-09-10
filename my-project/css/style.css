@@ -298,6 +298,9 @@ li{
     background-color: #000;
     opacity: 0.6;
 }
+.integralMallLoading.backGroundColor{
+    background-color: initial;
+}
 .integralMallLoading div{
     position: absolute;
     bottom: 50%;

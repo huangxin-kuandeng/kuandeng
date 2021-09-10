@@ -35,7 +35,7 @@ var view = new Vue({
         getQueryString(name) {
             var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
             var r = window.location.search.substr(1).match(reg);
-            if(name == 'title'){
+            if(name == 'viewTitle'){
                 return decodeURI(r[2]);
             }
             if (r != null) {
